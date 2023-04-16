@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/suitManA8.png</file>
+        <file>img/tempRuleBookA8.png</file>
+        <file>img/tempDesk2A8.png</file>
+        <file>img/tempBooksA8.png</file>
+    </qresource>
+</RCC>
