@@ -21,11 +21,12 @@ public slots:
     void ruleBookClicked();
     void ruleBookClosed();
     void toMainMenu();
+    void toClientSelection();
+    void questionClient();
 signals:
     void resetSignal();
 
 private slots:
-    void toClientSelection();
 
 private:
     Ui::MainWindow *ui;

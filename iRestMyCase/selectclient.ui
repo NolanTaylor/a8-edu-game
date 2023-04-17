@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>636</height>
+    <width>638</width>
+    <height>426</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -15,99 +15,50 @@
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="0" column="0">
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="widgetResizable">
-      <bool>true</bool>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(221, 199, 163);</string>
      </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>466</width>
-        <height>957</height>
-       </rect>
-      </property>
-      <layout class="QVBoxLayout" name="verticalLayout">
-       <item>
-        <widget class="QPushButton" name="client1">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>150</height>
-          </size>
-         </property>
+     <property name="currentIndex">
+      <number>1</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Tab 1</string>
+      </attribute>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <widget class="QLabel" name="label">
          <property name="text">
-          <string>Sir Johnitham the Great</string>
+          <string>LIST OF CLIENTELE</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="client2">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Mr. DinkleBerg</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="client3">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Ms. Caterbury</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="client4">
-         <property name="minimumSize">
-          <size>
-           <width>0</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Mr. White</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="client5">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Maxwell the Cat</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="client6">
-         <property name="minimumSize">
-          <size>
-           <width>100</width>
-           <height>150</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Oily Josh</string>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
          </property>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QWidget" name="client1_tab">
+      <attribute name="title">
+       <string>Tab 2</string>
+      </attribute>
+      <widget class="QLabel" name="client1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>161</width>
+         <height>151</height>
+        </rect>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </widget>
    </item>

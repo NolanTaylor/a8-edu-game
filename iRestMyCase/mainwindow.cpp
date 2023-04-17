@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->dialouge->hide();
 
     QPixmap client(":/resources/img/suitManA8.png");//Add path
     int w = ui->client->width();
@@ -36,10 +37,26 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
 
+    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
+
 }
+/**
+ * @brief Visually restarts the game
+ */
 void MainWindow::restartGame(){
 
+    ui->client->hide();
+
     ui->screens->setCurrentIndex(1);
+    ui->dialouge->hide();
+
+    ui->tabWidget->hide();
+    ui->tabWidget->setEnabled(false);
+    ui->closeRules_pushButton->hide();
+    ui->closeRules_pushButton->setEnabled(false);
+
+    ui->ruleBook_pushButton->show();
+    ui->ruleBook_pushButton->setEnabled(true);
 
     //Reset Everything in model
     emit resetSignal();
@@ -81,5 +98,12 @@ MainWindow::~MainWindow()
 void MainWindow::toClientSelection()
 {
    ui->screens->setCurrentIndex(2);
+}
+
+
+void MainWindow::questionClient()
+{
+   ui->dialouge->show();
+   ui->dialouge->setText("Hello this is a dialouge box!");
 }
 

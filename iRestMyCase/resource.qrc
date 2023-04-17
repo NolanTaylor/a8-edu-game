@@ -13,5 +13,9 @@
         <file>img/tempRuleBookMap.png</file>
         <file>img/tempRuleBookP2A8.png</file>
         <file>img/tempRuleBookP3A8.png</file>
+        <file>img/client1.png</file>
+        <file>img/client2.png</file>
+        <file>img/client3.png</file>
+        <file>img/tempMaxwell.png</file>
     </qresource>
 </RCC>

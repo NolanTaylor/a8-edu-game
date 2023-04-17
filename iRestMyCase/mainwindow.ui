@@ -50,7 +50,7 @@
        <rect>
         <x>30</x>
         <y>20</y>
-        <width>321</width>
+        <width>221</width>
         <height>651</height>
        </rect>
       </property>
@@ -265,6 +265,29 @@ background-repeat: none;</string>
       </property>
       <property name="text">
        <string>Main Menu</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="dialouge">
+      <property name="geometry">
+       <rect>
+        <x>290</x>
+        <y>40</y>
+        <width>271</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:beige;
+border: 2px solid black</string>
+      </property>
+      <property name="text">
+       <string>#PLACEHOLDER</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
     </widget>

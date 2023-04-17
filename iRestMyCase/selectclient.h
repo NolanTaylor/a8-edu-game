@@ -14,6 +14,8 @@ class SelectClient : public QWidget
 public:
     explicit SelectClient(QWidget *parent = nullptr);
     ~SelectClient();
+public slots:
+    void addNewClient();
 
 private:
     Ui::SelectClient *ui;
