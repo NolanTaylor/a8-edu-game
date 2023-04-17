@@ -2,7 +2,7 @@
 #include "ui_startmenu.h"
 
 StartMenu::StartMenu(QWidget *parent) :
-    QMainWindow(parent),
+    QWidget(parent),
     ui(new Ui::StartMenu)
 {
     ui->setupUi(this);

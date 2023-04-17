@@ -9,22 +9,16 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    gamescreen.cpp \
     main.cpp \
     mainwindow.cpp \
-    pickclients.cpp \
     startmenu.cpp
 
 HEADERS += \
-    gamescreen.h \
     mainwindow.h \
-    pickclients.h \
     startmenu.h
 
 FORMS += \
-    gamescreen.ui \
     mainwindow.ui \
-    pickclients.ui \
     startmenu.ui
 
 # Default rules for deployment.

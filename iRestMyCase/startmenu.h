@@ -1,13 +1,13 @@
 #ifndef STARTMENU_H
 #define STARTMENU_H
 
-#include <QMainWindow>
+#include <QWidget>
 
 namespace Ui {
 class StartMenu;
 }
 
-class StartMenu : public QMainWindow
+class StartMenu : public QWidget
 {
     Q_OBJECT
 
