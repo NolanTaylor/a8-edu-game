@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget_2">
+   <widget class="QTabWidget" name="screens">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -30,7 +30,7 @@
      <attribute name="title">
       <string>Page</string>
      </attribute>
-     <widget class="StartMenu" name="widget" native="true">
+     <widget class="StartMenu" name="start_menu" native="true">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -241,7 +241,7 @@ background-repeat: none;</string>
        <string>Evaluation</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="newClient_pushButton">
       <property name="geometry">
        <rect>
         <x>810</x>
@@ -254,11 +254,34 @@ background-repeat: none;</string>
        <string>NEW CLIENT</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="menu_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>10</y>
+        <width>93</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Main Menu</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="tab_6">
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
+     <widget class="SelectClient" name="widget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>20</y>
+        <width>491</width>
+        <height>531</height>
+       </rect>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -279,6 +302,12 @@ background-repeat: none;</string>
    <class>StartMenu</class>
    <extends>QWidget</extends>
    <header location="global">startmenu.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SelectClient</class>
+   <extends>QWidget</extends>
+   <header location="global">selectclient.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

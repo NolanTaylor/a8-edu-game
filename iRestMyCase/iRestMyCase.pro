@@ -11,14 +11,17 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
+    selectclient.cpp \
     startmenu.cpp
 
 HEADERS += \
     mainwindow.h \
+    selectclient.h \
     startmenu.h
 
 FORMS += \
     mainwindow.ui \
+    selectclient.ui \
     startmenu.ui
 
 # Default rules for deployment.

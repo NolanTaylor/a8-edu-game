@@ -15,6 +15,13 @@ public:
     explicit StartMenu(QWidget *parent = nullptr);
     ~StartMenu();
 
+private slots:
+
+    void on_newGame_pushButton_clicked();
+
+signals:
+    void restartGameSignal();
+
 private:
     Ui::StartMenu *ui;
 };

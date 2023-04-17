@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "startmenu.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,9 +17,15 @@ public:
     ~MainWindow();
 
 public slots:
+    void restartGame();
     void ruleBookClicked();
     void ruleBookClosed();
+    void toMainMenu();
+signals:
+    void resetSignal();
 
+private slots:
+    void toClientSelection();
 
 private:
     Ui::MainWindow *ui;

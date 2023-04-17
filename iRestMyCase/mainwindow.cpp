@@ -32,6 +32,20 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->ruleBook_pushButton, &QPushButton::clicked, this, &MainWindow::ruleBookClicked);
     connect(ui->closeRules_pushButton, &QPushButton::clicked, this, &MainWindow::ruleBookClosed);
 
+    connect(ui->start_menu, &StartMenu::restartGameSignal, this, &MainWindow::restartGame);
+    connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
+    connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
+
+}
+void MainWindow::restartGame(){
+
+    ui->screens->setCurrentIndex(1);
+
+    //Reset Everything in model
+    emit resetSignal();
+}
+void MainWindow::toMainMenu(){
+    ui->screens->setCurrentIndex(0);
 }
 void MainWindow::ruleBookClicked(){
 
@@ -61,5 +75,11 @@ void MainWindow::ruleBookClosed(){
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+
+void MainWindow::toClientSelection()
+{
+   ui->screens->setCurrentIndex(2);
 }
 
