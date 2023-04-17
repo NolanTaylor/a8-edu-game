@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab_7">
      <attribute name="title">
@@ -298,9 +298,9 @@ border: 2px solid black</string>
      <widget class="SelectClient" name="widget" native="true">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>20</y>
-        <width>491</width>
+        <x>330</x>
+        <y>10</y>
+        <width>621</width>
         <height>531</height>
        </rect>
       </property>

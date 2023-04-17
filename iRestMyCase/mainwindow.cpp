@@ -7,8 +7,10 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->screens->setCurrentIndex(0);
 
     ui->dialouge->hide();
+
 
     QPixmap client(":/resources/img/suitManA8.png");//Add path
     int w = ui->client->width();
@@ -105,5 +107,13 @@ void MainWindow::questionClient()
 {
    ui->dialouge->show();
    ui->dialouge->setText("Hello this is a dialouge box!");
+}
+
+/**
+ * @brief Displays client image sent by the SelectClient class
+ * @param index
+ */
+void MainWindow::selectClientDisplay(int index){
+
 }
 
