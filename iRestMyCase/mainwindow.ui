@@ -228,19 +228,6 @@ background-repeat: none;</string>
        <string>Question</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="evaluation_pushButton">
-      <property name="geometry">
-       <rect>
-        <x>160</x>
-        <y>400</y>
-        <width>121</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Evaluation</string>
-      </property>
-     </widget>
      <widget class="QPushButton" name="newClient_pushButton">
       <property name="geometry">
        <rect>
@@ -314,6 +301,19 @@ border: 2px solid black</string>
       </property>
       <property name="text">
        <string>Reject</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="next_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>120</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Next</string>
       </property>
      </widget>
     </widget>

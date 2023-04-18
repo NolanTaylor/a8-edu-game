@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVector>
 #include "startmenu.h"
 #include "selectclient.h"
 #include "model.h"
@@ -27,6 +28,7 @@ public slots:
     void questionClient();
     void acceptClient();
     void rejectClient();
+    void nextDialogue();
     void clientChosen(int);
 signals:
     void resetSignal();
@@ -36,6 +38,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     Model m;
+
+    bool client_in_office;
+    int client_index;
+    int dialogue_index;
+    QVector<QString> dialogue;
 
     void selectClientDisplay(int);
 };

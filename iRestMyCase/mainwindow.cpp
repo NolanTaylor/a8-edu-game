@@ -10,6 +10,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
 
+    client_in_office = false;
+    client_index = 0;
+    dialogue_index = 0;
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
+
     ui->dialouge->hide();
 
     QPixmap client(":/resources/img/suitManA8.png"); //Add path
@@ -42,6 +50,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
     connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::acceptClient);
     connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
+    connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::nextDialogue);
 }
 /**
  * @brief Visually restarts the game
@@ -102,37 +111,59 @@ void MainWindow::toClientSelection()
 {
     qDebug() << "next client";
 
-    QPixmap client(":/resources/img/client1.png");
+    client_in_office = true;
+    ui->newClient_pushButton->setDisabled(true);
+    ui->accept_pushButton->setDisabled(false);
+    ui->reject_pushButton->setDisabled(false);
+
+    QPixmap client_img(m.clients[client_index].image);
+
     int w = ui->client->width();
     int h = ui->client->height();
-    ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
+    ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
     ui->client->show();
 
-    ui->dialouge->setText("i drafted 12yo children into the armenian genocide\nin 1916, but it was an accident i swear! please help\nme file a court case against NATO");
+    ui->dialouge->setText(m.clients[client_index].dialogue[dialogue_index]);
     ui->dialouge->show();
 }
 
 
 void MainWindow::questionClient()
 {
-   ui->dialouge->show();
-   ui->dialouge->setText("Hello this is a dialouge box!");
+   ui->dialouge->setText(m.clients[client_index].dialogue_q[0]);
 }
 
 void MainWindow::acceptClient()
 {
-    ui->dialouge->setText("you won't regret this");
-    ui->dialouge->show();
+    ui->dialouge->setText(m.clients[client_index].dialogue_a[0]);
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
 }
 
 void MainWindow::rejectClient()
 {
-    ui->dialouge->setText("you're making a huge mistake");
-    ui->dialouge->show();
+    ui->dialouge->setText(m.clients[client_index].dialogue_r[0]);
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
+}
+
+void MainWindow::nextDialogue()
+{
+    if (dialogue_index + 2 > m.clients[client_index].dialogue.size())
+    {
+        return;
+    }
+
+    dialogue_index++;
+    ui->dialouge->setText(m.clients[client_index].dialogue[dialogue_index]);
 }
 
 void MainWindow::clientChosen(int ClientID)

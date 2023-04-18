@@ -14,10 +14,13 @@ public:
     QString name;
     int ID;
     //Parse through a text file for each character
-    std::vector<QString> dialougeOptions;
+    QVector<QString> dialogue;
+    QVector<QString> dialogue_q; // dialogue when questioned
+    QVector<QString> dialogue_a; // dialogue when accepted
+    QVector<QString> dialogue_r; // dialogue when rejected
     double viabililty;
     int payment;
-    QPixmap image;
+    QString image;
 
 signals:
 
