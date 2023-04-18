@@ -42,7 +42,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
 
-    connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
+    //connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
     connect(ui->addClient_pushButton, &QPushButton::clicked, this, &MainWindow::addNewClientSelection);
 
    // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);

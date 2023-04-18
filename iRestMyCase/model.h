@@ -17,9 +17,7 @@ public:
     std::vector<std::unique_ptr<Client>> unusedClients; //Select from this pool of not yet used clients
     int money, reputation;
 public slots:
-    void getNewClient();
 signals:
-    void addClientToManila(Client &client);
 
 
 };
