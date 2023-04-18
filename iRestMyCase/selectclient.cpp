@@ -17,31 +17,34 @@ SelectClient::SelectClient(QWidget *parent) :
     int h = ui->client1->height();
     ui->client1->setPixmap(client.scaled(w,h,Qt::IgnoreAspectRatio));
 
-    connect(ui->manila, &QTabWidget::tabBarClicked, this, &SelectClient::on_manila_tabBarClicked);
+    connect(ui->manila, &QTabWidget::tabBarClicked, this, &SelectClient::tabBarClicked);
+    connect(ui->pickClient_pushButton, &QPushButton::clicked, this, &SelectClient::pickClient);
 
 }
 
 /**
  * @brief Visually adds a new client to the list
  */
-void SelectClient::addNewClient(){
-
+void SelectClient::addNewClients(Client &client){
+    //Add a new tab
+    ui->manila->addTab(new QWidget, client.name);
+    int w = ui->client1->width();
+    int h = ui->client1->height();
+    ui->client1->setPixmap(client.image.scaled(w,h,Qt::IgnoreAspectRatio));
 }
-SelectClient::~SelectClient()
-{
-    delete ui;
-}
 
-void SelectClient::on_pickClient_pushButton_clicked()
+
+void SelectClient::pickClient()
 {
-    emit clientChosen(ui->manila->currentIndex());
+
+    emit clientChosen(ui->manila->currentIndex()-1); //Front page is 0
 }
 
 /**
  * @brief Hide the select button depending if user is one the front page.
  * @param index
  */
-void SelectClient::on_manila_tabBarClicked(int index)
+void SelectClient::tabBarClicked(int index)
 {
     if (index > 0){
         ui->pickClient_pushButton->show();
@@ -52,4 +55,7 @@ void SelectClient::on_manila_tabBarClicked(int index)
         ui->pickClient_pushButton->setEnabled(false);
     }
 }
-
+SelectClient::~SelectClient()
+{
+    delete ui;
+}

@@ -5,3 +5,16 @@ Client:
     Holds an image/s, viability, payment, name, dialogue/story, and unique ID
 Model:
     Holds a map of current clients and a map of every unused clients, money, and reputation
+
+parse the client file as follows:
+    name
+    ID
+    viability
+    payment
+    image path
+    information dialogue
+    end of information dialouge
+    reject dialouge
+    accept dialouge
+
+--Delete SelectClient class, unecessary

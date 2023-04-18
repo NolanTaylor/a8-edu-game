@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     client.cpp \
+    clienttab.cpp \
     main.cpp \
     mainwindow.cpp \
     model.cpp \
@@ -18,12 +19,14 @@ SOURCES += \
 
 HEADERS += \
     client.h \
+    clienttab.h \
     mainwindow.h \
     model.h \
     selectclient.h \
     startmenu.h
 
 FORMS += \
+    clienttab.ui \
     mainwindow.ui \
     selectclient.ui \
     startmenu.ui
@@ -37,4 +40,5 @@ RESOURCES += \
     resource.qrc
 
 DISTFILES += \
-    README
+    README \
+    clients

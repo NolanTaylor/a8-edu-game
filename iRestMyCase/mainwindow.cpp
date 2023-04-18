@@ -1,21 +1,18 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
+#include "clienttab.h"
 
-MainWindow::MainWindow(QWidget *parent)
+MainWindow::MainWindow(Model &model, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
+    this->model = &model;
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
 
     ui->dialouge->hide();
 
-
-    QPixmap client(":/resources/img/suitManA8.png");//Add path
-    int w = ui->client->width();
-    int h = ui->client->height();
-    ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
 
     QPixmap desk(":/resources/img/tempDesk2A8.png");
     ui->user_desk->setPixmap(desk.scaled(ui->user_desk->width(),ui->user_desk->height(), Qt::IgnoreAspectRatio));
@@ -32,6 +29,10 @@ MainWindow::MainWindow(QWidget *parent)
     ui->tabWidget->setEnabled(false);
     //ui->tab_3->setT;
 
+    //Select Client button should be hidden on main screen
+    ui->selectClient_pushButton->hide();
+    ui->selectClient_pushButton->setEnabled(false);
+
     connect(ui->ruleBook_pushButton, &QPushButton::clicked, this, &MainWindow::ruleBookClicked);
     connect(ui->closeRules_pushButton, &QPushButton::clicked, this, &MainWindow::ruleBookClosed);
 
@@ -40,6 +41,15 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
+
+    connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
+    connect(ui->addClient_pushButton, &QPushButton::clicked, this, &MainWindow::addNewClientSelection);
+
+   // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
+
+    connect(ui->selectClient, &QTabWidget::tabBarClicked, this, &MainWindow::changeTab);
+
+    connect(ui->selectClient_pushButton, &QPushButton::clicked, this, &MainWindow::selectClientDisplay);
 
 }
 /**
@@ -114,6 +124,37 @@ void MainWindow::questionClient()
  * @param index
  */
 void MainWindow::selectClientDisplay(int index){
+    ui->screens->setCurrentIndex(1);
+    ui->client->show();
+    QPixmap client = model->currentClients.at(index)->image;
+    int w = ui->client->width();
+    int h = ui->client->height();
+    ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
+}
 
+
+
+void MainWindow::addNewClientSelection()
+{
+    clientTab *newClient = new clientTab(*model->currentClients.at(0));
+    //newClient.addClient(*model->currentClients.at(0));
+    ui->selectClient->addTab(newClient,QIcon(QString("")), model->currentClients.at(0)->name);
+    //int w = ui->client1->width();
+   // int h = ui->client1->height();
+   // ui->client1->setPixmap(client.image.scaled(w,h,Qt::IgnoreAspectRatio));
+}
+
+
+
+void MainWindow::changeTab(int index)
+{
+    if (index > 0){
+        ui->selectClient_pushButton->show();
+        ui->selectClient_pushButton->setEnabled(true);
+    }
+    else{
+        ui->selectClient_pushButton->hide();
+        ui->selectClient_pushButton->setEnabled(false);
+    }
 }
 

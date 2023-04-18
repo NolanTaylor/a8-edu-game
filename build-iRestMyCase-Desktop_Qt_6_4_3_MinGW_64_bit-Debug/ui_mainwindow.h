@@ -28,9 +28,9 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTabWidget *tabWidget_2;
+    QTabWidget *screens;
     QWidget *tab_7;
-    StartMenu *widget;
+    StartMenu *start_menu;
     QWidget *tab_5;
     QLabel *client;
     QLabel *user_desk;
@@ -51,8 +51,15 @@ public:
     QPushButton *closeRules_pushButton;
     QPushButton *question_pushButton;
     QPushButton *evaluation_pushButton;
-    QPushButton *pushButton;
+    QPushButton *newClient_pushButton;
+    QPushButton *menu_pushButton;
+    QLabel *dialouge;
     QWidget *tab_6;
+    QPushButton *addClient_pushButton;
+    QTabWidget *selectClient;
+    QWidget *tab_8;
+    QLabel *label;
+    QPushButton *selectClient_pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -63,20 +70,20 @@ public:
         MainWindow->resize(1003, 650);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        tabWidget_2 = new QTabWidget(centralwidget);
-        tabWidget_2->setObjectName("tabWidget_2");
-        tabWidget_2->setGeometry(QRect(0, 0, 971, 591));
+        screens = new QTabWidget(centralwidget);
+        screens->setObjectName("screens");
+        screens->setGeometry(QRect(0, 0, 971, 591));
         tab_7 = new QWidget();
         tab_7->setObjectName("tab_7");
-        widget = new StartMenu(tab_7);
-        widget->setObjectName("widget");
-        widget->setGeometry(QRect(120, 0, 731, 551));
-        tabWidget_2->addTab(tab_7, QString());
+        start_menu = new StartMenu(tab_7);
+        start_menu->setObjectName("start_menu");
+        start_menu->setGeometry(QRect(120, 0, 731, 551));
+        screens->addTab(tab_7, QString());
         tab_5 = new QWidget();
         tab_5->setObjectName("tab_5");
         client = new QLabel(tab_5);
         client->setObjectName("client");
-        client->setGeometry(QRect(30, 20, 321, 651));
+        client->setGeometry(QRect(30, 20, 221, 651));
         user_desk = new QLabel(tab_5);
         user_desk->setObjectName("user_desk");
         user_desk->setEnabled(true);
@@ -160,13 +167,44 @@ public:
         evaluation_pushButton = new QPushButton(tab_5);
         evaluation_pushButton->setObjectName("evaluation_pushButton");
         evaluation_pushButton->setGeometry(QRect(20, 470, 121, 61));
-        pushButton = new QPushButton(tab_5);
-        pushButton->setObjectName("pushButton");
-        pushButton->setGeometry(QRect(810, 10, 131, 41));
-        tabWidget_2->addTab(tab_5, QString());
+        newClient_pushButton = new QPushButton(tab_5);
+        newClient_pushButton->setObjectName("newClient_pushButton");
+        newClient_pushButton->setGeometry(QRect(810, 10, 131, 41));
+        menu_pushButton = new QPushButton(tab_5);
+        menu_pushButton->setObjectName("menu_pushButton");
+        menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
+        dialouge = new QLabel(tab_5);
+        dialouge->setObjectName("dialouge");
+        dialouge->setGeometry(QRect(290, 40, 271, 61));
+        dialouge->setAutoFillBackground(false);
+        dialouge->setStyleSheet(QString::fromUtf8("background-color:beige;\n"
+"border: 2px solid black"));
+        dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        screens->addTab(tab_5, QString());
         tab_6 = new QWidget();
         tab_6->setObjectName("tab_6");
-        tabWidget_2->addTab(tab_6, QString());
+        addClient_pushButton = new QPushButton(tab_6);
+        addClient_pushButton->setObjectName("addClient_pushButton");
+        addClient_pushButton->setGeometry(QRect(10, 20, 131, 61));
+        selectClient = new QTabWidget(tab_6);
+        selectClient->setObjectName("selectClient");
+        selectClient->setGeometry(QRect(300, 20, 631, 511));
+        selectClient->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));\n"
+"alternate-background-color: rgb(255, 245, 205);"));
+        tab_8 = new QWidget();
+        tab_8->setObjectName("tab_8");
+        label = new QLabel(tab_8);
+        label->setObjectName("label");
+        label->setGeometry(QRect(170, 160, 261, 171));
+        label->setMaximumSize(QSize(16777212, 16777215));
+        label->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";\n"
+"color: rgb(148, 139, 118);"));
+        label->setAlignment(Qt::AlignCenter);
+        selectClient->addTab(tab_8, QString());
+        selectClient_pushButton = new QPushButton(tab_6);
+        selectClient_pushButton->setObjectName("selectClient_pushButton");
+        selectClient_pushButton->setGeometry(QRect(10, 110, 121, 61));
+        screens->addTab(tab_6, QString());
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -178,8 +216,9 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget_2->setCurrentIndex(1);
+        screens->setCurrentIndex(2);
         tabWidget->setCurrentIndex(1);
+        selectClient->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -188,7 +227,7 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_7), QCoreApplication::translate("MainWindow", "Page", nullptr));
+        screens->setTabText(screens->indexOf(tab_7), QCoreApplication::translate("MainWindow", "Page", nullptr));
         client->setText(QString());
         user_desk->setText(QString());
         front_page->setText(QString());
@@ -203,9 +242,15 @@ public:
         closeRules_pushButton->setText(QCoreApplication::translate("MainWindow", "Close book", nullptr));
         question_pushButton->setText(QCoreApplication::translate("MainWindow", "Question", nullptr));
         evaluation_pushButton->setText(QCoreApplication::translate("MainWindow", "Evaluation", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_5), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
-        tabWidget_2->setTabText(tabWidget_2->indexOf(tab_6), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
+        newClient_pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
+        menu_pushButton->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
+        dialouge->setText(QCoreApplication::translate("MainWindow", "#PLACEHOLDER", nullptr));
+        screens->setTabText(screens->indexOf(tab_5), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
+        addClient_pushButton->setText(QCoreApplication::translate("MainWindow", "ADD CLIENT", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "CLIENTELE", nullptr));
+        selectClient->setTabText(selectClient->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
+        selectClient_pushButton->setText(QCoreApplication::translate("MainWindow", "Select Client", nullptr));
+        screens->setTabText(screens->indexOf(tab_6), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
     } // retranslateUi
 
 };

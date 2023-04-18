@@ -23,11 +23,11 @@ class Ui_StartMenu
 {
 public:
     QGridLayout *gridLayout;
-    QPushButton *pushButton_3;
+    QPushButton *newGame_pushButton;
     QSpacerItem *horizontalSpacer;
-    QPushButton *pushButton_2;
-    QPushButton *pushButton;
-    QLabel *label;
+    QPushButton *instruction_pushButton;
+    QPushButton *load_pushButton;
+    QLabel *title;
     QSpacerItem *horizontalSpacer_2;
 
     void setupUi(QWidget *StartMenu)
@@ -37,30 +37,30 @@ public:
         StartMenu->resize(400, 560);
         gridLayout = new QGridLayout(StartMenu);
         gridLayout->setObjectName("gridLayout");
-        pushButton_3 = new QPushButton(StartMenu);
-        pushButton_3->setObjectName("pushButton_3");
+        newGame_pushButton = new QPushButton(StartMenu);
+        newGame_pushButton->setObjectName("newGame_pushButton");
 
-        gridLayout->addWidget(pushButton_3, 2, 1, 1, 1);
+        gridLayout->addWidget(newGame_pushButton, 2, 1, 1, 1);
 
         horizontalSpacer = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
         gridLayout->addItem(horizontalSpacer, 0, 0, 1, 1);
 
-        pushButton_2 = new QPushButton(StartMenu);
-        pushButton_2->setObjectName("pushButton_2");
+        instruction_pushButton = new QPushButton(StartMenu);
+        instruction_pushButton->setObjectName("instruction_pushButton");
 
-        gridLayout->addWidget(pushButton_2, 3, 1, 1, 1);
+        gridLayout->addWidget(instruction_pushButton, 3, 1, 1, 1);
 
-        pushButton = new QPushButton(StartMenu);
-        pushButton->setObjectName("pushButton");
+        load_pushButton = new QPushButton(StartMenu);
+        load_pushButton->setObjectName("load_pushButton");
 
-        gridLayout->addWidget(pushButton, 1, 1, 1, 1);
+        gridLayout->addWidget(load_pushButton, 1, 1, 1, 1);
 
-        label = new QLabel(StartMenu);
-        label->setObjectName("label");
-        label->setAlignment(Qt::AlignCenter);
+        title = new QLabel(StartMenu);
+        title->setObjectName("title");
+        title->setAlignment(Qt::AlignCenter);
 
-        gridLayout->addWidget(label, 0, 1, 1, 1);
+        gridLayout->addWidget(title, 0, 1, 1, 1);
 
         horizontalSpacer_2 = new QSpacerItem(40, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
 
@@ -75,10 +75,10 @@ public:
     void retranslateUi(QWidget *StartMenu)
     {
         StartMenu->setWindowTitle(QCoreApplication::translate("StartMenu", "Form", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("StartMenu", "NEW GAME", nullptr));
-        pushButton_2->setText(QCoreApplication::translate("StartMenu", "INSTRUCTIONS", nullptr));
-        pushButton->setText(QCoreApplication::translate("StartMenu", "LOAD", nullptr));
-        label->setText(QCoreApplication::translate("StartMenu", "I        REST MY CASE        ", nullptr));
+        newGame_pushButton->setText(QCoreApplication::translate("StartMenu", "NEW GAME", nullptr));
+        instruction_pushButton->setText(QCoreApplication::translate("StartMenu", "INSTRUCTIONS", nullptr));
+        load_pushButton->setText(QCoreApplication::translate("StartMenu", "LOAD", nullptr));
+        title->setText(QCoreApplication::translate("StartMenu", "      I REST MY CASE        ", nullptr));
     } // retranslateUi
 
 };

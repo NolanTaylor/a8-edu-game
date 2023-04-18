@@ -9,6 +9,9 @@ class Client : public QObject
     Q_OBJECT
 public:
     explicit Client(QObject *parent = nullptr);
+
+     Client (QString name, int ID, double viability, int payment, QPixmap image, QObject *parent = nullptr);
+
     QString name;
     int ID;
     //Parse through a text file for each character

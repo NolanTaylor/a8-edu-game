@@ -2,6 +2,7 @@
 #define SELECTCLIENT_H
 
 #include <QWidget>
+#include "client.h"
 
 namespace Ui {
 class SelectClient;
@@ -15,11 +16,9 @@ public:
     explicit SelectClient(QWidget *parent = nullptr);
     ~SelectClient();
 public slots:
-    void addNewClient();
-
-private slots:
-    void on_pickClient_pushButton_clicked();
-    void on_manila_tabBarClicked(int index);
+    void pickClient();
+    void tabBarClicked(int index);
+    void addNewClients(Client &client);
 
 signals:
     void clientChosen(int clientID);

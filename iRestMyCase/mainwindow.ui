@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab_7">
      <attribute name="title">
@@ -295,14 +295,78 @@ border: 2px solid black</string>
      <attribute name="title">
       <string>Tab 2</string>
      </attribute>
-     <widget class="SelectClient" name="widget" native="true">
+     <widget class="QPushButton" name="addClient_pushButton">
       <property name="geometry">
        <rect>
-        <x>330</x>
-        <y>10</y>
-        <width>621</width>
-        <height>531</height>
+        <x>10</x>
+        <y>20</y>
+        <width>131</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>ADD CLIENT</string>
+      </property>
+     </widget>
+     <widget class="QTabWidget" name="selectClient">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>20</y>
+        <width>631</width>
+        <height>511</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));
+alternate-background-color: rgb(255, 245, 205);</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Tab 1</string>
+       </attribute>
+       <widget class="QLabel" name="label">
+        <property name="geometry">
+         <rect>
+          <x>170</x>
+          <y>160</y>
+          <width>261</width>
+          <height>171</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>16777212</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">font: 700 15pt &quot;Courier&quot;;
+color: rgb(148, 139, 118);</string>
+        </property>
+        <property name="text">
+         <string>CLIENTELE</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="selectClient_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>110</y>
+        <width>121</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Select Client</string>
       </property>
      </widget>
     </widget>
@@ -325,12 +389,6 @@ border: 2px solid black</string>
    <class>StartMenu</class>
    <extends>QWidget</extends>
    <header location="global">startmenu.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>SelectClient</class>
-   <extends>QWidget</extends>
-   <header location="global">selectclient.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

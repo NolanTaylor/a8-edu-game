@@ -2,7 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "startmenu.h"
+#include "model.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -13,7 +14,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(Model &model, QWidget *parent = nullptr);
     ~MainWindow();
 
 public slots:
@@ -23,12 +24,17 @@ public slots:
     void toMainMenu();
     void toClientSelection();
     void questionClient();
+    void selectClientDisplay(int index);
 signals:
     void resetSignal();
-
 private slots:
+    void addNewClientSelection();
+
+
+    void changeTab(int index);
 
 private:
     Ui::MainWindow *ui;
+    Model *model;
 };
 #endif // MAINWINDOW_H
