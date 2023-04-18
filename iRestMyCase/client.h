@@ -9,6 +9,8 @@ class Client : public QObject
     Q_OBJECT
 public:
     explicit Client(QObject *parent = nullptr);
+    Client(const Client&);
+    Client& operator=(const Client&);
     QString name;
     int ID;
     //Parse through a text file for each character
@@ -16,7 +18,6 @@ public:
     double viabililty;
     int payment;
     QPixmap image;
-
 
 signals:
 

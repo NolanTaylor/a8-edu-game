@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include "startmenu.h"
+#include "selectclient.h"
+#include "model.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -23,6 +25,9 @@ public slots:
     void toMainMenu();
     void toClientSelection();
     void questionClient();
+    void acceptClient();
+    void rejectClient();
+    void clientChosen(int);
 signals:
     void resetSignal();
 
@@ -30,5 +35,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    Model m;
+
+    void selectClientDisplay(int);
 };
 #endif // MAINWINDOW_H

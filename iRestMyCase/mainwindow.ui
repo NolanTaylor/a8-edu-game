@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_7">
      <attribute name="title">
@@ -102,7 +102,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>2</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -231,10 +231,10 @@ background-repeat: none;</string>
      <widget class="QPushButton" name="evaluation_pushButton">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>470</y>
+        <x>160</x>
+        <y>400</y>
         <width>121</width>
-        <height>61</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="text">
@@ -272,8 +272,8 @@ background-repeat: none;</string>
        <rect>
         <x>290</x>
         <y>40</y>
-        <width>271</width>
-        <height>61</height>
+        <width>291</width>
+        <height>71</height>
        </rect>
       </property>
       <property name="autoFillBackground">
@@ -284,10 +284,36 @@ background-repeat: none;</string>
 border: 2px solid black</string>
       </property>
       <property name="text">
-       <string>#PLACEHOLDER</string>
+       <string>placeholder</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accept_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>460</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Accept</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="reject_pushButton">
+      <property name="geometry">
+       <rect>
+        <x>160</x>
+        <y>460</y>
+        <width>121</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reject</string>
       </property>
      </widget>
     </widget>
@@ -314,7 +340,7 @@ border: 2px solid black</string>
      <x>0</x>
      <y>0</y>
      <width>1003</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>

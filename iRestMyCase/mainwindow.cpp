@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
+#include <QDebug>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -11,8 +12,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->dialouge->hide();
 
-
-    QPixmap client(":/resources/img/suitManA8.png");//Add path
+    QPixmap client(":/resources/img/suitManA8.png"); //Add path
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
@@ -40,7 +40,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
-
+    connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::acceptClient);
+    connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
 }
 /**
  * @brief Visually restarts the game
@@ -96,10 +97,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+// goes to next client for now
 void MainWindow::toClientSelection()
 {
-   ui->screens->setCurrentIndex(2);
+    qDebug() << "next client";
+
+    QPixmap client(":/resources/img/client1.png");
+    int w = ui->client->width();
+    int h = ui->client->height();
+    ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
+    ui->client->show();
+
+    ui->dialouge->setText("i drafted 12yo children into the armenian genocide\nin 1916, but it was an accident i swear! please help\nme file a court case against NATO");
+    ui->dialouge->show();
 }
 
 
@@ -109,11 +119,33 @@ void MainWindow::questionClient()
    ui->dialouge->setText("Hello this is a dialouge box!");
 }
 
+void MainWindow::acceptClient()
+{
+    ui->dialouge->setText("you won't regret this");
+    ui->dialouge->show();
+
+    // implement money/reputation
+}
+
+void MainWindow::rejectClient()
+{
+    ui->dialouge->setText("you're making a huge mistake");
+    ui->dialouge->show();
+
+    // implement money/reputation
+}
+
+void MainWindow::clientChosen(int ClientID)
+{
+    qDebug() << "client chosen";
+}
+
 /**
  * @brief Displays client image sent by the SelectClient class
  * @param index
  */
-void MainWindow::selectClientDisplay(int index){
+void MainWindow::selectClientDisplay(int index)
+{
 
 }
 

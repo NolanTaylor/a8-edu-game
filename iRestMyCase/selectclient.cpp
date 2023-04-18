@@ -1,5 +1,6 @@
 #include "selectclient.h"
 #include "ui_selectclient.h"
+#include <QDebug>
 
 SelectClient::SelectClient(QWidget *parent) :
     QWidget(parent),
@@ -12,7 +13,7 @@ SelectClient::SelectClient(QWidget *parent) :
     ui->pickClient_pushButton->hide();
     ui->pickClient_pushButton->setEnabled(false);
 
-    QPixmap client(":/resources/img/suitManA8.png");//Add path
+    QPixmap client(":/resources/img/suitManA8.png"); //Add path
     int w = ui->client1->width();
     int h = ui->client1->height();
     ui->client1->setPixmap(client.scaled(w,h,Qt::IgnoreAspectRatio));
@@ -24,9 +25,11 @@ SelectClient::SelectClient(QWidget *parent) :
 /**
  * @brief Visually adds a new client to the list
  */
-void SelectClient::addNewClient(){
+void SelectClient::addNewClient()
+{
 
 }
+
 SelectClient::~SelectClient()
 {
     delete ui;
@@ -34,6 +37,7 @@ SelectClient::~SelectClient()
 
 void SelectClient::on_pickClient_pushButton_clicked()
 {
+    qDebug() << "emit signal";
     emit clientChosen(ui->manila->currentIndex());
 }
 
