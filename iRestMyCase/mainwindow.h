@@ -2,8 +2,9 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QVector>
+#include "startmenu.h"
 #include "model.h"
-
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,12 +30,24 @@ public slots:
     void addNewClientSelection();
     void changeTab(int index);
     void nextPageInstruction();
+    void acceptClient();
+    void rejectClient();
+    void nextDialogue();
+    void clientChosen(int);
 signals:
     void resetSignal();
 private slots:
 
 private:
     Ui::MainWindow *ui;
-    Model *model;
+    // Model *model; (rachel version)
+    Model m;
+
+    bool client_in_office;
+    int client_index;
+    int dialogue_index;
+    QVector<QString> dialogue;
+
+    void selectClientDisplay(int);
 };
 #endif // MAINWINDOW_H

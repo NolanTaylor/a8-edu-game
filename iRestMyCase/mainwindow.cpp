@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPixmap>
+#include <QDebug>
 #include "clienttab.h"
 
 MainWindow::MainWindow(Model &model, QWidget *parent)
@@ -11,6 +12,14 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
     ui->instruction_tab->setCurrentIndex(0);
+
+    client_in_office = false;
+    client_index = 0;
+    dialogue_index = 0;
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
 
     ui->dialouge->hide();
 
@@ -54,6 +63,10 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->selectClient, &QTabWidget::tabBarClicked, this, &MainWindow::changeTab);
 
     connect(ui->selectClient_pushButton, &QPushButton::clicked, this, &MainWindow::selectClientDisplay);
+
+    connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::acceptClient);
+    connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
+    connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::nextDialogue);
 
 }
 /**
@@ -113,17 +126,72 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-
+// goes to next client for now
 void MainWindow::toClientSelection()
 {
-   ui->screens->setCurrentIndex(2);
+    qDebug() << "next client";
+
+    client_in_office = true;
+    ui->newClient_pushButton->setDisabled(true);
+    ui->accept_pushButton->setDisabled(false);
+    ui->reject_pushButton->setDisabled(false);
+
+    QPixmap client_img(m.clients[client_index]->image);
+
+    int w = ui->client->width();
+    int h = ui->client->height();
+    ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
+    ui->client->show();
+
+    qDebug() << m.clients[1]->dialogue[0];
+    qDebug() << m.clients[0]->image;
+
+    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
+    ui->dialouge->show();
 }
 
 
 void MainWindow::questionClient()
 {
-   ui->dialouge->show();
-   ui->dialouge->setText("Hello this is a dialouge box!");
+   ui->dialouge->setText(m.clients[client_index]->dialogue_q[0]);
+}
+
+void MainWindow::acceptClient()
+{
+    ui->dialouge->setText(m.clients[client_index]->dialogue_a[0]);
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
+
+    // implement money/reputation
+}
+
+void MainWindow::rejectClient()
+{
+    ui->dialouge->setText(m.clients[client_index]->dialogue_r[0]);
+
+    ui->newClient_pushButton->setDisabled(false);
+    ui->accept_pushButton->setDisabled(true);
+    ui->reject_pushButton->setDisabled(true);
+
+    // implement money/reputation
+}
+
+void MainWindow::nextDialogue()
+{
+    if (dialogue_index + 2 > m.clients[client_index]->dialogue.size())
+    {
+        return;
+    }
+
+    dialogue_index++;
+    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
+}
+
+void MainWindow::clientChosen(int ClientID)
+{
+    qDebug() << "client chosen";
 }
 
 /**
@@ -179,6 +247,3 @@ void MainWindow::nextPageInstruction()
     }
 
 }
-
-
-

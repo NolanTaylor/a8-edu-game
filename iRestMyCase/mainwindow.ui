@@ -75,7 +75,7 @@
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QTabWidget::pane { 
+         <string notr="true">QTabWidget::pane {
  margin: 1px,1px,1px,1px;
  border: 2px solid #020202;
  border-radius: 7px;
@@ -438,7 +438,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1003</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
