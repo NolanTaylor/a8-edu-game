@@ -179,6 +179,7 @@ void MainWindow::acceptClient()
     }
     QString currentMoney = "Money: " + QString::number(model->getMoney());
     ui->money->setText(currentMoney);
+    // Reputation display required
 }
 
 void MainWindow::rejectClient()
@@ -198,6 +199,7 @@ void MainWindow::rejectClient()
     }
     QString currentMoney = "Money: " + QString::number(model->getMoney());
     ui->money->setText(currentMoney);
+    // Reputation display required
 }
 
 void MainWindow::nextDialogue()
