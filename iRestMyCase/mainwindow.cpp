@@ -172,6 +172,13 @@ void MainWindow::acceptClient()
     ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
+    if(true){ // When the user judges correctly
+        model->addMoney(model->clients[client_index]->payment);
+    }else{ // When the user judges incorrectly
+        model->deleteMoney(model->clients[client_index]->payment);
+    }
+    QString currentMoney = "Money: " + QString::number(model->getMoney());
+    ui->money->setText(currentMoney);
 }
 
 void MainWindow::rejectClient()
@@ -184,6 +191,13 @@ void MainWindow::rejectClient()
     ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
+    if(false){ // When the user judges correctly
+        model->addMoney(model->clients[client_index]->payment);
+    }else{ // When the user judges incorrectly
+        model->deleteMoney(model->clients[client_index]->payment);
+    }
+    QString currentMoney = "Money: " + QString::number(model->getMoney());
+    ui->money->setText(currentMoney);
 }
 
 void MainWindow::nextDialogue()

@@ -6,6 +6,8 @@ Model::Model(QObject *parent)
     : QObject{parent}
 {
     clients = QVector<Client*>();
+    money = 0;
+    reputation = 0;
 
     // currentClients.push_back(std::make_unique<Client>()); (rachel mode)
 
@@ -29,4 +31,33 @@ void Model::fillClients()
     clients[1]->name = "Zhong Xina";
     clients[1]->image = ":/resources/img/client2.png";
     clients[1]->dialogue.push_back("bing chilling");
+}
+
+int Model::getMoney(){
+    return this->money;
+}
+
+void Model::addMoney(int value){
+    money += value;
+}
+
+void Model::deleteMoney(int value){
+    money -= value;
+    if(money <= 0){
+        //game over
+    }
+}
+
+void Model::addReputation(double value){
+    reputation += value;
+//    if(){
+//        // Check if the reputation has reached the requirements of the next stage, and if so, promote
+//    }
+}
+
+void Model::deleteReputation(double value){
+    reputation -= value;
+    if(reputation <= 0){
+        //Check if there is a upper level, if not game over
+    }
 }

@@ -18,7 +18,7 @@
     <item>
      <widget class="QStackedWidget" name="screens">
       <property name="currentIndex">
-       <number>2</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="screensPage1">
        <widget class="StartMenu" name="start_menu" native="true">
@@ -304,6 +304,19 @@ border: 2px solid black</string>
          <string>Next</string>
         </property>
        </widget>
+       <widget class="QLabel" name="money">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>0</y>
+          <width>131</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Money: 0</string>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="screensPage3">
        <widget class="QPushButton" name="addClient_pushButton">
@@ -464,7 +477,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1003</width>
-     <height>25</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
