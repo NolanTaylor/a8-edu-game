@@ -22,7 +22,6 @@ public:
     // std::vector<std::unique_ptr<Client>> currentClients; //Pool of current clients
     // std::vector<std::unique_ptr<Client>> unusedClients; //Select from this pool of not yet used clients (rachel mode 2)
 
-    int money, reputation;
 public slots:
 signals:
 

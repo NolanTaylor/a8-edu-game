@@ -136,29 +136,29 @@ void MainWindow::toClientSelection()
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
 
-    QPixmap client_img(m.clients[client_index]->image);
+    QPixmap client_img(model->clients[client_index]->image);
 
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
     ui->client->show();
 
-    qDebug() << m.clients[1]->dialogue[0];
-    qDebug() << m.clients[0]->image;
+    qDebug() << model->clients[1]->dialogue[0];
+    qDebug() << model->clients[0]->image;
 
-    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
+    ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
     ui->dialouge->show();
 }
 
 
 void MainWindow::questionClient()
 {
-   ui->dialouge->setText(m.clients[client_index]->dialogue_q[0]);
+   ui->dialouge->setText(model->clients[client_index]->dialogue_q[0]);
 }
 
 void MainWindow::acceptClient()
 {
-    ui->dialouge->setText(m.clients[client_index]->dialogue_a[0]);
+    ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
 
     ui->newClient_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(true);
@@ -169,7 +169,7 @@ void MainWindow::acceptClient()
 
 void MainWindow::rejectClient()
 {
-    ui->dialouge->setText(m.clients[client_index]->dialogue_r[0]);
+    ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
 
     ui->newClient_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(true);
@@ -180,13 +180,13 @@ void MainWindow::rejectClient()
 
 void MainWindow::nextDialogue()
 {
-    if (dialogue_index + 2 > m.clients[client_index]->dialogue.size())
+    if (dialogue_index + 2 > model->clients[client_index]->dialogue.size())
     {
         return;
     }
 
     dialogue_index++;
-    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
+    ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
 }
 
 void MainWindow::clientChosen(int ClientID)
@@ -201,7 +201,7 @@ void MainWindow::clientChosen(int ClientID)
 void MainWindow::selectClientDisplay(int index){
     ui->screens->setCurrentIndex(1);
     ui->client->show();
-    QPixmap client = model->currentClients.at(index)->image;
+    QPixmap client = model->clients.at(index)->image;
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
@@ -211,9 +211,9 @@ void MainWindow::selectClientDisplay(int index){
 
 void MainWindow::addNewClientSelection()
 {
-    clientTab *newClient = new clientTab(*model->currentClients.at(0));
+    clientTab *newClient = new clientTab(*model->clients.at(0));
     //newClient.addClient(*model->currentClients.at(0));
-    ui->selectClient->addTab(newClient,QIcon(QString("")), model->currentClients.at(0)->name);
+    ui->selectClient->addTab(newClient,QIcon(QString("")), model->clients.at(0)->name);
 
 }
 

@@ -8,13 +8,15 @@ clientTab::clientTab(Client &client, QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->client_image->setPixmap(client.image.scaled(200,200,Qt::KeepAspectRatio));
+    QPixmap client_image(client.image);
+    ui->client_image->setPixmap(client_image.scaled(200,200,Qt::KeepAspectRatio));
 
     ui->textBrowser->setText(client.name + "\nDate of Birth: 1977\nPayment: " + QString::number(client.payment));
 
 }
 void clientTab::addClient(Client &client){
-   ui->client_image->setPixmap(client.image);
+   QPixmap client_image(client.image);
+   ui->client_image->setPixmap(client_image);
 
    ui->textBrowser->setText(client.name + "\nDate of Birth: 1977\nPayment: " + QString::number(client.payment));
 }

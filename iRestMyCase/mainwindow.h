@@ -25,9 +25,9 @@ public slots:
     void toMainMenu();
     void toClientSelection();
     void questionClient();
-    void selectClientDisplay(int index);
     void goToInstructions();
     void addNewClientSelection();
+    void selectClientDisplay(int);
     void changeTab(int index);
     void nextPageInstruction();
     void acceptClient();
@@ -40,14 +40,12 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    // Model *model; (rachel version)
-    Model m;
+    Model *model; // (rachel version)
+    // Model m; (nolan mode)
 
     bool client_in_office;
     int client_index;
     int dialogue_index;
     QVector<QString> dialogue;
-
-    void selectClientDisplay(int);
 };
 #endif // MAINWINDOW_H

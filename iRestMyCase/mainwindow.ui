@@ -18,9 +18,9 @@
     <item>
      <widget class="QStackedWidget" name="screens">
       <property name="currentIndex">
-       <number>3</number>
+       <number>1</number>
       </property>
-      <widget class="QWidget" name="screensPage1" native="true">
+      <widget class="QWidget" name="screensPage1">
        <widget class="StartMenu" name="start_menu" native="true">
         <property name="geometry">
          <rect>
@@ -32,7 +32,7 @@
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="screensPage2" native="true">
+      <widget class="QWidget" name="screensPage2">
        <widget class="QLabel" name="client">
         <property name="geometry">
          <rect>
@@ -216,19 +216,6 @@ background-repeat: none;</string>
          <string>Question</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="evaluation_pushButton">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>470</y>
-          <width>121</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Evaluation</string>
-        </property>
-       </widget>
        <widget class="QPushButton" name="newClient_pushButton">
         <property name="geometry">
          <rect>
@@ -278,8 +265,47 @@ border: 2px solid black</string>
          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
         </property>
        </widget>
+       <widget class="QPushButton" name="accept_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>460</y>
+          <width>121</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Accept</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="reject_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>150</x>
+          <y>460</y>
+          <width>121</width>
+          <height>51</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Reject</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="next_pushButton">
+        <property name="geometry">
+         <rect>
+          <x>520</x>
+          <y>110</y>
+          <width>41</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Next</string>
+        </property>
+       </widget>
       </widget>
-      <widget class="QWidget" name="screensPage3" native="true">
+      <widget class="QWidget" name="screensPage3">
        <widget class="QPushButton" name="addClient_pushButton">
         <property name="geometry">
          <rect>
@@ -351,14 +377,14 @@ color: rgb(148, 139, 118);</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="screensPage4" native="true">
+      <widget class="QWidget" name="screensPage4">
        <layout class="QGridLayout" name="gridLayout_5">
         <item row="0" column="0">
          <widget class="QStackedWidget" name="instruction_tab">
           <property name="currentIndex">
            <number>1</number>
           </property>
-          <widget class="QWidget" name="instruction_page1" native="true">
+          <widget class="QWidget" name="instruction_page1">
            <widget class="QTextBrowser" name="story_text">
             <property name="geometry">
              <rect>
@@ -385,7 +411,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
             </property>
            </widget>
           </widget>
-          <widget class="QWidget" name="instruction_page2" native="true">
+          <widget class="QWidget" name="instruction_page2">
            <widget class="QTextBrowser" name="instruction_text">
             <property name="geometry">
              <rect>
