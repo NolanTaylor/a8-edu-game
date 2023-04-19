@@ -26,13 +26,12 @@ public slots:
     void questionClient();
     void selectClientDisplay(int index);
     void goToInstructions();
+    void addNewClientSelection();
+    void changeTab(int index);
+    void nextPageInstruction();
 signals:
     void resetSignal();
 private slots:
-    void addNewClientSelection();
-
-
-    void changeTab(int index);
 
 private:
     Ui::MainWindow *ui;

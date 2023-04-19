@@ -10,9 +10,9 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     this->model = &model;
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
+    ui->instruction_tab->setCurrentIndex(0);
 
     ui->dialouge->hide();
-
 
     QPixmap desk(":/resources/img/tempDesk2A8.png");
     ui->user_desk->setPixmap(desk.scaled(ui->user_desk->width(),ui->user_desk->height(), Qt::IgnoreAspectRatio));
@@ -40,7 +40,9 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->start_menu, &StartMenu::instructionSignal, this, &MainWindow::goToInstructions);
 
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
+    connect(ui->instr_menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
+    connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::nextPageInstruction);
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
 
@@ -144,9 +146,7 @@ void MainWindow::addNewClientSelection()
     clientTab *newClient = new clientTab(*model->currentClients.at(0));
     //newClient.addClient(*model->currentClients.at(0));
     ui->selectClient->addTab(newClient,QIcon(QString("")), model->currentClients.at(0)->name);
-    //int w = ui->client1->width();
-   // int h = ui->client1->height();
-   // ui->client1->setPixmap(client.image.scaled(w,h,Qt::IgnoreAspectRatio));
+
 }
 
 
@@ -162,4 +162,23 @@ void MainWindow::changeTab(int index)
         ui->selectClient_pushButton->setEnabled(false);
     }
 }
+
+
+void MainWindow::nextPageInstruction()
+{
+    if ((ui->instruction_tab->currentIndex()) == ui->instruction_tab->count()-1){
+        ui->instruction_tab->setCurrentIndex(ui->instruction_tab->currentIndex()-1);
+        ui->instr_nextPage_pushButton->setText("NEXT...");
+    }
+    else{
+        ui->instruction_tab->setCurrentIndex(ui->instruction_tab->currentIndex()+1);
+
+        if ((ui->instruction_tab->currentIndex()) == ui->instruction_tab->count()-1){
+            ui->instr_nextPage_pushButton->setText("...BACK");
+        }
+    }
+
+}
+
+
 

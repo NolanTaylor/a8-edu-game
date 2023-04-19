@@ -17,9 +17,11 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QStackedWidget>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
+#include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <startmenu.h>
 
@@ -29,10 +31,11 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QTabWidget *screens;
-    QWidget *start_tab;
+    QVBoxLayout *verticalLayout_2;
+    QStackedWidget *screens;
+    QWidget *screensPage1;
     StartMenu *start_menu;
-    QWidget *game_tab;
+    QWidget *screensPage2;
     QLabel *client;
     QLabel *user_desk;
     QTabWidget *ruleBook;
@@ -55,20 +58,22 @@ public:
     QPushButton *newClient_pushButton;
     QPushButton *menu_pushButton;
     QLabel *dialouge;
-    QWidget *selectClient_tab;
+    QWidget *screensPage3;
     QPushButton *addClient_pushButton;
     QTabWidget *selectClient;
     QWidget *tab_8;
+    QVBoxLayout *verticalLayout;
     QLabel *label;
     QPushButton *selectClient_pushButton;
-    QWidget *instructions;
+    QWidget *screensPage4;
     QGridLayout *gridLayout_5;
-    QTabWidget *instruction_tab;
-    QWidget *tab_5;
-    QGridLayout *gridLayout_4;
-    QTextBrowser *textBrowser;
-    QWidget *tab_6;
-    QTextBrowser *textBrowser_2;
+    QStackedWidget *instruction_tab;
+    QWidget *instruction_page1;
+    QTextBrowser *story_text;
+    QWidget *instruction_page2;
+    QTextBrowser *instruction_text;
+    QPushButton *instr_nextPage_pushButton;
+    QPushButton *instr_menu_pushButton;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -79,26 +84,27 @@ public:
         MainWindow->resize(1003, 650);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        screens = new QTabWidget(centralwidget);
+        verticalLayout_2 = new QVBoxLayout(centralwidget);
+        verticalLayout_2->setObjectName("verticalLayout_2");
+        screens = new QStackedWidget(centralwidget);
         screens->setObjectName("screens");
-        screens->setGeometry(QRect(0, 0, 971, 591));
-        start_tab = new QWidget();
-        start_tab->setObjectName("start_tab");
-        start_menu = new StartMenu(start_tab);
+        screensPage1 = new QWidget();
+        screensPage1->setObjectName("screensPage1");
+        start_menu = new StartMenu(screensPage1);
         start_menu->setObjectName("start_menu");
         start_menu->setGeometry(QRect(120, 0, 731, 551));
-        screens->addTab(start_tab, QString());
-        game_tab = new QWidget();
-        game_tab->setObjectName("game_tab");
-        client = new QLabel(game_tab);
+        screens->addWidget(screensPage1);
+        screensPage2 = new QWidget();
+        screensPage2->setObjectName("screensPage2");
+        client = new QLabel(screensPage2);
         client->setObjectName("client");
         client->setGeometry(QRect(30, 20, 221, 651));
-        user_desk = new QLabel(game_tab);
+        user_desk = new QLabel(screensPage2);
         user_desk->setObjectName("user_desk");
         user_desk->setEnabled(true);
         user_desk->setGeometry(QRect(-150, 300, 1301, 481));
         user_desk->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempDesk2A8.png")));
-        ruleBook = new QTabWidget(game_tab);
+        ruleBook = new QTabWidget(screensPage2);
         ruleBook->setObjectName("ruleBook");
         ruleBook->setGeometry(QRect(320, 170, 543, 353));
         ruleBook->setStyleSheet(QString::fromUtf8("QTabWidget::pane { \n"
@@ -155,7 +161,7 @@ public:
         gridLayout_3->addWidget(map, 0, 0, 1, 1);
 
         ruleBook->addTab(tab_4, QString());
-        ruleBook_pushButton = new QPushButton(game_tab);
+        ruleBook_pushButton = new QPushButton(screensPage2);
         ruleBook_pushButton->setObjectName("ruleBook_pushButton");
         ruleBook_pushButton->setGeometry(QRect(800, 250, 121, 171));
         ruleBook_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
@@ -164,84 +170,96 @@ public:
 "background-repeat: none;\n"
 "\n"
 ""));
-        closeRules_pushButton = new QPushButton(game_tab);
+        closeRules_pushButton = new QPushButton(screensPage2);
         closeRules_pushButton->setObjectName("closeRules_pushButton");
         closeRules_pushButton->setGeometry(QRect(350, 130, 91, 41));
         closeRules_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "background: none;\n"
 "background-repeat: none;"));
-        question_pushButton = new QPushButton(game_tab);
+        question_pushButton = new QPushButton(screensPage2);
         question_pushButton->setObjectName("question_pushButton");
         question_pushButton->setGeometry(QRect(20, 400, 121, 51));
-        evaluation_pushButton = new QPushButton(game_tab);
+        evaluation_pushButton = new QPushButton(screensPage2);
         evaluation_pushButton->setObjectName("evaluation_pushButton");
         evaluation_pushButton->setGeometry(QRect(20, 470, 121, 61));
-        newClient_pushButton = new QPushButton(game_tab);
+        newClient_pushButton = new QPushButton(screensPage2);
         newClient_pushButton->setObjectName("newClient_pushButton");
         newClient_pushButton->setGeometry(QRect(810, 10, 131, 41));
-        menu_pushButton = new QPushButton(game_tab);
+        menu_pushButton = new QPushButton(screensPage2);
         menu_pushButton->setObjectName("menu_pushButton");
         menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
-        dialouge = new QLabel(game_tab);
+        dialouge = new QLabel(screensPage2);
         dialouge->setObjectName("dialouge");
         dialouge->setGeometry(QRect(290, 40, 271, 61));
         dialouge->setAutoFillBackground(false);
         dialouge->setStyleSheet(QString::fromUtf8("background-color:beige;\n"
 "border: 2px solid black"));
         dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        screens->addTab(game_tab, QString());
-        selectClient_tab = new QWidget();
-        selectClient_tab->setObjectName("selectClient_tab");
-        addClient_pushButton = new QPushButton(selectClient_tab);
+        screens->addWidget(screensPage2);
+        screensPage3 = new QWidget();
+        screensPage3->setObjectName("screensPage3");
+        addClient_pushButton = new QPushButton(screensPage3);
         addClient_pushButton->setObjectName("addClient_pushButton");
         addClient_pushButton->setGeometry(QRect(10, 20, 131, 61));
-        selectClient = new QTabWidget(selectClient_tab);
+        selectClient = new QTabWidget(screensPage3);
         selectClient->setObjectName("selectClient");
-        selectClient->setGeometry(QRect(300, 20, 631, 511));
+        selectClient->setGeometry(QRect(250, 20, 661, 501));
         selectClient->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));\n"
 "alternate-background-color: rgb(255, 245, 205);"));
         tab_8 = new QWidget();
         tab_8->setObjectName("tab_8");
+        verticalLayout = new QVBoxLayout(tab_8);
+        verticalLayout->setObjectName("verticalLayout");
         label = new QLabel(tab_8);
         label->setObjectName("label");
-        label->setGeometry(QRect(170, 160, 261, 171));
         label->setMaximumSize(QSize(16777212, 16777215));
-        label->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";\n"
+        label->setStyleSheet(QString::fromUtf8("font: 700 25pt \"Courier\";\n"
 "color: rgb(148, 139, 118);"));
         label->setAlignment(Qt::AlignCenter);
+
+        verticalLayout->addWidget(label);
+
         selectClient->addTab(tab_8, QString());
-        selectClient_pushButton = new QPushButton(selectClient_tab);
+        selectClient_pushButton = new QPushButton(screensPage3);
         selectClient_pushButton->setObjectName("selectClient_pushButton");
         selectClient_pushButton->setGeometry(QRect(10, 110, 121, 61));
-        screens->addTab(selectClient_tab, QString());
-        instructions = new QWidget();
-        instructions->setObjectName("instructions");
-        gridLayout_5 = new QGridLayout(instructions);
+        screens->addWidget(screensPage3);
+        screensPage4 = new QWidget();
+        screensPage4->setObjectName("screensPage4");
+        gridLayout_5 = new QGridLayout(screensPage4);
         gridLayout_5->setObjectName("gridLayout_5");
-        instruction_tab = new QTabWidget(instructions);
+        instruction_tab = new QStackedWidget(screensPage4);
         instruction_tab->setObjectName("instruction_tab");
-        instruction_tab->setTabBarAutoHide(true);
-        tab_5 = new QWidget();
-        tab_5->setObjectName("tab_5");
-        gridLayout_4 = new QGridLayout(tab_5);
-        gridLayout_4->setObjectName("gridLayout_4");
-        textBrowser = new QTextBrowser(tab_5);
-        textBrowser->setObjectName("textBrowser");
-        textBrowser->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";"));
-
-        gridLayout_4->addWidget(textBrowser, 0, 0, 1, 1);
-
-        instruction_tab->addTab(tab_5, QString());
-        tab_6 = new QWidget();
-        tab_6->setObjectName("tab_6");
-        textBrowser_2 = new QTextBrowser(tab_6);
-        textBrowser_2->setObjectName("textBrowser_2");
-        textBrowser_2->setGeometry(QRect(10, 10, 391, 481));
-        instruction_tab->addTab(tab_6, QString());
+        instruction_page1 = new QWidget();
+        instruction_page1->setObjectName("instruction_page1");
+        story_text = new QTextBrowser(instruction_page1);
+        story_text->setObjectName("story_text");
+        story_text->setGeometry(QRect(11, 11, 921, 571));
+        story_text->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";"));
+        instruction_tab->addWidget(instruction_page1);
+        instruction_page2 = new QWidget();
+        instruction_page2->setObjectName("instruction_page2");
+        instruction_text = new QTextBrowser(instruction_page2);
+        instruction_text->setObjectName("instruction_text");
+        instruction_text->setGeometry(QRect(10, 10, 391, 481));
+        instruction_tab->addWidget(instruction_page2);
 
         gridLayout_5->addWidget(instruction_tab, 0, 0, 1, 1);
 
-        screens->addTab(instructions, QString());
+        instr_nextPage_pushButton = new QPushButton(screensPage4);
+        instr_nextPage_pushButton->setObjectName("instr_nextPage_pushButton");
+
+        gridLayout_5->addWidget(instr_nextPage_pushButton, 1, 0, 1, 1);
+
+        instr_menu_pushButton = new QPushButton(screensPage4);
+        instr_menu_pushButton->setObjectName("instr_menu_pushButton");
+
+        gridLayout_5->addWidget(instr_menu_pushButton, 2, 0, 1, 1);
+
+        screens->addWidget(screensPage4);
+
+        verticalLayout_2->addWidget(screens);
+
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
@@ -253,7 +271,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        screens->setCurrentIndex(0);
+        screens->setCurrentIndex(3);
         ruleBook->setCurrentIndex(1);
         selectClient->setCurrentIndex(0);
         instruction_tab->setCurrentIndex(1);
@@ -265,7 +283,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        screens->setTabText(screens->indexOf(start_tab), QCoreApplication::translate("MainWindow", "Page", nullptr));
         client->setText(QString());
         user_desk->setText(QString());
         front_page->setText(QString());
@@ -283,13 +300,11 @@ public:
         newClient_pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
         menu_pushButton->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
         dialouge->setText(QCoreApplication::translate("MainWindow", "#PLACEHOLDER", nullptr));
-        screens->setTabText(screens->indexOf(game_tab), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
         addClient_pushButton->setText(QCoreApplication::translate("MainWindow", "ADD CLIENT", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CLIENTELE", nullptr));
         selectClient->setTabText(selectClient->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
         selectClient_pushButton->setText(QCoreApplication::translate("MainWindow", "Select Client", nullptr));
-        screens->setTabText(screens->indexOf(selectClient_tab), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
-        textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        story_text->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -300,8 +315,7 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:400;\">You're an up-and-coming lawyer who just joined their first law firm. Your gearing to prove your worth in some spectactular trail cases for sure, but you can't win everying case with fancy jargo"
                         "n and dramatic performances. There needs to be a vaild case to be made from your future clients. </span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:400;\">Before you take someones cases you need to hear them out. Is their story as flimsy and nonsensitcisal as it sounds, or is their some obscure law that actual gives them some merit? You'll soon find out, as its 9:00 am already and your day is just about to begin...</span></p></body></html>", nullptr));
-        instruction_tab->setTabText(instruction_tab->indexOf(tab_5), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
-        textBrowser_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        instruction_text->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
@@ -313,8 +327,8 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\""
                         ">FIND CLUES</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">HAVE FUN OR I WILL CRY</span></p></body></html>", nullptr));
-        instruction_tab->setTabText(instruction_tab->indexOf(tab_6), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
-        screens->setTabText(screens->indexOf(instructions), QCoreApplication::translate("MainWindow", "Page", nullptr));
+        instr_nextPage_pushButton->setText(QCoreApplication::translate("MainWindow", "NEXT...", nullptr));
+        instr_menu_pushButton->setText(QCoreApplication::translate("MainWindow", "MENU", nullptr));
     } // retranslateUi
 
 };

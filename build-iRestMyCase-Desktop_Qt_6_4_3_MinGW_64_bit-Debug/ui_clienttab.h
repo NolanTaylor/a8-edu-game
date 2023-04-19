@@ -33,7 +33,7 @@ public:
     {
         if (clientTab->objectName().isEmpty())
             clientTab->setObjectName("clientTab");
-        clientTab->resize(635, 490);
+        clientTab->resize(767, 490);
         clientTab->setStyleSheet(QString::fromUtf8("\n"
 "background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));"));
         gridLayout_2 = new QGridLayout(clientTab);
@@ -44,6 +44,7 @@ public:
         client_image = new QLabel(clientTab);
         client_image->setObjectName("client_image");
         client_image->setMaximumSize(QSize(16000, 400));
+        client_image->setStyleSheet(QString::fromUtf8("background-color: rgb(163, 130, 89);"));
 
         verticalLayout->addWidget(client_image);
 
@@ -56,7 +57,7 @@ public:
 
         textBrowser = new QTextBrowser(clientTab);
         textBrowser->setObjectName("textBrowser");
-        textBrowser->setMaximumSize(QSize(300, 16000));
+        textBrowser->setMaximumSize(QSize(400, 16000));
         textBrowser->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";"));
 
         gridLayout_2->addWidget(textBrowser, 0, 1, 1, 1);

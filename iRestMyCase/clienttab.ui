@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>635</width>
+    <width>767</width>
     <height>490</height>
    </rect>
   </property>
@@ -30,6 +30,9 @@ background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, sto
          <width>16000</width>
          <height>400</height>
         </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(163, 130, 89);</string>
        </property>
        <property name="text">
         <string/>
@@ -58,7 +61,7 @@ background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, sto
     <widget class="QTextBrowser" name="textBrowser">
      <property name="maximumSize">
       <size>
-       <width>300</width>
+       <width>400</width>
        <height>16000</height>
       </size>
      </property>
