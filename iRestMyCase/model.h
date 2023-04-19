@@ -10,7 +10,7 @@ class Model : public QObject
     Q_OBJECT
 public:
     explicit Model(QObject *parent = nullptr);
-    QVector<Client> clients; //Pool of current clients
+    QVector<Client*> clients; //Pool of current clients
     std::map<int, Client> unusedClients; //Select from this pool of not yet used clients
     int money, reputation;
 

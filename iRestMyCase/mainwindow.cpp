@@ -116,26 +116,29 @@ void MainWindow::toClientSelection()
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
 
-    QPixmap client_img(m.clients[client_index].image);
+    QPixmap client_img(m.clients[client_index]->image);
 
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
     ui->client->show();
 
-    ui->dialouge->setText(m.clients[client_index].dialogue[dialogue_index]);
+    qDebug() << m.clients[1]->dialogue[0];
+    qDebug() << m.clients[0]->image;
+
+    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
     ui->dialouge->show();
 }
 
 
 void MainWindow::questionClient()
 {
-   ui->dialouge->setText(m.clients[client_index].dialogue_q[0]);
+   ui->dialouge->setText(m.clients[client_index]->dialogue_q[0]);
 }
 
 void MainWindow::acceptClient()
 {
-    ui->dialouge->setText(m.clients[client_index].dialogue_a[0]);
+    ui->dialouge->setText(m.clients[client_index]->dialogue_a[0]);
 
     ui->newClient_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(true);
@@ -146,7 +149,7 @@ void MainWindow::acceptClient()
 
 void MainWindow::rejectClient()
 {
-    ui->dialouge->setText(m.clients[client_index].dialogue_r[0]);
+    ui->dialouge->setText(m.clients[client_index]->dialogue_r[0]);
 
     ui->newClient_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(true);
@@ -157,13 +160,13 @@ void MainWindow::rejectClient()
 
 void MainWindow::nextDialogue()
 {
-    if (dialogue_index + 2 > m.clients[client_index].dialogue.size())
+    if (dialogue_index + 2 > m.clients[client_index]->dialogue.size())
     {
         return;
     }
 
     dialogue_index++;
-    ui->dialouge->setText(m.clients[client_index].dialogue[dialogue_index]);
+    ui->dialouge->setText(m.clients[client_index]->dialogue[dialogue_index]);
 }
 
 void MainWindow::clientChosen(int ClientID)
