@@ -19,3 +19,9 @@ void StartMenu::on_newGame_pushButton_clicked()
     emit restartGameSignal();
 }
 
+
+void StartMenu::on_instruction_pushButton_clicked()
+{
+    emit instructionSignal();
+}
+

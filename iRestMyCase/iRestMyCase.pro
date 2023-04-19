@@ -14,7 +14,6 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     model.cpp \
-    selectclient.cpp \
     startmenu.cpp
 
 HEADERS += \
@@ -22,13 +21,11 @@ HEADERS += \
     clienttab.h \
     mainwindow.h \
     model.h \
-    selectclient.h \
     startmenu.h
 
 FORMS += \
     clienttab.ui \
     mainwindow.ui \
-    selectclient.ui \
     startmenu.ui
 
 # Default rules for deployment.

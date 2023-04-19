@@ -19,8 +19,11 @@ private slots:
 
     void on_newGame_pushButton_clicked();
 
+    void on_instruction_pushButton_clicked();
+
 signals:
     void restartGameSignal();
+    void instructionSignal();
 
 private:
     Ui::StartMenu *ui;

@@ -22,11 +22,11 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 //    ui->rule_book->hide();
 
     QPixmap ruleBook(":/resources/img/tempRuleBookP2A8.png");
-    ui->rules1->setPixmap(ruleBook.scaled(ui->tabWidget->width(), ui->tabWidget->height(), Qt::IgnoreAspectRatio));
+    ui->rules1->setPixmap(ruleBook.scaled(ui->ruleBook->width(), ui->ruleBook->height(), Qt::IgnoreAspectRatio));
     ui->closeRules_pushButton->hide();
     ui->closeRules_pushButton->setEnabled(false);
-    ui->tabWidget->hide();
-    ui->tabWidget->setEnabled(false);
+    ui->ruleBook->hide();
+    ui->ruleBook->setEnabled(false);
     //ui->tab_3->setT;
 
     //Select Client button should be hidden on main screen
@@ -37,6 +37,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->closeRules_pushButton, &QPushButton::clicked, this, &MainWindow::ruleBookClosed);
 
     connect(ui->start_menu, &StartMenu::restartGameSignal, this, &MainWindow::restartGame);
+    connect(ui->start_menu, &StartMenu::instructionSignal, this, &MainWindow::goToInstructions);
+
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
 
@@ -62,8 +64,8 @@ void MainWindow::restartGame(){
     ui->screens->setCurrentIndex(1);
     ui->dialouge->hide();
 
-    ui->tabWidget->hide();
-    ui->tabWidget->setEnabled(false);
+    ui->ruleBook->hide();
+    ui->ruleBook->setEnabled(false);
     ui->closeRules_pushButton->hide();
     ui->closeRules_pushButton->setEnabled(false);
 
@@ -72,6 +74,9 @@ void MainWindow::restartGame(){
 
     //Reset Everything in model
     emit resetSignal();
+}
+void MainWindow::goToInstructions(){
+    ui->screens->setCurrentIndex(3);
 }
 void MainWindow::toMainMenu(){
     ui->screens->setCurrentIndex(0);
@@ -82,8 +87,8 @@ void MainWindow::ruleBookClicked(){
    ui->ruleBook_pushButton->setEnabled(false);
 
   // ui->rule_book->show();
-   ui->tabWidget->show();
-   ui->tabWidget->setEnabled(true);
+   ui->ruleBook->show();
+   ui->ruleBook->setEnabled(true);
 
    ui->closeRules_pushButton->show();
    ui->closeRules_pushButton->setEnabled(true);
@@ -94,8 +99,8 @@ void MainWindow::ruleBookClosed(){
    ui->ruleBook_pushButton->setEnabled(true);
 
    //ui->rule_book->hide();
-   ui->tabWidget->hide();
-   ui->tabWidget->setEnabled(false);
+   ui->ruleBook->hide();
+   ui->ruleBook->setEnabled(false);
 
    ui->closeRules_pushButton->hide();
    ui->closeRules_pushButton->setEnabled(false);

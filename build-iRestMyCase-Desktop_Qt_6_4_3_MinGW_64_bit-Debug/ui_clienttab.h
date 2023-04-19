@@ -33,7 +33,7 @@ public:
     {
         if (clientTab->objectName().isEmpty())
             clientTab->setObjectName("clientTab");
-        clientTab->resize(669, 490);
+        clientTab->resize(635, 490);
         clientTab->setStyleSheet(QString::fromUtf8("\n"
 "background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));"));
         gridLayout_2 = new QGridLayout(clientTab);

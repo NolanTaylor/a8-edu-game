@@ -25,6 +25,7 @@ public slots:
     void toClientSelection();
     void questionClient();
     void selectClientDisplay(int index);
+    void goToInstructions();
 signals:
     void resetSignal();
 private slots:
