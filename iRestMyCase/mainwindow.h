@@ -20,25 +20,33 @@ public:
 
 public slots:
     void restartGame();
+
+    void toMainMenu();
+    void goToInstructions();
+    void toSelectionScreen();
+    void nextPageInstruction();
+
+    //Main screen
     void ruleBookClicked();
     void ruleBookClosed();
-    void toMainMenu();
-    void toClientSelection();
+
     void questionClient();
-    void goToInstructions();
     void addNewClientSelection();
-    void selectClientDisplay();
-    void changeTab(int index);
-    void nextPageInstruction();
     void acceptClient();
     void rejectClient();
-    void nextDialogue();
+
+    void selectClientDisplay();
+    void changeTab(int index);
+
+
+    void openDialougeHistory();
     void clientChosen(int);
 signals:
     void resetSignal();
 private slots:
     void displayOutcome();
-    void toSelectionScreen();
+    void nextRound();
+
 private:
     Ui::MainWindow *ui;
     Model *model; // (rachel version)
@@ -50,5 +58,6 @@ private:
     QVector<QString> dialogue;
 
     void nextClient();
+    void deleteClient();
 };
 #endif // MAINWINDOW_H
