@@ -29,4 +29,17 @@ void Model::fillClients()
     clients[1]->name = "Zhong Xina";
     clients[1]->image = ":/resources/img/client2.png";
     clients[1]->dialogue.push_back("bing chilling");
+    clients[1]->dialogue_a.push_back("Zǎo shang hǎo zhōng guó! Xiàn zài wǒ yǒu bing chilling. Wǒ hěn xǐ huān bing chilling");
+    clients[1]->dialogue_r.push_back("Zhǔn bèi. Yī, èr, sān");
+}
+void Model::fillUnusedClients(){
+
+}
+void Model::reset(){
+    //Reset the pool
+    clients.clear();
+    unusedClients.clear();
+
+    fillUnusedClients();
+    fillClients();
 }

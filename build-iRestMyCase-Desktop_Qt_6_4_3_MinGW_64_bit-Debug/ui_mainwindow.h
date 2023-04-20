@@ -54,10 +54,12 @@ public:
     QPushButton *ruleBook_pushButton;
     QPushButton *closeRules_pushButton;
     QPushButton *question_pushButton;
-    QPushButton *evaluation_pushButton;
     QPushButton *newClient_pushButton;
     QPushButton *menu_pushButton;
     QLabel *dialouge;
+    QPushButton *accept_pushButton;
+    QPushButton *reject_pushButton;
+    QPushButton *next_pushButton;
     QWidget *screensPage3;
     QPushButton *addClient_pushButton;
     QTabWidget *selectClient;
@@ -74,6 +76,10 @@ public:
     QTextBrowser *instruction_text;
     QPushButton *instr_nextPage_pushButton;
     QPushButton *instr_menu_pushButton;
+    QWidget *screenpage5;
+    QGridLayout *gridLayout_4;
+    QPushButton *continue_pushButton;
+    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -88,6 +94,7 @@ public:
         verticalLayout_2->setObjectName("verticalLayout_2");
         screens = new QStackedWidget(centralwidget);
         screens->setObjectName("screens");
+        screens->setStyleSheet(QString::fromUtf8(""));
         screensPage1 = new QWidget();
         screensPage1->setObjectName("screensPage1");
         start_menu = new StartMenu(screensPage1);
@@ -107,7 +114,7 @@ public:
         ruleBook = new QTabWidget(screensPage2);
         ruleBook->setObjectName("ruleBook");
         ruleBook->setGeometry(QRect(320, 170, 543, 353));
-        ruleBook->setStyleSheet(QString::fromUtf8("QTabWidget::pane { \n"
+        ruleBook->setStyleSheet(QString::fromUtf8("QTabWidget::pane {\n"
 " margin: 1px,1px,1px,1px;\n"
 " border: 2px solid #020202;\n"
 " border-radius: 7px;\n"
@@ -179,9 +186,6 @@ public:
         question_pushButton = new QPushButton(screensPage2);
         question_pushButton->setObjectName("question_pushButton");
         question_pushButton->setGeometry(QRect(20, 400, 121, 51));
-        evaluation_pushButton = new QPushButton(screensPage2);
-        evaluation_pushButton->setObjectName("evaluation_pushButton");
-        evaluation_pushButton->setGeometry(QRect(20, 470, 121, 61));
         newClient_pushButton = new QPushButton(screensPage2);
         newClient_pushButton->setObjectName("newClient_pushButton");
         newClient_pushButton->setGeometry(QRect(810, 10, 131, 41));
@@ -195,6 +199,15 @@ public:
         dialouge->setStyleSheet(QString::fromUtf8("background-color:beige;\n"
 "border: 2px solid black"));
         dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        accept_pushButton = new QPushButton(screensPage2);
+        accept_pushButton->setObjectName("accept_pushButton");
+        accept_pushButton->setGeometry(QRect(20, 460, 121, 51));
+        reject_pushButton = new QPushButton(screensPage2);
+        reject_pushButton->setObjectName("reject_pushButton");
+        reject_pushButton->setGeometry(QRect(150, 460, 121, 51));
+        next_pushButton = new QPushButton(screensPage2);
+        next_pushButton->setObjectName("next_pushButton");
+        next_pushButton->setGeometry(QRect(520, 110, 41, 21));
         screens->addWidget(screensPage2);
         screensPage3 = new QWidget();
         screensPage3->setObjectName("screensPage3");
@@ -257,6 +270,27 @@ public:
         gridLayout_5->addWidget(instr_menu_pushButton, 2, 0, 1, 1);
 
         screens->addWidget(screensPage4);
+        screenpage5 = new QWidget();
+        screenpage5->setObjectName("screenpage5");
+        screenpage5->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(133, 156, 120, 255), stop:1 rgba(216, 234, 236, 255));"));
+        gridLayout_4 = new QGridLayout(screenpage5);
+        gridLayout_4->setObjectName("gridLayout_4");
+        continue_pushButton = new QPushButton(screenpage5);
+        continue_pushButton->setObjectName("continue_pushButton");
+        continue_pushButton->setMinimumSize(QSize(0, 100));
+        continue_pushButton->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";\n"
+"color: rgb(12, 65, 16);"));
+
+        gridLayout_4->addWidget(continue_pushButton, 1, 1, 1, 1);
+
+        textBrowser = new QTextBrowser(screenpage5);
+        textBrowser->setObjectName("textBrowser");
+        textBrowser->setMaximumSize(QSize(16777215, 400));
+        textBrowser->setFrameShadow(QFrame::Sunken);
+
+        gridLayout_4->addWidget(textBrowser, 0, 0, 1, 2);
+
+        screens->addWidget(screenpage5);
 
         verticalLayout_2->addWidget(screens);
 
@@ -271,7 +305,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        screens->setCurrentIndex(3);
+        screens->setCurrentIndex(2);
         ruleBook->setCurrentIndex(1);
         selectClient->setCurrentIndex(0);
         instruction_tab->setCurrentIndex(1);
@@ -296,10 +330,12 @@ public:
         ruleBook_pushButton->setText(QString());
         closeRules_pushButton->setText(QCoreApplication::translate("MainWindow", "Close book", nullptr));
         question_pushButton->setText(QCoreApplication::translate("MainWindow", "Question", nullptr));
-        evaluation_pushButton->setText(QCoreApplication::translate("MainWindow", "Evaluation", nullptr));
         newClient_pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
         menu_pushButton->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
         dialouge->setText(QCoreApplication::translate("MainWindow", "#PLACEHOLDER", nullptr));
+        accept_pushButton->setText(QCoreApplication::translate("MainWindow", "Accept", nullptr));
+        reject_pushButton->setText(QCoreApplication::translate("MainWindow", "Reject", nullptr));
+        next_pushButton->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
         addClient_pushButton->setText(QCoreApplication::translate("MainWindow", "ADD CLIENT", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CLIENTELE", nullptr));
         selectClient->setTabText(selectClient->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
@@ -329,6 +365,22 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">HAVE FUN OR I WILL CRY</span></p></body></html>", nullptr));
         instr_nextPage_pushButton->setText(QCoreApplication::translate("MainWindow", "NEXT...", nullptr));
         instr_menu_pushButton->setText(QCoreApplication::translate("MainWindow", "MENU", nullptr));
+        continue_pushButton->setText(QCoreApplication::translate("MainWindow", "CONTINUE...", nullptr));
+        textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-fam"
+                        "ily:'Courier'; font-size:25pt;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:25pt;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:24pt;\">UNFORTUNATELY YOU LOST THE CASE</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:10pt;\">Child soliders are illegal under the Geneva Convention...</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:24pt;\"><br /></p></body></html>", nullptr));
     } // retranslateUi
 
 };
