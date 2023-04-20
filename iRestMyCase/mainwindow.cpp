@@ -18,6 +18,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     dialogue_index = 0;
 
     ui->newClient_pushButton->setDisabled(false);
+    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -139,12 +140,18 @@ MainWindow::~MainWindow()
 // goes to next client for now
 void MainWindow::toClientSelection()
 {
+    ui->screens->setCurrentIndex(2);
+}
+
+void MainWindow::nextClient()
+{
     qDebug() << "next client";
 
     client_index = ui->selectClient->currentIndex()-1;
 
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
+    ui->question_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
 
@@ -162,7 +169,6 @@ void MainWindow::toClientSelection()
     ui->dialouge->show();
 }
 
-
 void MainWindow::questionClient()
 {
    ui->dialouge->setText(model->clients[client_index]->dialogue_q[0]);
@@ -173,6 +179,7 @@ void MainWindow::acceptClient()
     ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
 
     ui->newClient_pushButton->setDisabled(false);
+    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -186,6 +193,7 @@ void MainWindow::rejectClient()
     ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
 
     ui->newClient_pushButton->setDisabled(false);
+    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -225,6 +233,9 @@ void MainWindow::selectClientDisplay(){
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
+
+
+    nextClient();
 }
 
 
@@ -237,7 +248,6 @@ void MainWindow::addNewClientSelection()
         //newClient.addClient(*model->currentClients.at(0));
         ui->selectClient->addTab(newClient,QIcon(QString("")), model->clients.at(i)->name);
     }
-
 }
 
 

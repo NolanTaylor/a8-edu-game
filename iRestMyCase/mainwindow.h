@@ -48,5 +48,7 @@ private:
     int client_index;
     int dialogue_index;
     QVector<QString> dialogue;
+
+    void nextClient();
 };
 #endif // MAINWINDOW_H
