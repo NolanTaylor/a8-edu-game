@@ -27,7 +27,7 @@ public slots:
     void questionClient();
     void goToInstructions();
     void addNewClientSelection();
-    void selectClientDisplay(int);
+    void selectClientDisplay();
     void changeTab(int index);
     void nextPageInstruction();
     void acceptClient();
@@ -37,7 +37,8 @@ public slots:
 signals:
     void resetSignal();
 private slots:
-
+    void displayOutcome();
+    void toSelectionScreen();
 private:
     Ui::MainWindow *ui;
     Model *model; // (rachel version)

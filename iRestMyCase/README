@@ -18,3 +18,8 @@ parse the client file as follows:
     accept dialouge
 
 --Delete SelectClient class, unecessary
+
+Accept/Reject added
+
+--Implement a proper reset
+--[Model]Keep track of the current client, get them out of the picture once the round ends (cannot be selected again

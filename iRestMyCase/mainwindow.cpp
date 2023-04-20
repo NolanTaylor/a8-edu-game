@@ -50,7 +50,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->instr_menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
-    connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
+    connect(ui->selectClient_pushButton, &QPushButton::clicked, this, &MainWindow::toClientSelection);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::nextPageInstruction);
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
@@ -63,10 +63,14 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->selectClient, &QTabWidget::tabBarClicked, this, &MainWindow::changeTab);
 
     connect(ui->selectClient_pushButton, &QPushButton::clicked, this, &MainWindow::selectClientDisplay);
+    connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::toSelectionScreen);
 
     connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::acceptClient);
     connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
     connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::nextDialogue);
+
+    //Send a full reset to the model
+    connect(this, &MainWindow::resetSignal, &model, &Model::reset);
 
 }
 /**
@@ -87,14 +91,20 @@ void MainWindow::restartGame(){
     ui->ruleBook_pushButton->show();
     ui->ruleBook_pushButton->setEnabled(true);
 
+
     //Reset Everything in model
     emit resetSignal();
 }
-void MainWindow::goToInstructions(){
-    ui->screens->setCurrentIndex(3);
-}
+
 void MainWindow::toMainMenu(){
     ui->screens->setCurrentIndex(0);
+}
+void MainWindow::toSelectionScreen()
+{
+    ui->screens->setCurrentIndex(2);
+}
+void MainWindow::goToInstructions(){
+    ui->screens->setCurrentIndex(3);
 }
 void MainWindow::ruleBookClicked(){
 
@@ -131,6 +141,8 @@ void MainWindow::toClientSelection()
 {
     qDebug() << "next client";
 
+    client_index = ui->selectClient->currentIndex()-1;
+
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(false);
@@ -143,8 +155,8 @@ void MainWindow::toClientSelection()
     ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
     ui->client->show();
 
-    qDebug() << model->clients[1]->dialogue[0];
-    qDebug() << model->clients[0]->image;
+    //qDebug() << model->clients[1]->dialogue[0];
+    //qDebug() << model->clients[0]->image;
 
     ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
     ui->dialouge->show();
@@ -165,6 +177,8 @@ void MainWindow::acceptClient()
     ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
+    //Implement timer that slowly fades into the next screen
+    ui->screens->setCurrentIndex(4);
 }
 
 void MainWindow::rejectClient()
@@ -176,6 +190,12 @@ void MainWindow::rejectClient()
     ui->reject_pushButton->setDisabled(true);
 
     // implement money/reputation
+
+    //Clear client->user selects new one
+    ui->screens->setCurrentIndex(4);
+}
+void MainWindow::displayOutcome(){
+
 }
 
 void MainWindow::nextDialogue()
@@ -198,10 +218,10 @@ void MainWindow::clientChosen(int ClientID)
  * @brief Displays client image sent by the SelectClient class
  * @param index
  */
-void MainWindow::selectClientDisplay(int index){
+void MainWindow::selectClientDisplay(){
     ui->screens->setCurrentIndex(1);
     ui->client->show();
-    QPixmap client = model->clients.at(index)->image;
+    QPixmap client = model->clients.at(client_index)->image;
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client.scaled(w,h,Qt::KeepAspectRatio));
@@ -211,9 +231,12 @@ void MainWindow::selectClientDisplay(int index){
 
 void MainWindow::addNewClientSelection()
 {
-    clientTab *newClient = new clientTab(*model->clients.at(0));
-    //newClient.addClient(*model->currentClients.at(0));
-    ui->selectClient->addTab(newClient,QIcon(QString("")), model->clients.at(0)->name);
+    for (int i = 0; i<model->clients.size(); i++)
+    {
+        clientTab *newClient = new clientTab(*model->clients.at(i));
+        //newClient.addClient(*model->currentClients.at(0));
+        ui->selectClient->addTab(newClient,QIcon(QString("")), model->clients.at(i)->name);
+    }
 
 }
 
@@ -247,3 +270,4 @@ void MainWindow::nextPageInstruction()
     }
 
 }
+

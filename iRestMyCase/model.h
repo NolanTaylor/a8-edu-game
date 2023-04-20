@@ -23,10 +23,12 @@ public:
     // std::vector<std::unique_ptr<Client>> unusedClients; //Select from this pool of not yet used clients (rachel mode 2)
 
 public slots:
+    void reset();
 signals:
 
 private:
     void fillClients();
+    void fillUnusedClients();
 };
 
 #endif // MODEL_H
