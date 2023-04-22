@@ -17,6 +17,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     client_index = 0;
     dialogue_index = 0;
 
+    //Your mom
     ui->newClient_pushButton->setDisabled(false);
     ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
