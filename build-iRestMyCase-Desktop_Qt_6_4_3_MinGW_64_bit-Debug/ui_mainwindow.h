@@ -33,9 +33,9 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout_2;
     QStackedWidget *screens;
-    QWidget *screensPage1;
+    QWidget *menu_screen;
     StartMenu *start_menu;
-    QWidget *screensPage2;
+    QWidget *main_screen;
     QLabel *client;
     QLabel *user_desk;
     QTabWidget *ruleBook;
@@ -60,14 +60,15 @@ public:
     QPushButton *accept_pushButton;
     QPushButton *reject_pushButton;
     QPushButton *next_pushButton;
-    QWidget *screensPage3;
+    QTextBrowser *dialougeHistory;
+    QWidget *selectClient_screen;
     QPushButton *addClient_pushButton;
     QTabWidget *selectClient;
     QWidget *tab_8;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QPushButton *selectClient_pushButton;
-    QWidget *screensPage4;
+    QWidget *instruction_screen;
     QGridLayout *gridLayout_5;
     QStackedWidget *instruction_tab;
     QWidget *instruction_page1;
@@ -76,7 +77,7 @@ public:
     QTextBrowser *instruction_text;
     QPushButton *instr_nextPage_pushButton;
     QPushButton *instr_menu_pushButton;
-    QWidget *screenpage5;
+    QWidget *end_screen;
     QGridLayout *gridLayout_4;
     QPushButton *continue_pushButton;
     QTextBrowser *textBrowser;
@@ -87,7 +88,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1003, 650);
+        MainWindow->resize(1003, 642);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout_2 = new QVBoxLayout(centralwidget);
@@ -95,23 +96,23 @@ public:
         screens = new QStackedWidget(centralwidget);
         screens->setObjectName("screens");
         screens->setStyleSheet(QString::fromUtf8(""));
-        screensPage1 = new QWidget();
-        screensPage1->setObjectName("screensPage1");
-        start_menu = new StartMenu(screensPage1);
+        menu_screen = new QWidget();
+        menu_screen->setObjectName("menu_screen");
+        start_menu = new StartMenu(menu_screen);
         start_menu->setObjectName("start_menu");
         start_menu->setGeometry(QRect(120, 0, 731, 551));
-        screens->addWidget(screensPage1);
-        screensPage2 = new QWidget();
-        screensPage2->setObjectName("screensPage2");
-        client = new QLabel(screensPage2);
+        screens->addWidget(menu_screen);
+        main_screen = new QWidget();
+        main_screen->setObjectName("main_screen");
+        client = new QLabel(main_screen);
         client->setObjectName("client");
         client->setGeometry(QRect(30, 20, 221, 651));
-        user_desk = new QLabel(screensPage2);
+        user_desk = new QLabel(main_screen);
         user_desk->setObjectName("user_desk");
         user_desk->setEnabled(true);
         user_desk->setGeometry(QRect(-150, 300, 1301, 481));
         user_desk->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempDesk2A8.png")));
-        ruleBook = new QTabWidget(screensPage2);
+        ruleBook = new QTabWidget(main_screen);
         ruleBook->setObjectName("ruleBook");
         ruleBook->setGeometry(QRect(320, 170, 543, 353));
         ruleBook->setStyleSheet(QString::fromUtf8("QTabWidget::pane {\n"
@@ -168,7 +169,7 @@ public:
         gridLayout_3->addWidget(map, 0, 0, 1, 1);
 
         ruleBook->addTab(tab_4, QString());
-        ruleBook_pushButton = new QPushButton(screensPage2);
+        ruleBook_pushButton = new QPushButton(main_screen);
         ruleBook_pushButton->setObjectName("ruleBook_pushButton");
         ruleBook_pushButton->setGeometry(QRect(800, 250, 121, 171));
         ruleBook_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
@@ -177,44 +178,55 @@ public:
 "background-repeat: none;\n"
 "\n"
 ""));
-        closeRules_pushButton = new QPushButton(screensPage2);
+        closeRules_pushButton = new QPushButton(main_screen);
         closeRules_pushButton->setObjectName("closeRules_pushButton");
         closeRules_pushButton->setGeometry(QRect(350, 130, 91, 41));
         closeRules_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "background: none;\n"
 "background-repeat: none;"));
-        question_pushButton = new QPushButton(screensPage2);
+        question_pushButton = new QPushButton(main_screen);
         question_pushButton->setObjectName("question_pushButton");
         question_pushButton->setGeometry(QRect(20, 400, 121, 51));
-        newClient_pushButton = new QPushButton(screensPage2);
+        newClient_pushButton = new QPushButton(main_screen);
         newClient_pushButton->setObjectName("newClient_pushButton");
         newClient_pushButton->setGeometry(QRect(810, 10, 131, 41));
-        menu_pushButton = new QPushButton(screensPage2);
+        menu_pushButton = new QPushButton(main_screen);
         menu_pushButton->setObjectName("menu_pushButton");
         menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
-        dialouge = new QLabel(screensPage2);
+        dialouge = new QLabel(main_screen);
         dialouge->setObjectName("dialouge");
-        dialouge->setGeometry(QRect(290, 40, 271, 61));
+        dialouge->setGeometry(QRect(290, 40, 291, 61));
         dialouge->setAutoFillBackground(false);
-        dialouge->setStyleSheet(QString::fromUtf8("background-color:beige;\n"
-"border: 2px solid black"));
+        dialouge->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
+"border: 2px solid rgb(149, 174, 207);\n"
+"font: 12pt \"Courier\";\n"
+""));
         dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
-        accept_pushButton = new QPushButton(screensPage2);
+        accept_pushButton = new QPushButton(main_screen);
         accept_pushButton->setObjectName("accept_pushButton");
         accept_pushButton->setGeometry(QRect(20, 460, 121, 51));
-        reject_pushButton = new QPushButton(screensPage2);
+        reject_pushButton = new QPushButton(main_screen);
         reject_pushButton->setObjectName("reject_pushButton");
         reject_pushButton->setGeometry(QRect(150, 460, 121, 51));
-        next_pushButton = new QPushButton(screensPage2);
+        next_pushButton = new QPushButton(main_screen);
         next_pushButton->setObjectName("next_pushButton");
-        next_pushButton->setGeometry(QRect(520, 110, 41, 21));
-        screens->addWidget(screensPage2);
-        screensPage3 = new QWidget();
-        screensPage3->setObjectName("screensPage3");
-        addClient_pushButton = new QPushButton(screensPage3);
+        next_pushButton->setGeometry(QRect(550, 70, 21, 21));
+        next_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
+"border: 2px solid rgb(149, 174, 207);\n"
+"font: 12pt \"Courier\";\n"
+""));
+        dialougeHistory = new QTextBrowser(main_screen);
+        dialougeHistory->setObjectName("dialougeHistory");
+        dialougeHistory->setGeometry(QRect(290, 100, 291, 291));
+        dialougeHistory->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
+"border: 2px solid rgb(149, 174, 207)"));
+        screens->addWidget(main_screen);
+        selectClient_screen = new QWidget();
+        selectClient_screen->setObjectName("selectClient_screen");
+        addClient_pushButton = new QPushButton(selectClient_screen);
         addClient_pushButton->setObjectName("addClient_pushButton");
         addClient_pushButton->setGeometry(QRect(10, 20, 131, 61));
-        selectClient = new QTabWidget(screensPage3);
+        selectClient = new QTabWidget(selectClient_screen);
         selectClient->setObjectName("selectClient");
         selectClient->setGeometry(QRect(250, 20, 661, 501));
         selectClient->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));\n"
@@ -233,15 +245,15 @@ public:
         verticalLayout->addWidget(label);
 
         selectClient->addTab(tab_8, QString());
-        selectClient_pushButton = new QPushButton(screensPage3);
+        selectClient_pushButton = new QPushButton(selectClient_screen);
         selectClient_pushButton->setObjectName("selectClient_pushButton");
         selectClient_pushButton->setGeometry(QRect(10, 110, 121, 61));
-        screens->addWidget(screensPage3);
-        screensPage4 = new QWidget();
-        screensPage4->setObjectName("screensPage4");
-        gridLayout_5 = new QGridLayout(screensPage4);
+        screens->addWidget(selectClient_screen);
+        instruction_screen = new QWidget();
+        instruction_screen->setObjectName("instruction_screen");
+        gridLayout_5 = new QGridLayout(instruction_screen);
         gridLayout_5->setObjectName("gridLayout_5");
-        instruction_tab = new QStackedWidget(screensPage4);
+        instruction_tab = new QStackedWidget(instruction_screen);
         instruction_tab->setObjectName("instruction_tab");
         instruction_page1 = new QWidget();
         instruction_page1->setObjectName("instruction_page1");
@@ -259,23 +271,23 @@ public:
 
         gridLayout_5->addWidget(instruction_tab, 0, 0, 1, 1);
 
-        instr_nextPage_pushButton = new QPushButton(screensPage4);
+        instr_nextPage_pushButton = new QPushButton(instruction_screen);
         instr_nextPage_pushButton->setObjectName("instr_nextPage_pushButton");
 
         gridLayout_5->addWidget(instr_nextPage_pushButton, 1, 0, 1, 1);
 
-        instr_menu_pushButton = new QPushButton(screensPage4);
+        instr_menu_pushButton = new QPushButton(instruction_screen);
         instr_menu_pushButton->setObjectName("instr_menu_pushButton");
 
         gridLayout_5->addWidget(instr_menu_pushButton, 2, 0, 1, 1);
 
-        screens->addWidget(screensPage4);
-        screenpage5 = new QWidget();
-        screenpage5->setObjectName("screenpage5");
-        screenpage5->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(133, 156, 120, 255), stop:1 rgba(216, 234, 236, 255));"));
-        gridLayout_4 = new QGridLayout(screenpage5);
+        screens->addWidget(instruction_screen);
+        end_screen = new QWidget();
+        end_screen->setObjectName("end_screen");
+        end_screen->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(133, 156, 120, 255), stop:1 rgba(216, 234, 236, 255));"));
+        gridLayout_4 = new QGridLayout(end_screen);
         gridLayout_4->setObjectName("gridLayout_4");
-        continue_pushButton = new QPushButton(screenpage5);
+        continue_pushButton = new QPushButton(end_screen);
         continue_pushButton->setObjectName("continue_pushButton");
         continue_pushButton->setMinimumSize(QSize(0, 100));
         continue_pushButton->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";\n"
@@ -283,14 +295,14 @@ public:
 
         gridLayout_4->addWidget(continue_pushButton, 1, 1, 1, 1);
 
-        textBrowser = new QTextBrowser(screenpage5);
+        textBrowser = new QTextBrowser(end_screen);
         textBrowser->setObjectName("textBrowser");
         textBrowser->setMaximumSize(QSize(16777215, 400));
         textBrowser->setFrameShadow(QFrame::Sunken);
 
         gridLayout_4->addWidget(textBrowser, 0, 0, 1, 2);
 
-        screens->addWidget(screenpage5);
+        screens->addWidget(end_screen);
 
         verticalLayout_2->addWidget(screens);
 
@@ -305,7 +317,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        screens->setCurrentIndex(2);
+        screens->setCurrentIndex(1);
         ruleBook->setCurrentIndex(1);
         selectClient->setCurrentIndex(0);
         instruction_tab->setCurrentIndex(1);
@@ -335,7 +347,15 @@ public:
         dialouge->setText(QCoreApplication::translate("MainWindow", "#PLACEHOLDER", nullptr));
         accept_pushButton->setText(QCoreApplication::translate("MainWindow", "Accept", nullptr));
         reject_pushButton->setText(QCoreApplication::translate("MainWindow", "Reject", nullptr));
-        next_pushButton->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
+        next_pushButton->setText(QCoreApplication::translate("MainWindow", "V", nullptr));
+        dialougeHistory->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier';\">#PLACEHOLDER</span></p></body></html>", nullptr));
         addClient_pushButton->setText(QCoreApplication::translate("MainWindow", "ADD CLIENT", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CLIENTELE", nullptr));
         selectClient->setTabText(selectClient->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
