@@ -33,6 +33,13 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     QPixmap desk(":/resources/img/tempDesk2A8.png");
     ui->user_desk->setPixmap(desk.scaled(ui->user_desk->width(),ui->user_desk->height(), Qt::IgnoreAspectRatio));
 
+    for (int i = 0; i < this->model->clients.size(); i++)
+    {
+        clientTab *newClient = new clientTab(*this->model->clients.at(i));
+        //newClient.addClient(*model->currentClients.at(0));
+        ui->selectClient->addTab(newClient,QIcon(QString("")), this->model->clients.at(i)->name);
+    }
+
 //    QPixmap ruleBook(":/resources/img/tempRuleBookA8.png");
 //    ui->rule_book->setPixmap(ruleBook.scaled(ui->rule_book->width(),ui->rule_book->height(), Qt::KeepAspectRatio));
 //    ui->rule_book->hide();
@@ -61,10 +68,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
 
-    //connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
-    connect(ui->addClient_pushButton, &QPushButton::clicked, this, &MainWindow::addNewClientSelection);
-
-   // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
+    // connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
+    // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
 
     connect(ui->selectClient, &QTabWidget::tabBarClicked, this, &MainWindow::changeTab);
 
@@ -155,8 +160,7 @@ void MainWindow::ruleBookClosed(){
 
 void MainWindow::nextClient()
 {
-    qDebug() << "next client";
-
+    dialogue_index = 0;
     client_index = ui->selectClient->currentIndex()-1;
 
     client_in_office = true;
@@ -205,7 +209,9 @@ void MainWindow::rejectClient()
     //Clear client->user selects new one
     ui->screens->setCurrentIndex(4);
 }
-void MainWindow::deleteClient(){
+
+void MainWindow::replaceClient()
+{
 
     ui->newClient_pushButton->setDisabled(false);
     ui->question_pushButton->setDisabled(true);
@@ -217,11 +223,23 @@ void MainWindow::deleteClient(){
     ui->selectClient->removeTab(client_index+1);
     ui->client->clear();
     changeTab(ui->selectClient->currentIndex());
-    //No current clients
-    client_index = -1;
+    // No current clients
+    // client_index = -1;
 
+    if (model->unusedClients.empty())
+    {
+        return;
+    }
+
+    clientTab *newClient = new clientTab(*model->unusedClients.at(0));
+    //newClient.addClient(*model->currentClients.at(0));
+    ui->selectClient->addTab(newClient,QIcon(QString("")), model->unusedClients.at(0)->name);
+    model->clients.append(model->unusedClients[0]);
+    model->unusedClients.removeAt(0);
 }
-void MainWindow::displayOutcome(){
+
+void MainWindow::displayOutcome()
+{
 
 }
 
@@ -273,16 +291,6 @@ void MainWindow::selectClientDisplay(){
     nextClient();
 }
 
-void MainWindow::addNewClientSelection()
-{
-    for (int i = 0; i<model->clients.size(); i++)
-    {
-        clientTab *newClient = new clientTab(*model->clients.at(i));
-        //newClient.addClient(*model->currentClients.at(0));
-        ui->selectClient->addTab(newClient,QIcon(QString("")), model->clients.at(i)->name);
-    }
-}
-
 void MainWindow::changeTab(int index)
 {
     if (index > 0){
@@ -306,7 +314,7 @@ void MainWindow::nextRound()
 
     ui->screens->setCurrentIndex(1);
 
-    deleteClient();
+    replaceClient();
     ui->newClient_pushButton->setDisabled(false);
     ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);

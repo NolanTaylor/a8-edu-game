@@ -21,7 +21,7 @@
        <string notr="true"/>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="menu_screen">
        <widget class="StartMenu" name="start_menu" native="true">
@@ -389,24 +389,11 @@ font: 9pt &quot;Segoe UI&quot;;
        </widget>
       </widget>
       <widget class="QWidget" name="selectClient_screen">
-       <widget class="QPushButton" name="addClient_pushButton">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>131</width>
-          <height>61</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>ADD CLIENT</string>
-        </property>
-       </widget>
        <widget class="QTabWidget" name="selectClient">
         <property name="geometry">
          <rect>
           <x>250</x>
-          <y>20</y>
+          <y>0</y>
           <width>661</width>
           <height>501</height>
          </rect>
@@ -449,8 +436,8 @@ color: rgb(148, 139, 118);</string>
        <widget class="QPushButton" name="selectClient_pushButton">
         <property name="geometry">
          <rect>
-          <x>10</x>
-          <y>110</y>
+          <x>790</x>
+          <y>510</y>
           <width>121</width>
           <height>61</height>
          </rect>
