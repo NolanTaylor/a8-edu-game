@@ -17,7 +17,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     client_index = 0;
     dialogue_index = 0;
 
-    //Your mom
     ui->newClient_pushButton->setDisabled(false);
     ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
@@ -29,6 +28,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     ui->dialouge->hide();
     ui->next_pushButton->hide();
+    ui->history_pushButton->hide();
 
     QPixmap desk(":/resources/img/tempDesk2A8.png");
     ui->user_desk->setPixmap(desk.scaled(ui->user_desk->width(),ui->user_desk->height(), Qt::IgnoreAspectRatio));
@@ -73,7 +73,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::acceptClient);
     connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
-    connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::openDialougeHistory);
+    connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::nextDialogue);
+    connect(ui->history_pushButton, &QPushButton::clicked, this, &MainWindow::openDialougeHistory);
     connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::nextRound);
 
     //Send a full reset to the model
@@ -172,6 +173,7 @@ void MainWindow::nextClient()
     ui->client->setPixmap(client_img.scaled(w,h,Qt::KeepAspectRatio));
     ui->client->show();
     ui->next_pushButton->show();
+    ui->history_pushButton->show();
 
     ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
     ui->dialougeHistory->append("\n" + ui->dialouge->text());
@@ -225,24 +227,26 @@ void MainWindow::displayOutcome(){
 
 void MainWindow::openDialougeHistory()
 {
-//    if (dialogue_index + 2 > model->clients[client_index]->dialogue.size())
-//    {
-//        return;
-//    }
-
-//    dialogue_index++;
-//    ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
-
-
     //Hide drop down
     if (ui->dialougeHistory->isVisible()){
         ui->dialougeHistory->hide();
-        ui->next_pushButton->setText("V");
+        ui->history_pushButton->setText("V");
     }
     else{
         ui->dialougeHistory->show();
-        ui->next_pushButton->setText("^");
+        ui->history_pushButton->setText("^");
     }
+}
+
+void MainWindow::nextDialogue()
+{
+    if (dialogue_index + 2 > model->clients[client_index]->dialogue.size())
+    {
+        return;
+    }
+
+    dialogue_index++;
+    ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
 }
 
 void MainWindow::clientChosen(int ClientID)
@@ -315,6 +319,7 @@ void MainWindow::nextRound()
     ui->dialougeHistory->clear();
 
     ui->next_pushButton->hide();
+    ui->history_pushButton->hide();
 
 
 

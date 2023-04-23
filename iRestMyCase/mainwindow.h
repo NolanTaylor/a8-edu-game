@@ -40,6 +40,7 @@ public slots:
 
 
     void openDialougeHistory();
+    void nextDialogue();
     void clientChosen(int);
 signals:
     void resetSignal();
