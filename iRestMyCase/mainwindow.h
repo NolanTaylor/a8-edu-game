@@ -31,7 +31,6 @@ public slots:
     void ruleBookClosed();
 
     void questionClient();
-    void addNewClientSelection();
     void acceptClient();
     void rejectClient();
 
@@ -40,6 +39,7 @@ public slots:
 
 
     void openDialougeHistory();
+    void nextDialogue();
     void clientChosen(int);
 signals:
     void resetSignal();
@@ -58,6 +58,6 @@ private:
     QVector<QString> dialogue;
 
     void nextClient();
-    void deleteClient();
+    void replaceClient();
 };
 #endif // MAINWINDOW_H
