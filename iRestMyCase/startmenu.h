@@ -14,6 +14,7 @@ class StartMenu : public QWidget
 public:
     explicit StartMenu(QWidget *parent = nullptr);
     ~StartMenu();
+    void playClickSound();
 
 private slots:
 
