@@ -13,7 +13,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     ui->screens->setCurrentIndex(0);
     ui->instruction_tab->setCurrentIndex(0);
 
-    client_in_office = false;
+    client_in_office = false;//
     client_index = 0;
     dialogue_index = 0;
 
