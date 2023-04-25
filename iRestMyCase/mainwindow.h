@@ -21,6 +21,8 @@ public:
 public slots:
     void restartGame();
 
+    void playClickSound();
+
     void toMainMenu();
     void goToInstructions();
     void toSelectionScreen();

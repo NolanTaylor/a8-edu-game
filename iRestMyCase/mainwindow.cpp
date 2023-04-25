@@ -84,8 +84,35 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     //Send a full reset to the model
     connect(this, &MainWindow::resetSignal, &model, &Model::reset);
+        
+    //Connects all the buttons to the play sound
+    connect(ui->newClient_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->addClient_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->accept_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->selectClient_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->addClient_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
 
 }
+
+void MainWindow::playClickSound()
+{
+    QSoundEffect sound;
+    QUrl click("qrc:/resources/img/clicknoise.wav");
+    sound.setSource(click);
+    sound.setLoopCount(1);
+    sound.setVolume(1.0f);
+    sound.play();
+    QEventLoop loop;
+    loop.exec();
+    loop.quit();
+}
+
 /**
  * @brief Visually restarts the game
  */
