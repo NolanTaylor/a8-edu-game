@@ -56,11 +56,11 @@ public:
     QPushButton *question_pushButton;
     QPushButton *newClient_pushButton;
     QPushButton *menu_pushButton;
-    QLabel *dialouge;
     QPushButton *accept_pushButton;
     QPushButton *reject_pushButton;
     QPushButton *next_pushButton;
     QTextBrowser *dialougeHistory;
+    QTextBrowser *dialouge;
     QWidget *selectClient_screen;
     QPushButton *addClient_pushButton;
     QTabWidget *selectClient;
@@ -193,15 +193,6 @@ public:
         menu_pushButton = new QPushButton(main_screen);
         menu_pushButton->setObjectName("menu_pushButton");
         menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
-        dialouge = new QLabel(main_screen);
-        dialouge->setObjectName("dialouge");
-        dialouge->setGeometry(QRect(290, 40, 291, 61));
-        dialouge->setAutoFillBackground(false);
-        dialouge->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
-"border: 2px solid rgb(149, 174, 207);\n"
-"font: 12pt \"Courier\";\n"
-""));
-        dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
         accept_pushButton = new QPushButton(main_screen);
         accept_pushButton->setObjectName("accept_pushButton");
         accept_pushButton->setGeometry(QRect(20, 460, 121, 51));
@@ -220,7 +211,25 @@ public:
         dialougeHistory->setGeometry(QRect(290, 100, 291, 291));
         dialougeHistory->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
 "border: 2px solid rgb(149, 174, 207)"));
+        dialouge = new QTextBrowser(main_screen);
+        dialouge->setObjectName("dialouge");
+        dialouge->setGeometry(QRect(290, 40, 291, 61));
+        dialouge->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
+"border: 2px solid rgb(149, 174, 207)"));
         screens->addWidget(main_screen);
+        dialouge->raise();
+        client->raise();
+        user_desk->raise();
+        ruleBook->raise();
+        ruleBook_pushButton->raise();
+        closeRules_pushButton->raise();
+        question_pushButton->raise();
+        newClient_pushButton->raise();
+        menu_pushButton->raise();
+        accept_pushButton->raise();
+        reject_pushButton->raise();
+        next_pushButton->raise();
+        dialougeHistory->raise();
         selectClient_screen = new QWidget();
         selectClient_screen->setObjectName("selectClient_screen");
         addClient_pushButton = new QPushButton(selectClient_screen);
@@ -344,11 +353,18 @@ public:
         question_pushButton->setText(QCoreApplication::translate("MainWindow", "Question", nullptr));
         newClient_pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
         menu_pushButton->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
-        dialouge->setText(QCoreApplication::translate("MainWindow", "#PLACEHOLDER", nullptr));
         accept_pushButton->setText(QCoreApplication::translate("MainWindow", "Accept", nullptr));
         reject_pushButton->setText(QCoreApplication::translate("MainWindow", "Reject", nullptr));
         next_pushButton->setText(QCoreApplication::translate("MainWindow", "V", nullptr));
         dialougeHistory->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier';\">#PLACEHOLDER</span></p></body></html>", nullptr));
+        dialouge->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "hr { height: 1px; border-width: 0; }\n"
