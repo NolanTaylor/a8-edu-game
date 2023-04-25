@@ -27,6 +27,7 @@ public:
     void deleteMoney(int value);
     void changeReputation(double value);
     void restart();
+    QString getReputationStatus();
 
 public slots:
     void reset();

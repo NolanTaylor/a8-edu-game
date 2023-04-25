@@ -7,7 +7,7 @@ Model::Model(QObject *parent)
 {
     clients = QVector<Client*>();
     money = 0;
-    reputation = 1;
+    reputation = 1.00;
     // currentClients.push_back(std::make_unique<Client>()); (rachel mode)
 
     fillClients();
@@ -95,4 +95,24 @@ void Model::restart(){
 //    for(int i = 0; i < iNum; i++){
 //        delete(clients.takeAt(0));
 //    }
+}
+
+QString Model::getReputationStatus(){
+    if(reputation >= 0.59 && reputation < 1.61){
+        return "Reputation status:    mediocre";
+    }else if(reputation >= 0.21 && reputation < 0.59){
+        return "Reputation status:    bad deeds";
+    }else if(reputation >= 1.61 && reputation < 4.18){
+        return "Reputation status:    small famous";
+    }else if(reputation >= 0.04 && reputation < 0.21){
+        return "Reputation status:    notorious";
+    }else if(reputation >= 4.18 && reputation < 17.45){
+        return "Reputation status:    outstanding";
+    }else if(reputation < 0.04){
+        return "Reputation status:    everyone spurned";
+    }else if (reputation >= 17.45){
+        return "Reputation status:    everyone knows";
+    }else{
+        return "Error";
+    }
 }

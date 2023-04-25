@@ -223,57 +223,35 @@ void MainWindow::checkMoneyAndReputation(){
         //Implement timer that slowly fades into the next screen
         ui->screens->setCurrentIndex(4);
    }
-   double reputation = model->getReputation();
-   if(reputation >= 0.59 && reputation < 1.611){
-        ui->reputation->setText("Reputation status:    mediocre");
-   }else if(reputation >= 0.206 && reputation < 0.59){
-        ui->reputation->setText("Reputation status:    bad deeds");
-   }else if(reputation >= 1.611 && reputation < 4.177){
-        ui->reputation->setText("Reputation status:    small famous");
-   }else if(reputation >= 0.042 && reputation < 0.206){
-        ui->reputation->setText("Reputation status:    notorious");
-   }else if(reputation >= 4.177 && reputation < 17.45){
-        ui->reputation->setText("Reputation status:    outstanding");
-   }else if(reputation < 0.042){
-        ui->reputation->setText("Reputation status:    everyone spurned");
-   }else if (reputation >= 17.45){
-        ui->reputation->setText("Reputation status:    everyone knows");
-   }else{
-        ui->reputation->setText("Error");
+   ui->reputation->setText(model->getReputationStatus());
+}
+
+void MainWindow::checkUserChoose(bool truth){
+   // implement money/reputation
+   int commission = model->clients[client_index]->payment;
+   if(truth){ // When the user judges correctly.
+        model->addMoney(commission * model->getReputation());
+        model->changeReputation(model->getReputation()*1.1);
+        qDebug() << model->getReputation();
+   }else{ // When the user judges incorrectly
+        model->deleteMoney(commission);
+        model->changeReputation(model->getReputation()*0.9);
    }
+   checkMoneyAndReputation();
 }
 
 void MainWindow::acceptClient()
 {
     ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
 
-    // implement money/reputation
-    int commission = model->clients[client_index]->payment * model->getReputation();
-    if(true){ // When the user judges correctly.
-        model->addMoney(commission);
-        model->changeReputation(model->getReputation()*1.1);
-    }else{ // When the user judges incorrectly
-        model->deleteMoney(commission);
-        model->changeReputation(model->getReputation()*0.9);
-    }
-    checkMoneyAndReputation();
-
+   checkUserChoose(true); // Need to add case is true or false
 }
 
 void MainWindow::rejectClient()
 {
     ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
 
-    // implement money/reputation
-    int commission = model->clients[client_index]->payment * model->getReputation();
-    if(false){ // When the user judges correctly.
-        model->addMoney(commission);
-        model->changeReputation(model->getReputation()*1.1);
-    }else{ // When the user judges incorrectly
-        model->deleteMoney(commission);
-        model->changeReputation(model->getReputation()*0.9);
-    }
-    checkMoneyAndReputation();
+    checkUserChoose(false); // Need to add case is true or false
 
 }
 

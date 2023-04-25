@@ -34,6 +34,7 @@ public slots:
     void ruleBookClosed();
 
     void checkMoneyAndReputation();
+    void checkUserChoose(bool truth);
     void questionClient();
     void acceptClient();
     void rejectClient();
