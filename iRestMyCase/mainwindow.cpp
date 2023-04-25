@@ -205,14 +205,14 @@ void MainWindow::nextClient()
     ui->history_pushButton->show();
 
     ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
-    ui->dialougeHistory->append("\n" + ui->dialouge->text());
+    ui->dialougeHistory->append("\n" + ui->dialouge->toPlainText());
     ui->dialouge->show();
 }
 
 void MainWindow::questionClient()
 {
    ui->dialouge->setText(model->clients[client_index]->dialogue_q[0]);
-   ui->dialougeHistory->append("\n" + ui->dialouge->text());
+   ui->dialougeHistory->append("\n" + ui->dialouge->toPlainText());
 
 }
 
