@@ -2,6 +2,7 @@
 #define STARTMENU_H
 
 #include <QWidget>
+#include <QSoundEffect>
 
 namespace Ui {
 class StartMenu;
@@ -14,6 +15,7 @@ class StartMenu : public QWidget
 public:
     explicit StartMenu(QWidget *parent = nullptr);
     ~StartMenu();
+    void playClickSound();
 
 private slots:
 

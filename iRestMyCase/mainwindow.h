@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QVector>
+#include <QSoundEffect>
 #include "startmenu.h"
 #include "model.h"
 
@@ -21,6 +22,8 @@ public:
 public slots:
     void restartGame();
 
+    void playClickSound();
+
     void toMainMenu();
     void goToInstructions();
     void toSelectionScreen();
@@ -30,8 +33,8 @@ public slots:
     void ruleBookClicked();
     void ruleBookClosed();
 
+    void checkMoneyAndReputation();
     void questionClient();
-    void addNewClientSelection();
     void acceptClient();
     void rejectClient();
 
@@ -40,12 +43,15 @@ public slots:
 
 
     void openDialougeHistory();
+    void nextDialogue();
     void clientChosen(int);
 signals:
     void resetSignal();
 private slots:
     void displayOutcome();
     void nextRound();
+
+    void on_continue_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -58,6 +64,6 @@ private:
     QVector<QString> dialogue;
 
     void nextClient();
-    void deleteClient();
+    void replaceClient();
 };
 #endif // MAINWINDOW_H
