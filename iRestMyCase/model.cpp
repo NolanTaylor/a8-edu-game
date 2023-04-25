@@ -6,7 +6,8 @@ Model::Model(QObject *parent)
     : QObject{parent}
 {
     clients = QVector<Client*>();
-
+    money = 0;
+    reputation = 1;
     // currentClients.push_back(std::make_unique<Client>()); (rachel mode)
 
     fillClients();
@@ -65,4 +66,33 @@ void Model::reset()
 
     fillUnusedClients();
     fillClients();
+}
+
+int Model::getMoney(){
+    return this->money;
+}
+
+double Model::getReputation(){
+    return this->reputation;
+}
+
+void Model::addMoney(int value){
+    money += value;
+}
+
+void Model::deleteMoney(int value){
+    money -= value;
+}
+
+void Model::changeReputation(double value){
+    reputation = value;
+}
+
+void Model::restart(){
+    money = 0;
+    reputation = 1;
+//    int iNum = clients.count();
+//    for(int i = 0; i < iNum; i++){
+//        delete(clients.takeAt(0));
+//    }
 }

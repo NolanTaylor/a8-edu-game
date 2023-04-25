@@ -16,6 +16,20 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
+     <widget class="QLabel" name="money">
+      <property name="text">
+       <string>Money: 0</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="reputation">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QStackedWidget" name="screens">
       <property name="styleSheet">
        <string notr="true"/>
@@ -587,7 +601,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1003</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

@@ -30,6 +30,7 @@ public slots:
     void ruleBookClicked();
     void ruleBookClosed();
 
+    void checkMoneyAndReputation();
     void questionClient();
     void acceptClient();
     void rejectClient();
@@ -46,6 +47,8 @@ signals:
 private slots:
     void displayOutcome();
     void nextRound();
+
+    void on_continue_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;

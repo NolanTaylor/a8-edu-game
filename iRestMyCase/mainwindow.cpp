@@ -191,13 +191,48 @@ void MainWindow::questionClient()
 
 }
 
+void MainWindow::checkMoneyAndReputation(){
+   QString currentMoney = "Money: " + QString::number(model->getMoney());
+   ui->money->setText(currentMoney);
+   if(model->getMoney() < 0){
+        //Implement timer that slowly fades into the next screen
+        ui->screens->setCurrentIndex(4);
+   }
+   double reputation = model->getReputation();
+   if(reputation >= 0.59 && reputation < 1.611){
+        ui->reputation->setText("Reputation status:    mediocre");
+   }else if(reputation >= 0.206 && reputation < 0.59){
+        ui->reputation->setText("Reputation status:    bad deeds");
+   }else if(reputation >= 1.611 && reputation < 4.177){
+        ui->reputation->setText("Reputation status:    small famous");
+   }else if(reputation >= 0.042 && reputation < 0.206){
+        ui->reputation->setText("Reputation status:    notorious");
+   }else if(reputation >= 4.177 && reputation < 17.45){
+        ui->reputation->setText("Reputation status:    outstanding");
+   }else if(reputation < 0.042){
+        ui->reputation->setText("Reputation status:    everyone spurned");
+   }else if (reputation >= 17.45){
+        ui->reputation->setText("Reputation status:    everyone knows");
+   }else{
+        ui->reputation->setText("Error");
+   }
+}
+
 void MainWindow::acceptClient()
 {
     ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
 
     // implement money/reputation
-    //Implement timer that slowly fades into the next screen
-    ui->screens->setCurrentIndex(4);
+    int commission = model->clients[client_index]->payment * model->getReputation();
+    if(true){ // When the user judges correctly.
+        model->addMoney(commission);
+        model->changeReputation(model->getReputation()*1.1);
+    }else{ // When the user judges incorrectly
+        model->deleteMoney(commission);
+        model->changeReputation(model->getReputation()*0.9);
+    }
+    checkMoneyAndReputation();
+
 }
 
 void MainWindow::rejectClient()
@@ -205,9 +240,16 @@ void MainWindow::rejectClient()
     ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
 
     // implement money/reputation
+    int commission = model->clients[client_index]->payment * model->getReputation();
+    if(false){ // When the user judges correctly.
+        model->addMoney(commission);
+        model->changeReputation(model->getReputation()*1.1);
+    }else{ // When the user judges incorrectly
+        model->deleteMoney(commission);
+        model->changeReputation(model->getReputation()*0.9);
+    }
+    checkMoneyAndReputation();
 
-    //Clear client->user selects new one
-    ui->screens->setCurrentIndex(4);
 }
 
 void MainWindow::replaceClient()
@@ -333,5 +375,14 @@ void MainWindow::nextRound()
 
     //Reset dialouge
 
+}
+
+
+void MainWindow::on_continue_pushButton_clicked()
+{
+    model->restart();
+    QString currentMoney = "Money: " + QString::number(model->getMoney());
+    ui->money->setText(currentMoney);
+    ui->reputation->setText("");
 }
 
