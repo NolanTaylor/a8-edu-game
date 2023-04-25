@@ -2,6 +2,7 @@
 #define STARTMENU_H
 
 #include <QWidget>
+#include <QSoundEffect>
 
 namespace Ui {
 class StartMenu;
