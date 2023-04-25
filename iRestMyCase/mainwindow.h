@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QVector>
+#include <QSoundEffect>
 #include "startmenu.h"
 #include "model.h"
 
