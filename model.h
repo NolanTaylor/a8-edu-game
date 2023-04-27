@@ -29,7 +29,7 @@ public:
     void changeReputation(double value);
     void restart();
     QString getReputationStatus();
-    void promote_pushButton();
+
     bool update();
     void graduate();
     int getLevel();

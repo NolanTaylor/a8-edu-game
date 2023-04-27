@@ -80,7 +80,7 @@ background-color: rgb(36, 64, 103);
          <enum>QTabWidget::Triangular</enum>
         </property>
         <property name="currentIndex">
-         <number>1</number>
+         <number>2</number>
         </property>
         <property name="tabsClosable">
          <bool>false</bool>
@@ -141,7 +141,7 @@ background-color: rgb(36, 64, 103);
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>10.08.020 - Reckless conduct</string>
+             <string>Cultural and Community Engagement</string>
             </property>
            </widget>
           </item>
@@ -193,7 +193,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>9.20.020 - Lawful Jumps</string>
+             <string>9.20.020 - Jumps to be lawful</string>
             </property>
            </widget>
           </item>
@@ -243,7 +243,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>10.04.050 - Impersonating an officer</string>
+             <string>11.16.030 - Speed limits near schools.</string>
             </property>
            </widget>
           </item>
@@ -253,7 +253,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>13.24.050 - Reimbursement Deadline</string>
+             <string>what the dawg doin</string>
             </property>
            </widget>
           </item>
@@ -263,7 +263,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>11.16.030 - Speed limits near schools</string>
+             <string>Your mom</string>
             </property>
            </widget>
           </item>
@@ -279,7 +279,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>8.06.010 - Nuisance Animal.</string>
+             <string>8.06.010 - Animal Nuisance</string>
             </property>
            </widget>
           </item>
@@ -295,7 +295,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>8.06.020 - Animal at large</string>
+             <string>8.06.020 - Animal running at large</string>
             </property>
            </widget>
           </item>
@@ -359,7 +359,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>13.24.010 - Golf - Short title</string>
+             <string>You dad</string>
             </property>
            </widget>
           </item>
@@ -377,7 +377,7 @@ color: rgb(201, 227, 255);
 font: 700 9pt &quot;Courier&quot;;</string>
             </property>
             <property name="text">
-             <string>TITLE 8</string>
+             <string>TITLE 4</string>
             </property>
            </widget>
           </item>
@@ -429,7 +429,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>9.20.010 - Written Permision.</string>
+             <string>9.20.010 - Written permission</string>
             </property>
            </widget>
           </item>
@@ -441,16 +441,11 @@ font: 700 9pt &quot;Courier&quot;;</string>
               <height>16777215</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <pointsize>8</pointsize>
-             </font>
-            </property>
             <property name="styleSheet">
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>10.04.020 - Giving false information</string>
+             <string>11.16.020 - Minimum speed limit</string>
             </property>
            </widget>
           </item>
@@ -466,7 +461,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>10.08.010 - Assault</string>
+             <string>Utah Agricultural Code</string>
             </property>
            </widget>
           </item>
@@ -482,7 +477,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>11.16.020 - Minimum speed limits</string>
+             <string>13.24.050 - Golf Reimbursement</string>
             </property>
            </widget>
           </item>
@@ -498,7 +493,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>11.16.050 - Speed contests </string>
+             <string>Utah Agricultural Code</string>
             </property>
            </widget>
           </item>
@@ -514,7 +509,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string>13.24.020 - Purpose</string>
+             <string>Utah Agricultural Code</string>
             </property>
            </widget>
           </item>
@@ -530,7 +525,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
              <string notr="true">color: rgb(255, 255, 255);</string>
             </property>
             <property name="text">
-             <string> 4.20.069 - urmom</string>
+             <string>Utah Agricultural Code</string>
             </property>
            </widget>
           </item>
@@ -673,7 +668,7 @@ font: 700 9pt &quot;Courier&quot;;</string>
           <item row="0" column="0">
            <widget class="QStackedWidget" name="titles">
             <property name="currentIndex">
-             <number>14</number>
+             <number>10</number>
             </property>
             <widget class="QWidget" name="page_1">
              <widget class="QLabel" name="label_2">
@@ -692,58 +687,14 @@ font: 700 9pt &quot;Courier&quot;;</string>
                <string>Title 4</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_2">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>0</y>
-                <width>491</width>
-                <height>341</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-1a6bb020-7fff-1f87-1bb0-91e0fd84ef9a&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;8&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.06.010 - Nuisance.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;A. An owner or person having charge, care, custody, or control of an animal or animals creating a nuisance as provided in this section shall be guilty of allowing a nuisance in violation of this title and subject to the penalties provided in this title.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;B. An animal is considered a &amp;quot;public nuisance animal&amp;quot; if it:&lt;/span&gt;&lt;/p&gt;
-&lt;ol style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Is repeatedly found at large;&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;2. Damages the property of anyone other than its owner;&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;3. Repeatedly molests or intimidates neighbors, pedestrians, or passersby by lunging at fences, chasing, or acting aggressively towards such persons, unless provoked by such persons;&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
             </widget>
             <widget class="QWidget" name="page_2_">
-             <widget class="QLabel" name="label_3">
+             <widget class="QTextBrowser" name="textBrowserAnimalTresspass">
               <property name="geometry">
                <rect>
-                <x>10</x>
-                <y>20</y>
-                <width>63</width>
-                <height>20</height>
-               </rect>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">color: rgb(255, 255, 255);</string>
-              </property>
-              <property name="text">
-               <string>Title 6</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_4">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
+                <x>0</x>
                 <y>0</y>
-                <width>481</width>
+                <width>501</width>
                 <height>341</height>
                </rect>
               </property>
@@ -755,11 +706,12 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;a name=&quot;docs-internal-guid-b7393143-7fff-6adb-c9f3-bd3372667ab4&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;8&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.06.030 - Animal trespass.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;a name=&quot;docs-internal-guid-64e4d000-7fff-165c-919b-ca9d72325e67&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;8&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.06.030 - Animal trespass.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
 &lt;li style=&quot; font-family:'Courier New'; font-size:11.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;A. It is unlawful for the owner or handler of an animal to allow such animal to trespass on the property of another, and shall be strictly liable for damages to persons or property committed by such animal, and shall hold the divisions harmless from said damages or injury.&lt;/span&gt;&lt;/li&gt;
 &lt;li style=&quot; font-family:'Courier New'; font-size:11.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;B. A person guilty of allowing a trespassing animal in violation of this section shall be subject to a civil notice of violation or a Class B misdemeanor citation. Each violation of this section shall be a separate offense.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:11.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. No. 1877, § VII, 4-27-2021)&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:11.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. No. 1877, § VII, 4-27-2021)&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </widget>
@@ -780,30 +732,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>Title 7</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_6">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>491</width>
-                <height>341</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-5e86d082-7fff-78c3-1b3e-d7d8d583d07b&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;9&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.20.020 - Jumps to be in compliance with law.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Any such approved parachute jump shall be made strictly in compliance with all pertinent rules and regulations of the federal government, the state of Utah, and the county of Salt Lake and its cities and town.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code 16-13-2)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
             </widget>
             <widget class="QWidget" name="page_4_">
              <widget class="QLabel" name="label_5">
@@ -820,30 +748,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <property name="text">
                <string>Title 8</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_8">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>0</y>
-                <width>481</width>
-                <height>331</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:195%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-92cd00e5-7fff-8f0b-3ed7-90151e6700e8&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;0.04.050 - Impersonating a public officer.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Any person who falsely personates a public officer, sheriff, deputy sheriff, justice of the peace, coroner or notary public, or other peace officer of any character whatsoever, and in such assumed character arrests or detains or attempts or threatens to arrest or detain, or otherwise intimidates or searches the person, building or other property of any person, or obtains money, property or other thing of value, shall be deemed guilty of a Class B misdemeanor.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. 1473 (part), 2001: Prior code § 16-22-4)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </widget>
@@ -864,32 +768,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>Title 9</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_3">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>481</width>
-                <height>331</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-a94c47d9-7fff-f850-8b20-7b08b31bcea0&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;8&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:14.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.06.020 - Animal running at large.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:11.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;A. It is unlawful for the owner or handler of any animal to allow such animal at any time to run at large. The owner or handler of an animal shall be strictly liable for damages to persons or property committed by such animal, and shall hold the divisions harmless from said damages or injury.&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:11.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;B. Dogs shall be considered running at large when off the property of their owner or handler unless a leash or tether is affixed to the dog at one end and the owner or handler at the other end, unless in a designated off-leash area.&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:11.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;C. A person guilty of allowing an animal running at large in violation of this section shall be subject to a civil notice of violation or a Class B misdemeanor citation. Each violation of this section shall be a separate offense.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:11.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. No. 1877, § VII, 4-27-2021)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
             </widget>
             <widget class="QWidget" name="page_6_">
              <widget class="QLabel" name="label_7">
@@ -908,10 +786,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>title 10</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_5">
+            </widget>
+            <widget class="QWidget" name="page_7_">
+             <widget class="QTextBrowser" name="textBrowserMinimumSpeedLimit">
               <property name="geometry">
                <rect>
-                <x>10</x>
+                <x>0</x>
                 <y>0</y>
                 <width>491</width>
                 <height>341</height>
@@ -925,49 +805,10 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-1f15d735-7fff-f2a6-41b4-a94072d5691a&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;9&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;.20.010 - Written permission required for parachute jumping.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-5d47c8fc-7fff-78e5-4e93-caf5dcc50a6b&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1.16.020 - Minimum speed regulations.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;It is unlawful for any person, except in an emergency, to make a parachute jump, or for any pilot in command of an aircraft to allow a parachute jump to be made from that aircraft, within the limits of the county, unless prior permission in writing is first had and obtained from the mayor.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. 1473 (part), 2001: Prior code § 16-13-1)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
-            </widget>
-            <widget class="QWidget" name="page_7_">
-             <widget class="QLabel" name="label_8">
-              <property name="geometry">
-               <rect>
-                <x>100</x>
-                <y>100</y>
-                <width>63</width>
-                <height>20</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>title 11</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_7">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>10</y>
-                <width>491</width>
-                <height>331</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:195%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-e0944a59-7fff-0870-22b6-6521c3ab6dbe&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;0.04.020 - Giving false information to law enforcement officers.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;Any person who, with the intent to mislead a law enforcement officer as to his identity, knowingly gives a false name, age, date of birth or address to a law enforcement officer in the lawful discharge of his official duties shall be deemed guilty of a misdemeanor and, upon conviction thereof, shall be punished as a Class B misdemeanor.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. 1473 (part), 2001: 1986 Recodification)&lt;/span&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;No person shall drive a motor vehicle at such a slow speed as to impede or block the normal and reasonable movement of traffic, except when reduced speed is necessary for safe operation or because upon a grade or in compliance with law. The transportation engineer may determine on the basis of an engineering and traffic investigation that slow speeds on any part of a road or highway of the county impede the normal and reasonable movement of traffic and constitute a traffic hazard requiring the declaration of a minimum speed limit below which no person shall drive except when necessary for safe operation or in compliance with law. All such minimum speed limits shall be properly posted.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 21-6-2)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
@@ -986,6 +827,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>page  8</string>
               </property>
              </widget>
+             <widget class="QTextBrowser" name="textBrowser_3">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>0</y>
+                <width>481</width>
+                <height>351</height>
+               </rect>
+              </property>
+             </widget>
             </widget>
             <widget class="QWidget" name="page_9">
              <widget class="QLabel" name="label_10">
@@ -999,31 +850,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <property name="text">
                <string>page 9</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_10">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>0</y>
-                <width>491</width>
-                <height>351</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:195%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-cb003a20-7fff-b838-5bde-6da30e43b69d&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;0.08.020 - Reckless conduct.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;A. A person who causes bodily harm to or endangers the bodily safety of an individual by any means, commits reckless conduct if he performs recklessly the acts that cause the harm or endanger safety, whether they otherwise are lawful or unlawful.&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;B. Reckless conduct is a Class B misdemeanor.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 16-18-4)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </widget>
@@ -1041,30 +867,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>page 10</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_12">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
-                <y>0</y>
-                <width>481</width>
-                <height>351</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-29c821e7-7fff-e3d9-0511-d8d7fc8c83dd&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1.16.030 - Speed limits near schools.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;It is unlawful for any person to drive or cause a motor vehicle to be driven past designated school crossing zones during school hours or while the children are going to or leaving school during opening or closing hours at a speed in excess of twenty miles per hour.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 21-6-3)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-              </property>
-             </widget>
             </widget>
             <widget class="QWidget" name="page_11">
              <widget class="QLabel" name="label_12">
@@ -1080,13 +882,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
                <string>page 11</string>
               </property>
              </widget>
-             <widget class="QTextBrowser" name="textBrowser_9">
+             <widget class="QTextBrowser" name="textBrowser_4">
               <property name="geometry">
                <rect>
-                <x>0</x>
+                <x>10</x>
                 <y>0</y>
-                <width>501</width>
-                <height>341</height>
+                <width>491</width>
+                <height>351</height>
                </rect>
               </property>
               <property name="html">
@@ -1097,13 +899,10 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:195%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-78ba24f1-7fff-319d-9167-51b3776103b7&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:12pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;0.08.010 - Assault.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-171b4e62-7fff-2d3c-41bc-a8768062d373&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1.16.020 - Minimum speed regulations.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;A. A person commits an assault when:&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;1. He attempts, with unlawful force or violence, to do bodily injury to another; or&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;2. He makes a threat, accompanied by a show of immediate force or violence, to do bodily injury to another.&lt;/span&gt;&lt;/li&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;B. Assault is a Class B misdemeanor.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 16-18-1)&lt;/span&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;No person shall drive a motor vehicle at such a slow speed as to impede or block the normal and reasonable movement of traffic, except when reduced speed is necessary for safe operation or because upon a grade or in compliance with law. The transportation engineer may determine on the basis of an engineering and traffic investigation that slow speeds on any part of a road or highway of the county impede the normal and reasonable movement of traffic and constitute a traffic hazard requiring the declaration of a minimum speed limit below which no person shall drive except when necessary for safe operation or in compliance with law. All such minimum speed limits shall be properly posted.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 21-6-2)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
@@ -1124,25 +923,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
              </widget>
             </widget>
             <widget class="QWidget" name="page_13">
-             <widget class="QLabel" name="label_14">
+             <widget class="QTextBrowser" name="textBrowser_2">
               <property name="geometry">
                <rect>
-                <x>160</x>
-                <y>70</y>
-                <width>63</width>
-                <height>20</height>
-               </rect>
-              </property>
-              <property name="text">
-               <string>page 13</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_11">
-              <property name="geometry">
-               <rect>
-                <x>10</x>
+                <x>0</x>
                 <y>0</y>
-                <width>491</width>
+                <width>501</width>
                 <height>341</height>
                </rect>
               </property>
@@ -1154,10 +940,10 @@ hr { height: 1px; border-width: 0; }
 li.unchecked::marker { content: &quot;\2610&quot;; }
 li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-88e615d8-7fff-48ca-2c89-a3dd1628c415&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1.16.020 - Minimum speed regulations.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-f2a4085a-7fff-f665-98ab-ba43d83c5286&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;3.24.050 - Reimbursement—Application—Time limitations.&lt;/span&gt;&lt;/p&gt;
 &lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;No person shall drive a motor vehicle at such a slow speed as to impede or block the normal and reasonable movement of traffic, except when reduced speed is necessary for safe operation or because upon a grade or in compliance with law. The transportation engineer may determine on the basis of an engineering and traffic investigation that slow speeds on any part of a road or highway of the county impede the normal and reasonable movement of traffic and constitute a traffic hazard requiring the declaration of a minimum speed limit below which no person shall drive except when necessary for safe operation or in compliance with law. All such minimum speed limits shall be properly posted.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 21-6-2)&lt;/span&gt;&lt;/p&gt;
+&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;All applications for reimbursement under this chapter must be submitted to the county risk manager within ninety days after the incident occurs.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Ord. 1477 § 1 (part), 2001: Ord. 1465 § 1 (part), 2000)&lt;/span&gt;&lt;/p&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
@@ -1174,30 +960,6 @@ li.checked::marker { content: &quot;\2612&quot;; }
               </property>
               <property name="text">
                <string>page 14</string>
-              </property>
-             </widget>
-             <widget class="QTextBrowser" name="textBrowser_13">
-              <property name="geometry">
-               <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>501</width>
-                <height>351</height>
-               </rect>
-              </property>
-              <property name="html">
-               <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:186.667%; background-color:#ffffff;&quot;&gt;&lt;a name=&quot;docs-internal-guid-882b2e27-7fff-5084-6d8b-856b4b831adf&quot;&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:13.5pt; font-weight:700; color:#313335; background-color:transparent;&quot;&gt;1.16.050 - Speed contests on highway prohibited.&lt;/span&gt;&lt;/p&gt;
-&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;
-&lt;li style=&quot; font-family:'Courier New'; font-size:10.5pt; color:#313335; background-color:#ffffff;&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%;&quot;&gt;&lt;span style=&quot; background-color:transparent;&quot;&gt;It is unlawful for any person to engage in any motor vehicle speed contest or exhibition of speed on a highway, and no person shall aid or abet in any such contest or exhibition on any highway.&lt;/span&gt;&lt;/li&gt;&lt;/ul&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; line-height:138%; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10.5pt; color:#313335; background-color:transparent;&quot;&gt;(Prior code § 21-6-1)&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
              </widget>
             </widget>
@@ -1559,7 +1321,7 @@ background-color: transparent;
          <string>Reputation: 0</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="promote_pushButton">
+       <widget class="QPushButton" name="promote">
         <property name="geometry">
          <rect>
           <x>0</x>
@@ -1622,7 +1384,7 @@ background-color: transparent;
        <zorder>money</zorder>
        <zorder>reputation</zorder>
        <zorder>level</zorder>
-       <zorder>promote_pushButton</zorder>
+       <zorder>promote</zorder>
       </widget>
       <widget class="QWidget" name="selectClient_screen">
        <widget class="QTabWidget" name="selectClient">
