@@ -17,5 +17,7 @@
         <file>img/client2.png</file>
         <file>img/client3.png</file>
         <file>img/tempMaxwell.png</file>
+        <file>img/clicknoise.wav</file>
+        <file>img/carwithgolfball.png</file>
     </qresource>
 </RCC>

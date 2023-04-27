@@ -35,7 +35,6 @@ public slots:
 
     void checkMoneyAndReputation();
     void checkUserChoose(bool truth);
-    void questionClient();
     void acceptClient();
     void rejectClient();
 
@@ -52,9 +51,7 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    void on_update_pressed();
-
-    void on_update_released();
+    void on_continue_pushButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -68,7 +65,5 @@ private:
 
     void nextClient();
     void replaceClient();
-
-    void restart();
 };
 #endif // MAINWINDOW_H

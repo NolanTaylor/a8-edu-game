@@ -18,7 +18,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     dialogue_index = 0;
 
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
@@ -66,8 +65,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->instr_menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::nextPageInstruction);
 
-    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
-
     // connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
     // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
 
@@ -94,13 +91,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
-    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
-
-    ui->level->setText("Apprentice lawyer");
-    QFont font = ui->level->font();
-    font.setPointSize(12);
-    font.setBold(true);
-    ui->level->setFont(font);
 
 }
 
@@ -196,7 +186,6 @@ void MainWindow::nextClient()
 
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
-    ui->question_pushButton->setDisabled(false);
     ui->next_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
@@ -215,31 +204,15 @@ void MainWindow::nextClient()
     ui->dialouge->show();
 }
 
-void MainWindow::questionClient()
-{
-   ui->dialouge->setText(model->clients[client_index]->dialogue_q[0]);
-   ui->dialougeHistory->append("\n" + ui->dialouge->toPlainText());
-
-}
 
 void MainWindow::checkMoneyAndReputation(){
    QString currentMoney = "Money: " + QString::number(model->getMoney());
    ui->money->setText(currentMoney);
    if(model->getMoney() < 0){
-        restart();
+        //Implement timer that slowly fades into the next screen
         ui->screens->setCurrentIndex(4);
    }
    ui->reputation->setText(model->getReputationStatus());
-}
-
-void MainWindow::restart(){
-   model->reset();
-   QString currentMoney = "Money: " + QString::number(model->getMoney());
-   ui->money->setText(currentMoney);
-   ui->reputation->setText("");
-   ui->update->setText("UPDATE");
-   ui->level->setText(model->getLevelStatus());
-
 }
 
 void MainWindow::checkUserChoose(bool truth){
@@ -248,35 +221,37 @@ void MainWindow::checkUserChoose(bool truth){
    if(truth){ // When the user judges correctly.
         model->addMoney(commission * model->getReputation());
         model->changeReputation(model->getReputation()*1.1);
-        nextRound();
+        qDebug() << model->getReputation();
    }else{ // When the user judges incorrectly
         model->deleteMoney(commission);
         model->changeReputation(model->getReputation()*0.9);
-        nextRound();
    }
    checkMoneyAndReputation();
 }
 
 void MainWindow::acceptClient()
 {
-    ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
-
-   checkUserChoose(true); // Need to add case is true or false
+   checkUserChoose(model->clients[client_index]->viabililty); // Need to add case is true or false
+   ui->textBrowser->setText(model->clients[client_index]->explanationAccept);
+   // QFont(const QString &family, int pointSize = -1, int weight = -1, bool italic = false)
+   ui->textBrowser->setFont(QFont("Times", 15, QFont::Bold));
+   ui->textBrowser->setAlignment(Qt::AlignCenter);
+   ui->screens->setCurrentIndex(4);
 }
 
 void MainWindow::rejectClient()
 {
-    ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
-
-    checkUserChoose(false); // Need to add case is true or false
-
+    checkUserChoose(model->clients[client_index]->viabililty); // Need to add case is true or false
+    ui->textBrowser->setText(model->clients[client_index]->explanationReject);
+    ui->textBrowser->setFont(QFont("Times", 15, QFont::Bold));
+    ui->textBrowser->setAlignment(Qt::AlignCenter);
+    ui->screens->setCurrentIndex(4);
 }
 
 void MainWindow::replaceClient()
 {
 
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -327,6 +302,7 @@ void MainWindow::nextDialogue()
 
     dialogue_index++;
     ui->dialouge->setText(model->clients[client_index]->dialogue[dialogue_index]);
+    ui->dialougeHistory->append("\n" + ui->dialouge->toPlainText());
 }
 
 void MainWindow::clientChosen(int ClientID)
@@ -378,7 +354,6 @@ void MainWindow::nextRound()
 
     replaceClient();
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
@@ -397,22 +372,12 @@ void MainWindow::nextRound()
 
 }
 
-void MainWindow::on_update_pressed()
+
+void MainWindow::on_continue_pushButton_clicked()
 {
-    if(model->update()){
-        QString currentMoney = "Money: " + QString::number(model->getMoney());
-        ui->money->setText(currentMoney);
-    }else{
-        ui->update->setText("lack of money");
-        ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
-
-    }
-}
-
-
-void MainWindow::on_update_released()
-{
-    ui->update->setText("UPDATE");
-    ui->level->setText(model->getReputationStatus());
+    model->restart();
+    QString currentMoney = "Money: " + QString::number(model->getMoney());
+    ui->money->setText(currentMoney);
+    ui->reputation->setText("");
 }
 
