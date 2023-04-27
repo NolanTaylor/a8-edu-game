@@ -1141,11 +1141,36 @@ background-color: transparent;
          <string>Reputation: 0</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="update">
+        <property name="geometry">
+         <rect>
+          <x>130</x>
+          <y>20</y>
+          <width>75</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>update</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="level">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>60</y>
+          <width>49</width>
+          <height>16</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>level</string>
+        </property>
+       </widget>
        <zorder>client</zorder>
        <zorder>user_desk</zorder>
        <zorder>ruleBook_pushButton</zorder>
        <zorder>closeRules_pushButton</zorder>
-       <zorder>question_pushButton</zorder>
        <zorder>newClient_pushButton</zorder>
        <zorder>menu_pushButton</zorder>
        <zorder>accept_pushButton</zorder>
@@ -1159,7 +1184,8 @@ background-color: transparent;
        <zorder>page_turner_2</zorder>
        <zorder>money</zorder>
        <zorder>reputation</zorder>
-
+       <zorder>update</zorder>
+       <zorder>label_9</zorder>
       </widget>
       <widget class="QWidget" name="selectClient_screen">
        <widget class="QTabWidget" name="selectClient">
@@ -1338,7 +1364,7 @@ color: rgb(12, 65, 16);</string>
      <x>0</x>
      <y>0</y>
      <width>995</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
