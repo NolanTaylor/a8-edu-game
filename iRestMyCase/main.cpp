@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "startmenu.h"
 #include "model.h"
-#include <Box2D/Box2D.h>
 
 #include <QApplication>
 
