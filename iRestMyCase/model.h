@@ -45,6 +45,7 @@ signals:
 private:
     int money;
     double reputation;
+    int level;
 
     void fillClients();
     void fillUnusedClients();

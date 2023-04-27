@@ -148,6 +148,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
 //    connect(ui->dialouge_hitBox, &QPushButton::clicked, this, &MainWindow::on_dialouge_hitBox_clicked);
 //    connect(ui->dialouge_hitBox_2, &QPushButton::clicked, this, &MainWindow::on_dialouge_hitBox_clicked);
+
+
     connect(ui->ruleBook, &QTabWidget::currentChanged, this, &MainWindow::changedTabs);
 
     connect(ui->title4Button, &QPushButton::clicked, this, &MainWindow::title4Clicked);
@@ -310,7 +312,7 @@ void MainWindow::checkMoneyAndReputation(){
         if(model->getLevel() == 0){
             restart();
             ui->screens->setCurrentIndex(4);
-        }else{
+        } else {
             model->deleteLevel();
             model->equalMoney(1000);
             QString currentMoney = "Money: " + QString::number(model->getMoney());
@@ -320,6 +322,16 @@ void MainWindow::checkMoneyAndReputation(){
 
    }
    ui->reputation->setText(model->getReputationStatus());
+}
+
+void MainWindow::restart() {
+   model->reset();
+   QString currentMoney = "Money: " + QString::number(model->getMoney());
+   ui->money->setText(currentMoney);
+   ui->reputation->setText("");
+   ui->update->setText("UPDATE");
+   ui->level->setText(model->getLevelStatus());
+
 }
 
 void MainWindow::checkUserChoose(bool truth){
