@@ -710,3 +710,4 @@ void MainWindow::on_title4Button_9_clicked()
     ui->titles->setCurrentIndex(15);
 }
 
+
