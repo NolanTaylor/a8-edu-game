@@ -1,6 +1,7 @@
 #include "model.h"
 #include <QPixmap>
 #include "client.h"
+#include <QTimer>
 
 Model::Model(QObject *parent)
     : QObject{parent}
@@ -11,6 +12,10 @@ Model::Model(QObject *parent)
     // currentClients.push_back(std::make_unique<Client>()); (rachel mode)
 
     fillClients();
+
+    //Adding a timer
+   // connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
+
 }
 
 void Model::fillClients()
@@ -18,7 +23,8 @@ void Model::fillClients()
     Client *client0 = new Client;
     clients.push_back(client0);
     clients[0]->name = "Steve 'Warcrime' Barkley";
-    clients[0]->image = ":/resources/img/client1.png";
+
+    clients[0]->image = ":/resources/img/general.png";
     clients[0]->dialogue.push_back("i drafted 12yo children into the armenian genocide in 1916, but it was an accident i swear! please help me file a court case against NATO");
     clients[0]->dialogue.push_back("geneva conventions, schmeneva conventions. please sir think of all the money we'll make!");
     clients[0]->viabililty = true;
@@ -26,10 +32,11 @@ void Model::fillClients()
     clients[0]->explanationReject = "Nope! Children should be sent to the battlefield! Did you see how good they are at Call Of Duty!";
 
 
+
     Client *client1 = new Client;
     clients.push_back(client1);
     clients[1]->name = "Zhong Xina";
-    clients[1]->image = ":/resources/img/client2.png";
+    clients[1]->image = ":/resources/img/granny.png";
     clients[1]->dialogue.push_back("bing chilling");
     clients[1]->viabililty = true;
 }
@@ -38,6 +45,7 @@ void Model::fillUnusedClients()
 {
     Client *client0 = new Client;
     unusedClients.push_back(client0);
+
     unusedClients[0]->name = "Carl Ford";
     unusedClients[0]->image = ":/resources/img/carwithgolfball.png";
     unusedClients[0]->dialogue.push_back("Last year this golf ball here hit my windshield and has been there ever since!");
@@ -118,6 +126,7 @@ void Model::fillUnusedClients()
     unusedClients[6]->viabililty = false;
     unusedClients[6]->explanationAccept = "Correct! Expressed permission from the mayor allows you to parachute \naccording to Section 9.20.010";
     unusedClients[6]->explanationReject = "Try again! Take a look at Section 9.20.010";
+
 }
 
 void Model::reset()
@@ -140,6 +149,10 @@ double Model::getReputation(){
 
 void Model::addMoney(int value){
     money += value;
+}
+
+void Model::equalMoney(int value){
+    money = value;
 }
 
 void Model::deleteMoney(int value){
@@ -178,3 +191,92 @@ QString Model::getReputationStatus(){
         return "Error";
     }
 }
+
+bool Model::update(){
+    switch (level) {
+    case 0:
+        if(money > 10000){
+            money -= 10000;
+            level++;
+            return true;
+        }else{
+
+        }
+        break;
+    case 1:
+        if(money > 35000){
+            money -= 35000;
+            level++;
+            return true;
+        }
+        break;
+    case 2:
+        if(money > 200000){
+            money -= 200000;
+            level++;
+            return true;
+        }
+        break;
+    case 3:
+        if(money > 1500000){
+            money -= 1500000;
+            graduate();
+            return true;
+        }
+        break;
+    }
+    return false;
+}
+
+void Model::graduate(){
+
+}
+
+int Model::getLevel(){
+    return this->level;
+}
+
+int Model::getLevelMoney(){
+    switch(level){
+    case 0:
+        return 10000;
+        break;
+    case 1:
+        return 35000;
+        break;
+    case 2:
+        return 200000;
+        break;
+    case 3:
+        return 1500000;
+        break;
+    case 4:
+        return INT_MAX;
+    }
+    return 0;
+}
+
+QString Model::getLevelStatus(){
+    switch(level){
+    case 0:
+        return "Apprentice lawyer";
+        break;
+    case 1:
+        return "junior lawyer";
+        break;
+    case 2:
+        return "Intermediate Lawyer";
+        break;
+    case 3:
+        return "senior lawyer";
+        break;
+    case 4:
+        return "Graduate";
+    }
+    return 0;
+}
+
+void Model::deleteLevel(){
+    level -= 1;
+}
+
