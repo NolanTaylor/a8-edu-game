@@ -1153,6 +1153,32 @@ background-color: transparent;
          <string>Reputation: 0</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="update">
+        <property name="geometry">
+         <rect>
+          <x>80</x>
+          <y>160</y>
+          <width>93</width>
+          <height>29</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>PushButton</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="level">
+        <property name="geometry">
+         <rect>
+          <x>100</x>
+          <y>220</y>
+          <width>63</width>
+          <height>20</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>TextLabel</string>
+        </property>
+       </widget>
        <zorder>client</zorder>
        <zorder>user_desk</zorder>
        <zorder>ruleBook_pushButton</zorder>
@@ -1171,6 +1197,8 @@ background-color: transparent;
        <zorder>page_turner_2</zorder>
        <zorder>money</zorder>
        <zorder>reputation</zorder>
+       <zorder>update</zorder>
+       <zorder>level</zorder>
       </widget>
       <widget class="QWidget" name="selectClient_screen">
        <widget class="QTabWidget" name="selectClient">

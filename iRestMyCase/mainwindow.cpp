@@ -10,6 +10,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     //Make the world
+    timer = new QTimer(this);
+
 
     b2Vec2 gravity(0.0f, -9.81);
     mWorld = std::make_unique<b2World>(gravity);
@@ -168,7 +170,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
 
     //Box 2D implementation
-    //connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
+    connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
     //ui->level->setText("Apprentice lawyer"); //Add later once button added
     //QFont font = ui->level->font();
@@ -212,6 +214,9 @@ void MainWindow::restartGame(){
 
     //Reset Everything in model
     emit resetSignal();
+
+    //Start animation once user starts the game
+    timer->start(100);
 }
 
 void MainWindow::toMainMenu(){
