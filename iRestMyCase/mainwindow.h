@@ -37,7 +37,6 @@ public slots:
 
     void checkMoneyAndReputation();
     void checkUserChoose(bool truth);
-    void questionClient();
     void acceptClient();
     void rejectClient();
 
@@ -54,9 +53,10 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    void updateClicked();
+    //void updateClicked();
 
-    void on_update_released();
+    //void on_update_released();
+    void on_continue_pushButton_clicked();
 
     void title4Clicked();
 
@@ -104,5 +104,6 @@ private:
     QTimer *timer;
 
     void restart();
+
 };
 #endif // MAINWINDOW_H

@@ -18,6 +18,9 @@
         <file>img/client3.png</file>
         <file>img/tempMaxwell.png</file>
         <file>img/clicknoise.wav</file>
+
+        <file>img/carwithgolfball.png</file>
+
         <file>img/utah_code.jpg</file>
         <file>img/business.png</file>
         <file>img/CEO.png</file>
@@ -30,5 +33,6 @@
         <file>img/paper_turn.png</file>
         <file>img/paper_turn_trans.png</file>
         <file>img/final_page_turn.png</file>
+
     </qresource>
 </RCC>

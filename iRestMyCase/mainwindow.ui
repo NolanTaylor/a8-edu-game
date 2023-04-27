@@ -24,7 +24,7 @@
        <string notr="true">background-color: rgb(255, 243, 226);</string>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>4</number>
       </property>
       <widget class="QWidget" name="menu_screen">
        <widget class="StartMenu" name="start_menu" native="true">
@@ -1078,6 +1078,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier';&quot;&gt;#PLACEHOLDER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
+
        <widget class="QPushButton" name="page_turner">
         <property name="geometry">
          <rect>
