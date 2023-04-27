@@ -129,8 +129,6 @@ public:
     QTextBrowser *dialouge;
     QPushButton *page_turner;
     QPushButton *page_turner_2;
-    QLabel *money;
-    QLabel *reputation;
     QPushButton *promote;
     QLabel *level;
     QLabel *user_desk;
@@ -153,6 +151,18 @@ public:
     QGridLayout *gridLayout_4;
     QPushButton *continue_pushButton;
     QLabel *textBrowser;
+    QWidget *lose_screen;
+    QGridLayout *gridLayout_6;
+    QPushButton *pushButton;
+    QLabel *label_18;
+    QWidget *summary_screen;
+    QGridLayout *gridLayout_7;
+    QLabel *payment_total;
+    QLabel *reputation;
+    QLabel *money_loss;
+    QLabel *money;
+    QLabel *promote_cost;
+    QPushButton *nextRound;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -614,7 +624,7 @@ public:
         ruleBook->addTab(tab_4, QString());
         ruleBook_pushButton = new QPushButton(main_screen);
         ruleBook_pushButton->setObjectName("ruleBook_pushButton");
-        ruleBook_pushButton->setGeometry(QRect(800, 210, 161, 211));
+        ruleBook_pushButton->setGeometry(QRect(810, 320, 161, 211));
         ruleBook_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "background-image: url(:/resources/img/rule_book.png);\n"
 "background-repeat: none;\n"
@@ -629,7 +639,7 @@ public:
 "background-repeat: none;"));
         newClient_pushButton = new QPushButton(main_screen);
         newClient_pushButton->setObjectName("newClient_pushButton");
-        newClient_pushButton->setGeometry(QRect(810, 10, 131, 41));
+        newClient_pushButton->setGeometry(QRect(80, 470, 131, 41));
         menu_pushButton = new QPushButton(main_screen);
         menu_pushButton->setObjectName("menu_pushButton");
         menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
@@ -686,29 +696,23 @@ public:
         page_turner_2 = new QPushButton(main_screen);
         page_turner_2->setObjectName("page_turner_2");
         page_turner_2->setGeometry(QRect(340, 460, 61, 61));
-        page_turner_2->setStyleSheet(QString::fromUtf8("border-image: url(:/resources/img/final_page_turn.png);\n"
+        page_turner_2->setStyleSheet(QString::fromUtf8("border-image: url(:/resources/img/final_page_turn_flip.png);\n"
 "background-color: transparent;\n"
 ""));
-        money = new QLabel(main_screen);
-        money->setObjectName("money");
-        money->setGeometry(QRect(10, 10, 81, 20));
-        reputation = new QLabel(main_screen);
-        reputation->setObjectName("reputation");
-        reputation->setGeometry(QRect(10, 30, 81, 20));
         promote = new QPushButton(main_screen);
         promote->setObjectName("promote");
         promote->setGeometry(QRect(0, 50, 75, 24));
         level = new QLabel(main_screen);
         level->setObjectName("level");
-        level->setGeometry(QRect(110, 10, 181, 31));
+        level->setGeometry(QRect(10, 10, 181, 31));
         user_desk = new QLabel(main_screen);
         user_desk->setObjectName("user_desk");
         user_desk->setEnabled(true);
-        user_desk->setGeometry(QRect(-10, 320, 991, 441));
+        user_desk->setGeometry(QRect(-10, 420, 991, 161));
         user_desk->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/desk.png")));
         screens->addWidget(main_screen);
-        user_desk->raise();
         client->raise();
+        user_desk->raise();
         ruleBook_pushButton->raise();
         closeRules_pushButton->raise();
         newClient_pushButton->raise();
@@ -722,8 +726,6 @@ public:
         ruleBook->raise();
         page_turner->raise();
         page_turner_2->raise();
-        money->raise();
-        reputation->raise();
         level->raise();
         promote->raise();
         selectClient_screen = new QWidget();
@@ -803,6 +805,79 @@ public:
         gridLayout_4->addWidget(textBrowser, 0, 0, 1, 2);
 
         screens->addWidget(end_screen);
+        lose_screen = new QWidget();
+        lose_screen->setObjectName("lose_screen");
+        lose_screen->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(55, 13, 13, 255), stop:1 rgba(139, 0, 0, 255));"));
+        gridLayout_6 = new QGridLayout(lose_screen);
+        gridLayout_6->setObjectName("gridLayout_6");
+        pushButton = new QPushButton(lose_screen);
+        pushButton->setObjectName("pushButton");
+        pushButton->setMinimumSize(QSize(0, 100));
+        pushButton->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));\n"
+"font: 700 15pt \"Courier\";\n"
+"color: rgb(255, 237, 237);"));
+
+        gridLayout_6->addWidget(pushButton, 1, 0, 1, 1);
+
+        label_18 = new QLabel(lose_screen);
+        label_18->setObjectName("label_18");
+        label_18->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));\n"
+"font: 700 15pt \"Courier\";\n"
+"color: rgb(255, 237, 237);"));
+        label_18->setAlignment(Qt::AlignCenter);
+
+        gridLayout_6->addWidget(label_18, 0, 0, 1, 1);
+
+        screens->addWidget(lose_screen);
+        summary_screen = new QWidget();
+        summary_screen->setObjectName("summary_screen");
+        gridLayout_7 = new QGridLayout(summary_screen);
+        gridLayout_7->setObjectName("gridLayout_7");
+        payment_total = new QLabel(summary_screen);
+        payment_total->setObjectName("payment_total");
+        payment_total->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(payment_total, 0, 0, 1, 1);
+
+        reputation = new QLabel(summary_screen);
+        reputation->setObjectName("reputation");
+        reputation->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(reputation, 0, 1, 1, 1);
+
+        money_loss = new QLabel(summary_screen);
+        money_loss->setObjectName("money_loss");
+        money_loss->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(money_loss, 1, 0, 1, 1);
+
+        money = new QLabel(summary_screen);
+        money->setObjectName("money");
+        money->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(money, 2, 0, 1, 1);
+
+        promote_cost = new QLabel(summary_screen);
+        promote_cost->setObjectName("promote_cost");
+        promote_cost->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(promote_cost, 3, 0, 1, 1);
+
+        nextRound = new QPushButton(summary_screen);
+        nextRound->setObjectName("nextRound");
+        nextRound->setMinimumSize(QSize(0, 200));
+        nextRound->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
+"background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 187, 164, 255), stop:1 rgba(255, 255, 255, 255));\n"
+"color: rgb(127, 74, 28);"));
+
+        gridLayout_7->addWidget(nextRound, 3, 1, 1, 1);
+
+        screens->addWidget(summary_screen);
 
         verticalLayout_2->addWidget(screens);
 
@@ -818,7 +893,7 @@ public:
         retranslateUi(MainWindow);
 
         screens->setCurrentIndex(1);
-        ruleBook->setCurrentIndex(2);
+        ruleBook->setCurrentIndex(1);
         titles->setCurrentIndex(15);
         selectClient->setCurrentIndex(0);
         instruction_tab->setCurrentIndex(1);
@@ -933,8 +1008,6 @@ public:
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier';\">#PLACEHOLDER</span></p></body></html>", nullptr));
         page_turner->setText(QString());
         page_turner_2->setText(QString());
-        money->setText(QCoreApplication::translate("MainWindow", "Money: 0", nullptr));
-        reputation->setText(QCoreApplication::translate("MainWindow", "Reputation: 0", nullptr));
         promote->setText(QCoreApplication::translate("MainWindow", "promote", nullptr));
         level->setText(QCoreApplication::translate("MainWindow", "level", nullptr));
         user_desk->setText(QString());
@@ -968,6 +1041,14 @@ public:
         instr_menu_pushButton->setText(QCoreApplication::translate("MainWindow", "MENU", nullptr));
         continue_pushButton->setText(QCoreApplication::translate("MainWindow", "CONTINUE...", nullptr));
         textBrowser->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "RESTART GAME", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "YOU'RE BANKRUPT!", nullptr));
+        payment_total->setText(QCoreApplication::translate("MainWindow", "Payment: ", nullptr));
+        reputation->setText(QCoreApplication::translate("MainWindow", "Reputation: 0", nullptr));
+        money_loss->setText(QCoreApplication::translate("MainWindow", "Money lost: ", nullptr));
+        money->setText(QCoreApplication::translate("MainWindow", "NET EARNINGS: ", nullptr));
+        promote_cost->setText(QCoreApplication::translate("MainWindow", "Cost for next promotion:", nullptr));
+        nextRound->setText(QCoreApplication::translate("MainWindow", "NEXT ROUND", nullptr));
     } // retranslateUi
 
 };

@@ -50,6 +50,9 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
+    ui->accept_pushButton->hide();
+    ui->reject_pushButton->hide();
+
 
     ui->dialougeHistory->hide();
     ui->dialougeHistory->clear();
@@ -120,7 +123,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->reject_pushButton, &QPushButton::clicked, this, &MainWindow::rejectClient);
     connect(ui->next_pushButton, &QPushButton::clicked, this, &MainWindow::nextDialogue);
     connect(ui->history_pushButton, &QPushButton::clicked, this, &MainWindow::openDialougeHistory);
-    connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::nextRound);
+    connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::toSummary);
+    connect(ui->nextRound, &QPushButton::clicked, this, &MainWindow::nextRound);
 
     //Send a full reset to the model
     connect(this, &MainWindow::resetSignal, &model, &Model::reset);
@@ -160,12 +164,18 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     //Box 2D implementation
     connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
+    //Game over
+    connect(&model, &Model::gameOver, this, &MainWindow::endGame);
+
     ui->level->setText("Apprentice lawyer"); //Add later once button added
     QFont font = ui->level->font();
     font.setPointSize(12);
     font.setBold(true);
     ui->level->setFont(font);
 
+}
+void MainWindow::endGame(){
+    ui->screens->setCurrentIndex(5);
 }
 
 void MainWindow::playClickSound()
@@ -271,17 +281,21 @@ void MainWindow::nextClient()
 
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
+    ui->newClient_pushButton->hide();
 
     ui->next_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
+
+    ui->next_pushButton->show();
+    ui->accept_pushButton->show();
+    ui->reject_pushButton->show();
 
     QPixmap client_img(model->clients[client_index]->image);
 
     int w = ui->client->width();
     int h = ui->client->height();
     ui->client->setPixmap(client_img. scaled(w,h,Qt::KeepAspectRatio));
-    ui->user_desk->hide();
     ui->client->show();
     ui->next_pushButton->show();
     ui->history_pushButton->show();
@@ -352,9 +366,14 @@ void MainWindow::replaceClient()
 {
 
     ui->newClient_pushButton->setDisabled(false);
+    ui->newClient_pushButton->show();
+
 
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
+
+    ui->accept_pushButton->hide();
+    ui->reject_pushButton->hide();
 
     model->clients.removeAt(client_index);
 
@@ -487,12 +506,14 @@ void MainWindow::promoteClicked()
 }
 
 
-void MainWindow::on_continue_pushButton_clicked()
+void MainWindow::toSummary()
 {
     // model->restart();
 
     ui->promote->setText("UPDATE");
     ui->level->setText(model->getLevelStatus());
+
+    ui->screens->setCurrentIndex(6);
 }
 
 
@@ -688,3 +709,5 @@ void MainWindow::on_title4Button_9_clicked()
     ui->ruleBook->setCurrentIndex(2);
     ui->titles->setCurrentIndex(15);
 }
+
+
