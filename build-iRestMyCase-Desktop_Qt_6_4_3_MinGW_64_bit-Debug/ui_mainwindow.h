@@ -695,7 +695,7 @@ public:
 ""));
         page_turner_2 = new QPushButton(main_screen);
         page_turner_2->setObjectName("page_turner_2");
-        page_turner_2->setGeometry(QRect(340, 460, 61, 61));
+        page_turner_2->setGeometry(QRect(330, 460, 61, 61));
         page_turner_2->setStyleSheet(QString::fromUtf8("border-image: url(:/resources/img/final_page_turn_flip.png);\n"
 "background-color: transparent;\n"
 ""));

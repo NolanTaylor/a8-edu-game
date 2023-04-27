@@ -40,6 +40,8 @@ public:
 
 public slots:
     void reset();
+    void calculateAccept(int index);
+    void calculateReject(int index);
 signals:
     void gameOver();
 private:

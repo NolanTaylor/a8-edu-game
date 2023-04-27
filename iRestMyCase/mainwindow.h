@@ -35,8 +35,7 @@ public slots:
     void ruleBookClicked();
     void ruleBookClosed();
 
-    void checkMoneyAndReputation();
-    void checkUserChoose(bool truth);
+    void updateMoneyAndReputation();
     void acceptClient();
     void rejectClient();
 
@@ -49,6 +48,8 @@ public slots:
     void clientChosen(int);
 signals:
     void resetSignal();
+    void calculateAccept(int index);
+    void calculateReject(int index);
 private slots:
     void displayOutcome();
     void nextRound();

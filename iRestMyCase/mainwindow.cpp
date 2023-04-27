@@ -167,6 +167,10 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     //Game over
     connect(&model, &Model::gameOver, this, &MainWindow::endGame);
 
+    connect(this, &MainWindow::calculateAccept, &model, &Model::calculateAccept);
+    connect(this, &MainWindow::calculateReject, &model, &Model::calculateReject);
+
+
     ui->level->setText("Apprentice lawyer"); //Add later once button added
     QFont font = ui->level->font();
     font.setPointSize(12);
@@ -306,7 +310,7 @@ void MainWindow::nextClient()
 }
 
 
-void MainWindow::checkMoneyAndReputation(){
+void MainWindow::updateMoneyAndReputation(){
    QString currentMoney = "Money: " + QString::number(model->getMoney());
    ui->money->setText(currentMoney);
    if(model->getMoney() < 0){
@@ -329,37 +333,42 @@ void MainWindow::checkMoneyAndReputation(){
    ui->reputation->setText(model->getReputationStatus());
 }
 
-void MainWindow::checkUserChoose(bool truth){
-   // implement money/reputation
-   int commission = model->clients[client_index]->payment;
-   if(truth){ // When the user judges correctly.
-        model->addMoney(commission * model->getReputation());
-        model->changeReputation(model->getReputation()*1.1);
-        qDebug() << model->getReputation();
-   }else{ // When the user judges incorrectly
-        model->deleteMoney(commission);
-        model->changeReputation(model->getReputation()*0.9);
-   }
-   checkMoneyAndReputation();
-}
+//void MainWindow::checkUserChoose(bool truth){
+//   // implement money/reputation
+//   int commission = model->clients[client_index]->payment;
+//   if(truth){ // When the user judges correctly.
+//        model->addMoney(commission * model->getReputation());
+//        model->changeReputation(model->getReputation()*1.1);
+//        qDebug() << model->getReputation();
+//   }else{ // When the user judges incorrectly
+//        model->deleteMoney(commission);
+//        model->changeReputation(model->getReputation()*0.9);
+//   }
+//   checkMoneyAndReputation();
+//}
 
 void MainWindow::acceptClient()
 {
-   checkUserChoose(model->clients[client_index]->viabililty); // Need to add case is true or false
+
+   //Emit current client to model -> to determine viaible
+   emit calculateAccept(this->client_index);
    ui->textBrowser->setText(model->clients[client_index]->explanationAccept);
    // QFont(const QString &family, int pointSize = -1, int weight = -1, bool italic = false)
    ui->textBrowser->setFont(QFont("Times", 15, QFont::Bold));
    ui->textBrowser->setAlignment(Qt::AlignCenter);
    ui->screens->setCurrentIndex(4);
+
 }
 
 void MainWindow::rejectClient()
 {
-    checkUserChoose(model->clients[client_index]->viabililty); // Need to add case is true or false
+   emit calculateReject(this->client_index);
+
     ui->textBrowser->setText(model->clients[client_index]->explanationReject);
     ui->textBrowser->setFont(QFont("Times", 15, QFont::Bold));
     ui->textBrowser->setAlignment(Qt::AlignCenter);
     ui->screens->setCurrentIndex(4);
+
 }
 
 void MainWindow::replaceClient()
@@ -509,11 +518,14 @@ void MainWindow::promoteClicked()
 void MainWindow::toSummary()
 {
     // model->restart();
+    updateMoneyAndReputation();
 
     ui->promote->setText("UPDATE");
     ui->level->setText(model->getLevelStatus());
 
     ui->screens->setCurrentIndex(6);
+
+
 }
 
 

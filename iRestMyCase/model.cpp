@@ -170,10 +170,10 @@ void Model::changeReputation(double value){
 void Model::restart(){
     money = 0;
     reputation = 1;
-//    int iNum = clients.count();
-//    for(int i = 0; i < iNum; i++){
-//        delete(clients.takeAt(0));
-//    }
+   int iNum = clients.count();
+    for(int i = 0; i < iNum; i++){
+        delete(clients.takeAt(0));
+    }
 }
 
 QString Model::getReputationStatus(){
@@ -190,7 +190,7 @@ QString Model::getReputationStatus(){
     }else if(reputation < 0.04){
         return "Reputation status:    everyone spurned";
     }else if (reputation >= 17.45){
-        return "Reputation status:    everyone knows";
+        return "Reputation status:    Better Call Saul";
     }else{
         return "Error";
     }
@@ -282,5 +282,28 @@ QString Model::getLevelStatus(){
 
 void Model::deleteLevel(){
     level -= 1;
+}
+void Model::calculateAccept(int index){
+    // implement money/reputation
+    int commission = clients[index]->payment;
+    if(clients[index]->viabililty){ // When the user judges correctly.
+        addMoney(commission * reputation);
+        changeReputation(reputation*1.1);
+        //qDebug() << model->getReputation();
+    }else{ // When the user judges incorrectly
+        deleteMoney(commission);
+        changeReputation(reputation*0.9);
+    }
+}
+void Model::calculateReject(int index){
+    int commission = clients[index]->payment;
+    if(!clients[index]->viabililty){ // When the user judges correctly.
+        //addMoney(commission * reputation); do nothing
+        changeReputation(reputation*1.1);
+        //qDebug() << model->getReputation();
+    }else{ // When the user judges incorrectly
+        //deleteMoney(commission);
+        changeReputation(reputation*0.9);
+    }
 }
 
