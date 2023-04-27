@@ -30,7 +30,7 @@ public:
     void restart();
     QString getReputationStatus();
 
-    bool promote_pushButton();
+    bool update();
     void graduate();
     int getLevel();
     void deleteLevel();
@@ -45,11 +45,10 @@ signals:
 private:
     int money;
     double reputation;
+    int level;
 
     void fillClients();
     void fillUnusedClients();
-
-    int level;
 };
 
 #endif // MODEL_H

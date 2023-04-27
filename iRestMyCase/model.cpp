@@ -14,7 +14,7 @@ Model::Model(QObject *parent)
     fillClients();
 
     //Adding a timer
-   // connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
+    // connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
 
 }
 
@@ -92,15 +92,15 @@ void Model::fillUnusedClients()
 
     Client *client4 = new Client;
     unusedClients.push_back(client4);
-    unusedClients[4]->name = "Gertrude Chutes";
+    unusedClients[4]->name = "Spin 'Apache Attack Helicopter' Jim";
     unusedClients[4]->image = ":/resources/img/carwithgolfball.png";
-    unusedClients[4]->dialogue.push_back("I went parachute jumping and a police officer said it was illegal.");
-    unusedClients[4]->dialogue.push_back("I told him I had it approved by the mayor and the papers to show it");
-    unusedClients[4]->dialogue.push_back("But the police officer didnt believe me so I want to sue!");
-    unusedClients[4]->dialogue.push_back("Im not going back!");
+    unusedClients[4]->dialogue.push_back("I was minding me own business in the park, spinning around like a uhh..");
+    unusedClients[4]->dialogue.push_back("Anyways its legal to spin around! Whats the big idea!");
+    unusedClients[4]->dialogue.push_back("It's not my fault that guy was in the way when i was going mach 6 spinning at 4000 rpm");
+    unusedClients[4]->dialogue.push_back("Its not my fault so help me not get sued!");
     unusedClients[4]->viabililty = true;
-    unusedClients[4]->explanationAccept = "Correct! Expressed permission from the mayor allows you to parachute \naccording to Section 9.20.010";
-    unusedClients[4]->explanationReject = "Try again! Take a look at Section 9.20.010";
+    unusedClients[4]->explanationAccept = "incorrect!";
+    unusedClients[4]->explanationReject = "Yep! As cool as this kid is he still committed a Class B misdemeanor according to the section 4.020.69";
 
     Client *client5 = new Client;
     unusedClients.push_back(client5);
@@ -192,7 +192,7 @@ QString Model::getReputationStatus(){
     }
 }
 
-bool Model::promote_pushButton(){
+bool Model::update(){
     switch (level) {
     case 0:
         if(money > 10000){
@@ -279,4 +279,3 @@ QString Model::getLevelStatus(){
 void Model::deleteLevel(){
     level -= 1;
 }
-
