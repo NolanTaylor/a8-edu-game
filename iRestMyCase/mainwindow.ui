@@ -80,7 +80,7 @@ background-color: rgb(36, 64, 103);
          <enum>QTabWidget::Triangular</enum>
         </property>
         <property name="currentIndex">
-         <number>2</number>
+         <number>1</number>
         </property>
         <property name="tabsClosable">
          <bool>false</bool>
@@ -997,8 +997,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <widget class="QPushButton" name="ruleBook_pushButton">
         <property name="geometry">
          <rect>
-          <x>800</x>
-          <y>210</y>
+          <x>810</x>
+          <y>320</y>
           <width>161</width>
           <height>211</height>
          </rect>
@@ -1036,8 +1036,8 @@ background-repeat: none;</string>
        <widget class="QPushButton" name="newClient_pushButton">
         <property name="geometry">
          <rect>
-          <x>810</x>
-          <y>10</y>
+          <x>80</x>
+          <y>470</y>
           <width>131</width>
           <height>41</height>
          </rect>
@@ -1215,45 +1215,19 @@ background-color: transparent;
        <widget class="QPushButton" name="page_turner_2">
         <property name="geometry">
          <rect>
-          <x>340</x>
+          <x>330</x>
           <y>460</y>
           <width>61</width>
           <height>61</height>
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">border-image: url(:/resources/img/final_page_turn.png);
+         <string notr="true">border-image: url(:/resources/img/final_page_turn_flip.png);
 background-color: transparent;
 </string>
         </property>
         <property name="text">
          <string/>
-        </property>
-       </widget>
-       <widget class="QLabel" name="money">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>10</y>
-          <width>81</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Money: 0</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="reputation">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>30</y>
-          <width>81</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Reputation: 0</string>
         </property>
        </widget>
        <widget class="QPushButton" name="promote">
@@ -1272,7 +1246,7 @@ background-color: transparent;
        <widget class="QLabel" name="level">
         <property name="geometry">
          <rect>
-          <x>110</x>
+          <x>10</x>
           <y>10</y>
           <width>181</width>
           <height>31</height>
@@ -1289,20 +1263,20 @@ background-color: transparent;
         <property name="geometry">
          <rect>
           <x>-10</x>
-          <y>320</y>
+          <y>420</y>
           <width>991</width>
-          <height>441</height>
+          <height>161</height>
          </rect>
         </property>
         <property name="text">
          <string/>
         </property>
         <property name="pixmap">
-         <pixmap>:/resources/img/desk.png</pixmap>
+         <pixmap resource="resource.qrc">:/resources/img/desk.png</pixmap>
         </property>
        </widget>
-       <zorder>user_desk</zorder>
        <zorder>client</zorder>
+       <zorder>user_desk</zorder>
        <zorder>ruleBook_pushButton</zorder>
        <zorder>closeRules_pushButton</zorder>
        <zorder>newClient_pushButton</zorder>
@@ -1316,8 +1290,6 @@ background-color: transparent;
        <zorder>ruleBook</zorder>
        <zorder>page_turner</zorder>
        <zorder>page_turner_2</zorder>
-       <zorder>money</zorder>
-       <zorder>reputation</zorder>
        <zorder>level</zorder>
        <zorder>promote</zorder>
       </widget>
@@ -1483,6 +1455,123 @@ color: rgb(12, 65, 16);</string>
          <widget class="QLabel" name="textBrowser">
           <property name="text">
            <string>TextLabel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="lose_screen">
+       <property name="styleSheet">
+        <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(55, 13, 13, 255), stop:1 rgba(139, 0, 0, 255));</string>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_6">
+        <item row="1" column="0">
+         <widget class="QPushButton" name="pushButton">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>100</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));
+font: 700 15pt &quot;Courier&quot;;
+color: rgb(255, 237, 237);</string>
+          </property>
+          <property name="text">
+           <string>RESTART GAME</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_18">
+          <property name="styleSheet">
+           <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));
+font: 700 15pt &quot;Courier&quot;;
+color: rgb(255, 237, 237);</string>
+          </property>
+          <property name="text">
+           <string>YOU'RE BANKRUPT!</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="summary_screen">
+       <layout class="QGridLayout" name="gridLayout_7">
+        <item row="0" column="0">
+         <widget class="QLabel" name="payment_total">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>Payment: </string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLabel" name="reputation">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>Reputation: 0</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="money_loss">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>Money lost: </string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="money">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>NET EARNINGS: </string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="promote_cost">
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>Cost for next promotion:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="nextRound">
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>200</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">font: 12pt &quot;Courier&quot;;
+background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 187, 164, 255), stop:1 rgba(255, 255, 255, 255));
+color: rgb(127, 74, 28);</string>
+          </property>
+          <property name="text">
+           <string>NEXT ROUND</string>
           </property>
          </widget>
         </item>

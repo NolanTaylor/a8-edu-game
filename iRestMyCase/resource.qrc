@@ -41,5 +41,6 @@
         <file>img/kid_color.png</file>
         <file>img/rule_book.png</file>
         <file>img/worker_color.png</file>
+        <file>img/desk.png</file>
     </qresource>
 </RCC>

@@ -41,7 +41,7 @@ public:
 public slots:
     void reset();
 signals:
-
+    void gameOver();
 private:
     int money;
     double reputation;

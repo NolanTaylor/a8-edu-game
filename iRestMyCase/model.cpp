@@ -157,6 +157,10 @@ void Model::equalMoney(int value){
 
 void Model::deleteMoney(int value){
     money -= value;
+
+    if (money<= 0){
+        emit gameOver();
+    }
 }
 
 void Model::changeReputation(double value){
