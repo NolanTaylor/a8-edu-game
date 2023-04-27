@@ -11,15 +11,15 @@ public:
     explicit Client(QObject *parent = nullptr);
     Client(const Client&);
     Client& operator=(const Client&);
-    Client (QString name, int ID, double viability, int payment, QPixmap image, QObject *parent = nullptr);
+    Client (QString name, int ID, bool viability, int payment, QPixmap image, QObject *parent = nullptr);
     QString name;
     int ID;
+    QString explanationAccept;
+    QString explanationReject;
     //Parse through a text file for each character
     QVector<QString> dialogue;
-    QVector<QString> dialogue_q; // dialogue when questioned
-    QVector<QString> dialogue_a; // dialogue when accepted
-    QVector<QString> dialogue_r; // dialogue when rejected
-    double viabililty;
+
+    bool viabililty;
     int payment;
     QString image;
 
