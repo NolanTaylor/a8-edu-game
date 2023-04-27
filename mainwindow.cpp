@@ -480,7 +480,7 @@ void MainWindow::promoteClicked()
 //        QString currentMoney = "Money: " + QString::number(model->getMoney());
 //        ui->money->setText(currentMoney);
 //    }else{
-//        ui->promote_pushButton->setText("lack of money");
+//       ui->promote->setText("lack of money");
 //       ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
 
 //    }
@@ -491,7 +491,7 @@ void MainWindow::on_continue_pushButton_clicked()
 {
     // model->restart();
 
-    ui->promote_pushButton->setText("UPDATE");
+    ui->promote->setText("UPDATE");
     ui->level->setText(model->getLevelStatus());
 }
 
@@ -628,7 +628,7 @@ void MainWindow::characterAnimationOnTick(){
         QPoint destBox;
         destBox.setX(box.getBody()->GetPosition().x);
         destBox.setY(box.getBody()->GetPosition().y);
-        ui->promote_pushButton->move(destBox);
+        ui->promote->move(destBox);
     }
 
 }

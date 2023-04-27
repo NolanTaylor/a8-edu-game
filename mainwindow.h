@@ -102,7 +102,6 @@ private slots:
 
     void on_title4Button_9_clicked();
 
-
 private:
     Ui::MainWindow *ui;
     Model *model; // (rachel version)
