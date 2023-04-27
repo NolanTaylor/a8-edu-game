@@ -10,6 +10,7 @@ Box::~Box(){
 }
 
 void Box::init(b2World* world, QVector2D& position, QVector2D& dimensions){
+    this->dimensions = dimensions;
     //Make the body
     b2BodyDef bodyDef;
     bodyDef.type = b2_dynamicBody;

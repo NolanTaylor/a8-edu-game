@@ -79,6 +79,9 @@ private slots:
 
     void titlesScreenChanged(int arg1);
 
+    void characterAnimationOnTick();
+
+
 private:
     Ui::MainWindow *ui;
     Model *model; // (rachel version)
@@ -92,7 +95,10 @@ private:
     void nextClient();
     void replaceClient();
 
+    //Box2D implementation
     std::unique_ptr<b2World> mWorld;
     std::vector<Box> mBoxes;
+    QTimer *timer;
+
 };
 #endif // MAINWINDOW_H

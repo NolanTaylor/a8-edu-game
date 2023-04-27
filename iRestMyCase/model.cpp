@@ -14,7 +14,7 @@ Model::Model(QObject *parent)
     fillClients();
 
     //Adding a timer
-    connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
+   // connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
 
 }
 

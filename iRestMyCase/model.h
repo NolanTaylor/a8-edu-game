@@ -27,7 +27,6 @@ public:
     void deleteMoney(int value);
     void changeReputation(double value);
     void restart();
-    void characterAnimationOnTick();
 
 public slots:
     void reset();
@@ -39,9 +38,6 @@ private:
 
     void fillClients();
     void fillUnusedClients();
-
-    QTimer *timer;
-
 };
 
 #endif // MODEL_H

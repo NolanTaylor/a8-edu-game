@@ -32,6 +32,16 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
     newBox.init(mWorld.get(), position, direction);
 
+    for (auto& box: mBoxes){
+        QVector4D destRect;
+        destRect.setX(box.getBody()->GetPosition().x);
+        destRect.setY(box.getBody()->GetPosition().y);
+        destRect.setZ(box.getDimensions().x());
+        destRect.setW(box.getDimensions().y());
+        //box.getBody()->GetAngle();
+
+    }
+
     this->model = &model;
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
@@ -157,7 +167,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->titles, &QStackedWidget::currentChanged, this, &MainWindow::titlesScreenChanged);
 
 
-
+    //Box 2D implementation
+    connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
 
 }
 
@@ -601,4 +612,7 @@ void MainWindow::titlesScreenChanged(int arg1)
         ui->page_turner_2->setEnabled(true);
     }
 }
+//Controls the Box2D implementation
+void MainWindow::characterAnimationOnTick(){
 
+}
