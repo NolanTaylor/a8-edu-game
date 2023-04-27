@@ -14,7 +14,6 @@
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QLabel>
-#include <QtWidgets/QListWidget>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QPushButton>
@@ -22,7 +21,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 #include <startmenu.h>
@@ -35,110 +33,44 @@ public:
     QWidget *centralwidget;
     QVBoxLayout *verticalLayout_2;
     QStackedWidget *screens;
-    QWidget *menu_screen;
+    QWidget *screensPage1;
     StartMenu *start_menu;
-    QWidget *main_screen;
+    QWidget *screensPage2;
     QLabel *client;
+    QLabel *user_desk;
     QTabWidget *ruleBook;
     QWidget *tab;
     QHBoxLayout *horizontalLayout;
     QLabel *front_page;
-    QLabel *contents;
     QWidget *tab_2;
     QGridLayout *gridLayout;
-    QPushButton *title9Button;
-    QLabel *title_4;
-    QLabel *title_3;
-    QPushButton *title7Button;
-    QLabel *title_7;
-    QPushButton *title6Button;
-    QPushButton *title8Button;
-    QPushButton *title12Button;
-    QPushButton *title10Button;
-    QPushButton *title4Button;
-    QPushButton *title4Button_2;
-    QLabel *title_5;
-    QLabel *title_6;
-    QLabel *title_2;
-    QPushButton *title11Button;
-    QLabel *title_1;
-    QLabel *title_8;
-    QLabel *title_9;
-    QPushButton *title4Button_3;
-    QPushButton *title4Button_4;
-    QPushButton *title4Button_5;
-    QPushButton *title4Button_6;
-    QPushButton *title4Button_7;
-    QPushButton *title4Button_8;
-    QPushButton *title4Button_9;
-    QLabel *title_10;
-    QLabel *title_11;
-    QLabel *title_12;
-    QLabel *title_13;
-    QLabel *title_14;
-    QLabel *title_15;
-    QLabel *title_16;
+    QLabel *rules1;
     QWidget *tab_3;
     QGridLayout *gridLayout_2;
-    QStackedWidget *titles;
-    QWidget *page_1;
-    QLabel *label_2;
-    QWidget *page_2_;
-    QLabel *label_3;
-    QWidget *page_3_;
-    QLabel *label_4;
-    QWidget *page_4_;
-    QLabel *label_5;
-    QWidget *page_5_;
-    QLabel *label_6;
-    QWidget *page_6_;
-    QLabel *label_7;
-    QWidget *page_7_;
-    QLabel *label_8;
-    QWidget *page_8_;
-    QLabel *label_9;
-    QWidget *page_9;
-    QLabel *label_10;
-    QWidget *page_10;
-    QLabel *label_11;
-    QWidget *page_11;
-    QLabel *label_12;
-    QWidget *page_12;
-    QLabel *label_13;
-    QWidget *page_13;
-    QLabel *label_14;
-    QWidget *page_14;
-    QLabel *label_15;
-    QWidget *page;
-    QLabel *label_16;
-    QWidget *page_2;
-    QLabel *label_17;
+    QLabel *rules2;
     QWidget *tab_4;
     QGridLayout *gridLayout_3;
-    QTextEdit *textEdit_2;
-    QListWidget *listWidget;
+    QLabel *map;
     QPushButton *ruleBook_pushButton;
     QPushButton *closeRules_pushButton;
+    QPushButton *question_pushButton;
     QPushButton *newClient_pushButton;
     QPushButton *menu_pushButton;
     QPushButton *accept_pushButton;
     QPushButton *reject_pushButton;
-    QPushButton *history_pushButton;
-    QTextBrowser *dialougeHistory;
     QPushButton *next_pushButton;
+    QTextBrowser *dialougeHistory;
     QTextBrowser *dialouge;
-    QPushButton *page_turner;
-    QPushButton *page_turner_2;
-    QPushButton *promote;
-    QLabel *level;
-    QLabel *user_desk;
     QWidget *selectClient_screen;
+
+    QWidget *screensPage3;
+    QPushButton *addClient_pushButton;
     QTabWidget *selectClient;
     QWidget *tab_8;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QPushButton *selectClient_pushButton;
-    QWidget *instruction_screen;
+    QWidget *screensPage4;
     QGridLayout *gridLayout_5;
     QStackedWidget *instruction_tab;
     QWidget *instruction_page1;
@@ -147,22 +79,10 @@ public:
     QTextBrowser *instruction_text;
     QPushButton *instr_nextPage_pushButton;
     QPushButton *instr_menu_pushButton;
-    QWidget *end_screen;
+    QWidget *screenpage5;
     QGridLayout *gridLayout_4;
     QPushButton *continue_pushButton;
-    QLabel *textBrowser;
-    QWidget *lose_screen;
-    QGridLayout *gridLayout_6;
-    QPushButton *pushButton;
-    QLabel *label_18;
-    QWidget *summary_screen;
-    QGridLayout *gridLayout_7;
-    QLabel *payment_total;
-    QLabel *reputation;
-    QLabel *money_loss;
-    QLabel *money;
-    QLabel *promote_cost;
-    QPushButton *nextRound;
+    QTextBrowser *textBrowser;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -170,569 +90,170 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(995, 611);
-        MainWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(213, 197, 170);"));
+        MainWindow->resize(1003, 650);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
         verticalLayout_2 = new QVBoxLayout(centralwidget);
         verticalLayout_2->setObjectName("verticalLayout_2");
         screens = new QStackedWidget(centralwidget);
         screens->setObjectName("screens");
-        screens->setStyleSheet(QString::fromUtf8("background-color: rgb(255, 243, 226);"));
-        menu_screen = new QWidget();
-        menu_screen->setObjectName("menu_screen");
-        start_menu = new StartMenu(menu_screen);
+        screens->setStyleSheet(QString::fromUtf8(""));
+        screensPage1 = new QWidget();
+        screensPage1->setObjectName("screensPage1");
+        start_menu = new StartMenu(screensPage1);
         start_menu->setObjectName("start_menu");
         start_menu->setGeometry(QRect(120, 0, 731, 551));
-        screens->addWidget(menu_screen);
-        main_screen = new QWidget();
-        main_screen->setObjectName("main_screen");
-        client = new QLabel(main_screen);
+        screens->addWidget(screensPage1);
+        screensPage2 = new QWidget();
+        screensPage2->setObjectName("screensPage2");
+        client = new QLabel(screensPage2);
         client->setObjectName("client");
-        client->setGeometry(QRect(0, 50, 421, 411));
-        client->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/general.png")));
-        ruleBook = new QTabWidget(main_screen);
+        client->setGeometry(QRect(30, 20, 221, 651));
+        user_desk = new QLabel(screensPage2);
+        user_desk->setObjectName("user_desk");
+        user_desk->setEnabled(true);
+        user_desk->setGeometry(QRect(-150, 300, 1301, 481));
+        user_desk->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempDesk2A8.png")));
+        ruleBook = new QTabWidget(screensPage2);
         ruleBook->setObjectName("ruleBook");
-        ruleBook->setGeometry(QRect(310, 140, 551, 381));
+        ruleBook->setGeometry(QRect(320, 170, 543, 353));
         ruleBook->setStyleSheet(QString::fromUtf8("QTabWidget::pane {\n"
 " margin: 1px,1px,1px,1px;\n"
 " border: 2px solid #020202;\n"
 " border-radius: 7px;\n"
 " padding: 1px;\n"
-"background-color: rgb(36, 64, 103);\n"
+" background-color: #E6E6E3;\n"
 "}"));
         ruleBook->setTabPosition(QTabWidget::West);
         ruleBook->setTabShape(QTabWidget::Triangular);
         ruleBook->setTabsClosable(false);
         tab = new QWidget();
         tab->setObjectName("tab");
-        tab->setStyleSheet(QString::fromUtf8("background-color: rgb(36, 64, 103);"));
         horizontalLayout = new QHBoxLayout(tab);
         horizontalLayout->setObjectName("horizontalLayout");
         front_page = new QLabel(tab);
         front_page->setObjectName("front_page");
-        front_page->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/utah_code.jpg")));
+        front_page->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempRuleBookCover.png")));
 
         horizontalLayout->addWidget(front_page);
-
-        contents = new QLabel(tab);
-        contents->setObjectName("contents");
-        contents->setMinimumSize(QSize(300, 0));
-        contents->setStyleSheet(QString::fromUtf8(""));
-
-        horizontalLayout->addWidget(contents);
 
         ruleBook->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
-        tab_2->setStyleSheet(QString::fromUtf8("background-color: rgb(36, 64, 103);"));
         gridLayout = new QGridLayout(tab_2);
         gridLayout->setObjectName("gridLayout");
-        title9Button = new QPushButton(tab_2);
-        title9Button->setObjectName("title9Button");
-        title9Button->setMaximumSize(QSize(200, 16777215));
-        title9Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
+        rules1 = new QLabel(tab_2);
+        rules1->setObjectName("rules1");
+        rules1->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempRuleBookP2A8.png")));
 
-        gridLayout->addWidget(title9Button, 4, 1, 1, 1);
-
-        title_4 = new QLabel(tab_2);
-        title_4->setObjectName("title_4");
-        title_4->setMaximumSize(QSize(50, 16777215));
-        title_4->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_4, 3, 0, 1, 1);
-
-        title_3 = new QLabel(tab_2);
-        title_3->setObjectName("title_3");
-        title_3->setMaximumSize(QSize(50, 16777215));
-        title_3->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_3, 2, 0, 1, 1);
-
-        title7Button = new QPushButton(tab_2);
-        title7Button->setObjectName("title7Button");
-        title7Button->setMaximumSize(QSize(200, 16777215));
-        title7Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title7Button, 2, 1, 1, 1);
-
-        title_7 = new QLabel(tab_2);
-        title_7->setObjectName("title_7");
-        title_7->setMaximumSize(QSize(50, 16777215));
-        title_7->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_7, 6, 0, 1, 1);
-
-        title6Button = new QPushButton(tab_2);
-        title6Button->setObjectName("title6Button");
-        title6Button->setMaximumSize(QSize(200, 16777215));
-        title6Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title6Button, 1, 1, 1, 1);
-
-        title8Button = new QPushButton(tab_2);
-        title8Button->setObjectName("title8Button");
-        title8Button->setMaximumSize(QSize(200, 16777215));
-        title8Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title8Button, 3, 1, 1, 1);
-
-        title12Button = new QPushButton(tab_2);
-        title12Button->setObjectName("title12Button");
-        title12Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title12Button, 7, 1, 1, 1);
-
-        title10Button = new QPushButton(tab_2);
-        title10Button->setObjectName("title10Button");
-        title10Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title10Button, 5, 1, 1, 1);
-
-        title4Button = new QPushButton(tab_2);
-        title4Button->setObjectName("title4Button");
-        title4Button->setMaximumSize(QSize(200, 16777215));
-        title4Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button, 0, 1, 1, 1);
-
-        title4Button_2 = new QPushButton(tab_2);
-        title4Button_2->setObjectName("title4Button_2");
-        title4Button_2->setMaximumSize(QSize(200, 16777215));
-        title4Button_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_2, 0, 3, 1, 1);
-
-        title_5 = new QLabel(tab_2);
-        title_5->setObjectName("title_5");
-        title_5->setMaximumSize(QSize(50, 16777215));
-        title_5->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_5, 4, 0, 1, 1);
-
-        title_6 = new QLabel(tab_2);
-        title_6->setObjectName("title_6");
-        title_6->setMaximumSize(QSize(50, 16777215));
-        title_6->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_6, 5, 0, 1, 1);
-
-        title_2 = new QLabel(tab_2);
-        title_2->setObjectName("title_2");
-        title_2->setMaximumSize(QSize(50, 16777215));
-        title_2->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_2, 1, 0, 1, 1);
-
-        title11Button = new QPushButton(tab_2);
-        title11Button->setObjectName("title11Button");
-        title11Button->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title11Button, 6, 1, 1, 1);
-
-        title_1 = new QLabel(tab_2);
-        title_1->setObjectName("title_1");
-        title_1->setMaximumSize(QSize(50, 16777215));
-        title_1->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_1, 0, 0, 1, 1);
-
-        title_8 = new QLabel(tab_2);
-        title_8->setObjectName("title_8");
-        title_8->setMaximumSize(QSize(50, 16777215));
-        title_8->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_8, 7, 0, 1, 1);
-
-        title_9 = new QLabel(tab_2);
-        title_9->setObjectName("title_9");
-        title_9->setMaximumSize(QSize(50, 16777215));
-        title_9->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_9, 0, 2, 1, 1);
-
-        title4Button_3 = new QPushButton(tab_2);
-        title4Button_3->setObjectName("title4Button_3");
-        title4Button_3->setMaximumSize(QSize(200, 16777215));
-        title4Button_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_3, 1, 3, 1, 1);
-
-        title4Button_4 = new QPushButton(tab_2);
-        title4Button_4->setObjectName("title4Button_4");
-        title4Button_4->setMaximumSize(QSize(200, 16777215));
-        title4Button_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_4, 2, 3, 1, 1);
-
-        title4Button_5 = new QPushButton(tab_2);
-        title4Button_5->setObjectName("title4Button_5");
-        title4Button_5->setMaximumSize(QSize(200, 16777215));
-        title4Button_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_5, 3, 3, 1, 1);
-
-        title4Button_6 = new QPushButton(tab_2);
-        title4Button_6->setObjectName("title4Button_6");
-        title4Button_6->setMaximumSize(QSize(200, 16777215));
-        title4Button_6->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_6, 4, 3, 1, 1);
-
-        title4Button_7 = new QPushButton(tab_2);
-        title4Button_7->setObjectName("title4Button_7");
-        title4Button_7->setMaximumSize(QSize(200, 16777215));
-        title4Button_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_7, 5, 3, 1, 1);
-
-        title4Button_8 = new QPushButton(tab_2);
-        title4Button_8->setObjectName("title4Button_8");
-        title4Button_8->setMaximumSize(QSize(200, 16777215));
-        title4Button_8->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_8, 6, 3, 1, 1);
-
-        title4Button_9 = new QPushButton(tab_2);
-        title4Button_9->setObjectName("title4Button_9");
-        title4Button_9->setMaximumSize(QSize(200, 16777215));
-        title4Button_9->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-
-        gridLayout->addWidget(title4Button_9, 7, 3, 1, 1);
-
-        title_10 = new QLabel(tab_2);
-        title_10->setObjectName("title_10");
-        title_10->setMaximumSize(QSize(50, 16777215));
-        title_10->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_10, 1, 2, 1, 1);
-
-        title_11 = new QLabel(tab_2);
-        title_11->setObjectName("title_11");
-        title_11->setMaximumSize(QSize(50, 16777215));
-        title_11->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_11, 2, 2, 1, 1);
-
-        title_12 = new QLabel(tab_2);
-        title_12->setObjectName("title_12");
-        title_12->setMaximumSize(QSize(50, 16777215));
-        title_12->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_12, 3, 2, 1, 1);
-
-        title_13 = new QLabel(tab_2);
-        title_13->setObjectName("title_13");
-        title_13->setMaximumSize(QSize(50, 16777215));
-        title_13->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_13, 4, 2, 1, 1);
-
-        title_14 = new QLabel(tab_2);
-        title_14->setObjectName("title_14");
-        title_14->setMaximumSize(QSize(50, 16777215));
-        title_14->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_14, 5, 2, 1, 1);
-
-        title_15 = new QLabel(tab_2);
-        title_15->setObjectName("title_15");
-        title_15->setMaximumSize(QSize(50, 16777215));
-        title_15->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_15, 6, 2, 1, 1);
-
-        title_16 = new QLabel(tab_2);
-        title_16->setObjectName("title_16");
-        title_16->setMaximumSize(QSize(50, 16777215));
-        title_16->setStyleSheet(QString::fromUtf8("\n"
-"color: rgb(201, 227, 255);\n"
-"font: 700 9pt \"Courier\";"));
-
-        gridLayout->addWidget(title_16, 7, 2, 1, 1);
+        gridLayout->addWidget(rules1, 0, 0, 1, 1);
 
         ruleBook->addTab(tab_2, QString());
         tab_3 = new QWidget();
         tab_3->setObjectName("tab_3");
-        tab_3->setStyleSheet(QString::fromUtf8("background-color: rgb(36, 64, 103);"));
         gridLayout_2 = new QGridLayout(tab_3);
         gridLayout_2->setObjectName("gridLayout_2");
-        titles = new QStackedWidget(tab_3);
-        titles->setObjectName("titles");
-        page_1 = new QWidget();
-        page_1->setObjectName("page_1");
-        label_2 = new QLabel(page_1);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(10, 10, 63, 20));
-        label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_1);
-        page_2_ = new QWidget();
-        page_2_->setObjectName("page_2_");
-        label_3 = new QLabel(page_2_);
-        label_3->setObjectName("label_3");
-        label_3->setGeometry(QRect(10, 20, 63, 20));
-        label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_2_);
-        page_3_ = new QWidget();
-        page_3_->setObjectName("page_3_");
-        label_4 = new QLabel(page_3_);
-        label_4->setObjectName("label_4");
-        label_4->setGeometry(QRect(30, 40, 63, 20));
-        label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_3_);
-        page_4_ = new QWidget();
-        page_4_->setObjectName("page_4_");
-        label_5 = new QLabel(page_4_);
-        label_5->setObjectName("label_5");
-        label_5->setGeometry(QRect(10, 10, 63, 20));
-        label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_4_);
-        page_5_ = new QWidget();
-        page_5_->setObjectName("page_5_");
-        label_6 = new QLabel(page_5_);
-        label_6->setObjectName("label_6");
-        label_6->setGeometry(QRect(30, 40, 63, 20));
-        label_6->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_5_);
-        page_6_ = new QWidget();
-        page_6_->setObjectName("page_6_");
-        label_7 = new QLabel(page_6_);
-        label_7->setObjectName("label_7");
-        label_7->setGeometry(QRect(120, 150, 63, 20));
-        label_7->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
-        titles->addWidget(page_6_);
-        page_7_ = new QWidget();
-        page_7_->setObjectName("page_7_");
-        label_8 = new QLabel(page_7_);
-        label_8->setObjectName("label_8");
-        label_8->setGeometry(QRect(100, 100, 63, 20));
-        titles->addWidget(page_7_);
-        page_8_ = new QWidget();
-        page_8_->setObjectName("page_8_");
-        label_9 = new QLabel(page_8_);
-        label_9->setObjectName("label_9");
-        label_9->setGeometry(QRect(130, 120, 63, 20));
-        titles->addWidget(page_8_);
-        page_9 = new QWidget();
-        page_9->setObjectName("page_9");
-        label_10 = new QLabel(page_9);
-        label_10->setObjectName("label_10");
-        label_10->setGeometry(QRect(100, 110, 63, 20));
-        titles->addWidget(page_9);
-        page_10 = new QWidget();
-        page_10->setObjectName("page_10");
-        label_11 = new QLabel(page_10);
-        label_11->setObjectName("label_11");
-        label_11->setGeometry(QRect(100, 120, 63, 20));
-        titles->addWidget(page_10);
-        page_11 = new QWidget();
-        page_11->setObjectName("page_11");
-        label_12 = new QLabel(page_11);
-        label_12->setObjectName("label_12");
-        label_12->setGeometry(QRect(200, 180, 63, 20));
-        titles->addWidget(page_11);
-        page_12 = new QWidget();
-        page_12->setObjectName("page_12");
-        label_13 = new QLabel(page_12);
-        label_13->setObjectName("label_13");
-        label_13->setGeometry(QRect(130, 80, 63, 20));
-        titles->addWidget(page_12);
-        page_13 = new QWidget();
-        page_13->setObjectName("page_13");
-        label_14 = new QLabel(page_13);
-        label_14->setObjectName("label_14");
-        label_14->setGeometry(QRect(160, 70, 63, 20));
-        titles->addWidget(page_13);
-        page_14 = new QWidget();
-        page_14->setObjectName("page_14");
-        label_15 = new QLabel(page_14);
-        label_15->setObjectName("label_15");
-        label_15->setGeometry(QRect(120, 200, 63, 20));
-        titles->addWidget(page_14);
-        page = new QWidget();
-        page->setObjectName("page");
-        label_16 = new QLabel(page);
-        label_16->setObjectName("label_16");
-        label_16->setGeometry(QRect(240, 130, 63, 20));
-        titles->addWidget(page);
-        page_2 = new QWidget();
-        page_2->setObjectName("page_2");
-        label_17 = new QLabel(page_2);
-        label_17->setObjectName("label_17");
-        label_17->setGeometry(QRect(130, 160, 63, 20));
-        titles->addWidget(page_2);
+        rules2 = new QLabel(tab_3);
+        rules2->setObjectName("rules2");
+        rules2->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempRuleBookP3A8.png")));
 
-        gridLayout_2->addWidget(titles, 0, 0, 1, 1);
+        gridLayout_2->addWidget(rules2, 0, 0, 1, 1);
 
         ruleBook->addTab(tab_3, QString());
         tab_4 = new QWidget();
         tab_4->setObjectName("tab_4");
-        tab_4->setStyleSheet(QString::fromUtf8("background-color: rgb(36, 64, 103);"));
         gridLayout_3 = new QGridLayout(tab_4);
         gridLayout_3->setObjectName("gridLayout_3");
-        textEdit_2 = new QTextEdit(tab_4);
-        textEdit_2->setObjectName("textEdit_2");
+        map = new QLabel(tab_4);
+        map->setObjectName("map");
+        map->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/tempRuleBookMap.png")));
 
-        gridLayout_3->addWidget(textEdit_2, 0, 1, 1, 1);
-
-        listWidget = new QListWidget(tab_4);
-        QBrush brush(QColor(244, 231, 218, 255));
-        brush.setStyle(Qt::NoBrush);
-        QFont font;
-        font.setFamilies({QString::fromUtf8("Courier New")});
-        font.setPointSize(12);
-        font.setBold(true);
-        QListWidgetItem *__qlistwidgetitem = new QListWidgetItem(listWidget);
-        __qlistwidgetitem->setFont(font);
-        __qlistwidgetitem->setForeground(brush);
-        __qlistwidgetitem->setFlags(Qt::ItemIsSelectable|Qt::ItemIsEditable|Qt::ItemIsDragEnabled|Qt::ItemIsUserCheckable|Qt::ItemIsEnabled);
-        listWidget->setObjectName("listWidget");
-        listWidget->setStyleSheet(QString::fromUtf8("color: rgb(255, 252, 237);"));
-
-        gridLayout_3->addWidget(listWidget, 0, 0, 1, 1);
+        gridLayout_3->addWidget(map, 0, 0, 1, 1);
 
         ruleBook->addTab(tab_4, QString());
-        ruleBook_pushButton = new QPushButton(main_screen);
+        ruleBook_pushButton = new QPushButton(screensPage2);
         ruleBook_pushButton->setObjectName("ruleBook_pushButton");
-        ruleBook_pushButton->setGeometry(QRect(810, 320, 161, 211));
+        ruleBook_pushButton->setGeometry(QRect(800, 250, 121, 171));
         ruleBook_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
-"background-image: url(:/resources/img/rule_book.png);\n"
+"border-image: url(:/resources/img/tempBooksA8.png);\n"
+"background: none;\n"
 "background-repeat: none;\n"
-"border-image: url(:/resources/img/rule_book.png);\n"
 "\n"
 ""));
-        closeRules_pushButton = new QPushButton(main_screen);
+        closeRules_pushButton = new QPushButton(screensPage2);
         closeRules_pushButton->setObjectName("closeRules_pushButton");
-        closeRules_pushButton->setGeometry(QRect(760, 100, 91, 41));
+        closeRules_pushButton->setGeometry(QRect(350, 130, 91, 41));
         closeRules_pushButton->setStyleSheet(QString::fromUtf8("background-color: transparent;\n"
 "background: none;\n"
 "background-repeat: none;"));
-        newClient_pushButton = new QPushButton(main_screen);
+        question_pushButton = new QPushButton(screensPage2);
+        question_pushButton->setObjectName("question_pushButton");
+        question_pushButton->setGeometry(QRect(20, 400, 121, 51));
+        newClient_pushButton = new QPushButton(screensPage2);
         newClient_pushButton->setObjectName("newClient_pushButton");
-        newClient_pushButton->setGeometry(QRect(80, 470, 131, 41));
-        menu_pushButton = new QPushButton(main_screen);
+        newClient_pushButton->setGeometry(
+        QRect(810, 10, 131, 41));
+        menu_pushButton = new QPushButton(screensPage2);
         menu_pushButton->setObjectName("menu_pushButton");
         menu_pushButton->setGeometry(QRect(690, 10, 93, 29));
         accept_pushButton = new QPushButton(main_screen);
+        dialouge = new QLabel(screensPage2);
+        dialouge->setObjectName("dialouge");
+        dialouge->setGeometry(QRect(290, 40, 271, 61));
+        dialouge->setAutoFillBackground(false);
+        dialouge->setStyleSheet(QString::fromUtf8("background-color:beige;\n"
+"border: 2px solid black"));
+        dialouge->setAlignment(Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter);
+        accept_pushButton = new QPushButton(screensPage2);
         accept_pushButton->setObjectName("accept_pushButton");
         accept_pushButton->setGeometry(QRect(20, 460, 121, 51));
-        reject_pushButton = new QPushButton(main_screen);
+        reject_pushButton = new QPushButton(screensPage2);
         reject_pushButton->setObjectName("reject_pushButton");
         reject_pushButton->setGeometry(QRect(150, 460, 121, 51));
-        history_pushButton = new QPushButton(main_screen);
-        history_pushButton->setObjectName("history_pushButton");
-        history_pushButton->setGeometry(QRect(580, 80, 21, 21));
-        history_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
+        next_pushButton = new QPushButton(screensPage2);
+        next_pushButton->setObjectName("next_pushButton");
+        next_pushButton->setGeometry(QRect(550, 70, 21, 21));
+        next_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
 "border: 2px solid rgb(149, 174, 207);\n"
 "font: 12pt \"Courier\";\n"
 ""));
         dialougeHistory = new QTextBrowser(main_screen);
         dialougeHistory->setObjectName("dialougeHistory");
         dialougeHistory->setGeometry(QRect(290, 100, 291, 291));
-        QFont font1;
-        font1.setFamilies({QString::fromUtf8("Segoe UI")});
-        font1.setPointSize(9);
-        dialougeHistory->setFont(font1);
         dialougeHistory->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
-"background-color: rgb(226, 190, 146);\n"
-"\n"
 "border: 2px solid rgb(149, 174, 207)"));
-        next_pushButton = new QPushButton(main_screen);
-        next_pushButton->setObjectName("next_pushButton");
-        next_pushButton->setGeometry(QRect(580, 30, 41, 20));
-        QFont font2;
-        font2.setFamilies({QString::fromUtf8("Segoe UI")});
-        font2.setPointSize(9);
-        font2.setBold(false);
-        font2.setItalic(false);
-        next_pushButton->setFont(font2);
-        next_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
-"border: 2px solid rgb(149, 174, 207);\n"
-"font: 9pt \"Segoe UI\";\n"
-""));
         dialouge = new QTextBrowser(main_screen);
         dialouge->setObjectName("dialouge");
-        dialouge->setGeometry(QRect(290, 30, 291, 71));
-        dialouge->setFont(font1);
+        dialouge->setGeometry(QRect(290, 40, 291, 61));
         dialouge->setStyleSheet(QString::fromUtf8("background-color: rgb(231, 239, 243);\n"
-"background-color: rgb(226, 190, 146);\n"
 "border: 2px solid rgb(149, 174, 207)"));
-        page_turner = new QPushButton(main_screen);
-        page_turner->setObjectName("page_turner");
-        page_turner->setGeometry(QRect(800, 460, 61, 61));
-        page_turner->setStyleSheet(QString::fromUtf8("border-image: url(:/resources/img/final_page_turn.png);\n"
-"background-color: transparent;\n"
-""));
-        page_turner_2 = new QPushButton(main_screen);
-        page_turner_2->setObjectName("page_turner_2");
-        page_turner_2->setGeometry(QRect(340, 460, 61, 61));
-        page_turner_2->setStyleSheet(QString::fromUtf8("border-image: url(:/resources/img/final_page_turn_flip.png);\n"
-"background-color: transparent;\n"
-""));
-        promote = new QPushButton(main_screen);
-        promote->setObjectName("promote");
-        promote->setGeometry(QRect(0, 50, 75, 24));
-        level = new QLabel(main_screen);
-        level->setObjectName("level");
-        level->setGeometry(QRect(10, 10, 181, 31));
-        user_desk = new QLabel(main_screen);
-        user_desk->setObjectName("user_desk");
-        user_desk->setEnabled(true);
-        user_desk->setGeometry(QRect(-10, 420, 991, 161));
-        user_desk->setPixmap(QPixmap(QString::fromUtf8(":/resources/img/desk.png")));
         screens->addWidget(main_screen);
+        dialouge->raise();
         client->raise();
         user_desk->raise();
+        ruleBook->raise();
         ruleBook_pushButton->raise();
         closeRules_pushButton->raise();
+        question_pushButton->raise();
         newClient_pushButton->raise();
         menu_pushButton->raise();
         accept_pushButton->raise();
         reject_pushButton->raise();
-        history_pushButton->raise();
-        dialougeHistory->raise();
         next_pushButton->raise();
-        dialouge->raise();
-        ruleBook->raise();
-        page_turner->raise();
-        page_turner_2->raise();
-        level->raise();
-        promote->raise();
+        dialougeHistory->raise();
         selectClient_screen = new QWidget();
         selectClient_screen->setObjectName("selectClient_screen");
-        selectClient = new QTabWidget(selectClient_screen);
+        addClient_pushButton = new QPushButton(selectClient_screen); //ui
+        next_pushButton->setGeometry(QRect(520, 110, 41, 21));
+        screens->addWidget(screensPage2);
+        screensPage3 = new QWidget();
+        screensPage3->setObjectName("screensPage3");
+        addClient_pushButton = new QPushButton(screensPage3); //main
+        addClient_pushButton->setObjectName("addClient_pushButton");
+        addClient_pushButton->setGeometry(QRect(10, 20, 131, 61));
+        selectClient = new QTabWidget(screensPage3);
         selectClient->setObjectName("selectClient");
-        selectClient->setGeometry(QRect(250, 0, 661, 501));
+        selectClient->setGeometry(QRect(250, 20, 661, 501));
         selectClient->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(245, 232, 169, 255), stop:1 rgba(255, 246, 224, 255));\n"
 "alternate-background-color: rgb(255, 245, 205);"));
         tab_8 = new QWidget();
@@ -749,15 +270,15 @@ public:
         verticalLayout->addWidget(label);
 
         selectClient->addTab(tab_8, QString());
-        selectClient_pushButton = new QPushButton(selectClient_screen);
+        selectClient_pushButton = new QPushButton(screensPage3);
         selectClient_pushButton->setObjectName("selectClient_pushButton");
-        selectClient_pushButton->setGeometry(QRect(790, 510, 121, 61));
-        screens->addWidget(selectClient_screen);
-        instruction_screen = new QWidget();
-        instruction_screen->setObjectName("instruction_screen");
-        gridLayout_5 = new QGridLayout(instruction_screen);
+        selectClient_pushButton->setGeometry(QRect(10, 110, 121, 61));
+        screens->addWidget(screensPage3);
+        screensPage4 = new QWidget();
+        screensPage4->setObjectName("screensPage4");
+        gridLayout_5 = new QGridLayout(screensPage4);
         gridLayout_5->setObjectName("gridLayout_5");
-        instruction_tab = new QStackedWidget(instruction_screen);
+        instruction_tab = new QStackedWidget(screensPage4);
         instruction_tab->setObjectName("instruction_tab");
         instruction_page1 = new QWidget();
         instruction_page1->setObjectName("instruction_page1");
@@ -775,23 +296,23 @@ public:
 
         gridLayout_5->addWidget(instruction_tab, 0, 0, 1, 1);
 
-        instr_nextPage_pushButton = new QPushButton(instruction_screen);
+        instr_nextPage_pushButton = new QPushButton(screensPage4);
         instr_nextPage_pushButton->setObjectName("instr_nextPage_pushButton");
 
         gridLayout_5->addWidget(instr_nextPage_pushButton, 1, 0, 1, 1);
 
-        instr_menu_pushButton = new QPushButton(instruction_screen);
+        instr_menu_pushButton = new QPushButton(screensPage4);
         instr_menu_pushButton->setObjectName("instr_menu_pushButton");
 
         gridLayout_5->addWidget(instr_menu_pushButton, 2, 0, 1, 1);
 
-        screens->addWidget(instruction_screen);
-        end_screen = new QWidget();
-        end_screen->setObjectName("end_screen");
-        end_screen->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(133, 156, 120, 255), stop:1 rgba(216, 234, 236, 255));"));
-        gridLayout_4 = new QGridLayout(end_screen);
+        screens->addWidget(screensPage4);
+        screenpage5 = new QWidget();
+        screenpage5->setObjectName("screenpage5");
+        screenpage5->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:1, y2:0, stop:0 rgba(133, 156, 120, 255), stop:1 rgba(216, 234, 236, 255));"));
+        gridLayout_4 = new QGridLayout(screenpage5);
         gridLayout_4->setObjectName("gridLayout_4");
-        continue_pushButton = new QPushButton(end_screen);
+        continue_pushButton = new QPushButton(screenpage5);
         continue_pushButton->setObjectName("continue_pushButton");
         continue_pushButton->setMinimumSize(QSize(0, 100));
         continue_pushButton->setStyleSheet(QString::fromUtf8("font: 700 15pt \"Courier\";\n"
@@ -799,92 +320,21 @@ public:
 
         gridLayout_4->addWidget(continue_pushButton, 1, 1, 1, 1);
 
-        textBrowser = new QLabel(end_screen);
+        textBrowser = new QTextBrowser(screenpage5);
         textBrowser->setObjectName("textBrowser");
+        textBrowser->setMaximumSize(QSize(16777215, 400));
+        textBrowser->setFrameShadow(QFrame::Sunken);
 
         gridLayout_4->addWidget(textBrowser, 0, 0, 1, 2);
 
-        screens->addWidget(end_screen);
-        lose_screen = new QWidget();
-        lose_screen->setObjectName("lose_screen");
-        lose_screen->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(55, 13, 13, 255), stop:1 rgba(139, 0, 0, 255));"));
-        gridLayout_6 = new QGridLayout(lose_screen);
-        gridLayout_6->setObjectName("gridLayout_6");
-        pushButton = new QPushButton(lose_screen);
-        pushButton->setObjectName("pushButton");
-        pushButton->setMinimumSize(QSize(0, 100));
-        pushButton->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));\n"
-"font: 700 15pt \"Courier\";\n"
-"color: rgb(255, 237, 237);"));
-
-        gridLayout_6->addWidget(pushButton, 1, 0, 1, 1);
-
-        label_18 = new QLabel(lose_screen);
-        label_18->setObjectName("label_18");
-        label_18->setStyleSheet(QString::fromUtf8("background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 48, 48, 255), stop:0.0247525 rgba(216, 0, 0, 255), stop:1 rgba(255, 136, 136, 255));\n"
-"font: 700 15pt \"Courier\";\n"
-"color: rgb(255, 237, 237);"));
-        label_18->setAlignment(Qt::AlignCenter);
-
-        gridLayout_6->addWidget(label_18, 0, 0, 1, 1);
-
-        screens->addWidget(lose_screen);
-        summary_screen = new QWidget();
-        summary_screen->setObjectName("summary_screen");
-        gridLayout_7 = new QGridLayout(summary_screen);
-        gridLayout_7->setObjectName("gridLayout_7");
-        payment_total = new QLabel(summary_screen);
-        payment_total->setObjectName("payment_total");
-        payment_total->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(payment_total, 0, 0, 1, 1);
-
-        reputation = new QLabel(summary_screen);
-        reputation->setObjectName("reputation");
-        reputation->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(reputation, 0, 1, 1, 1);
-
-        money_loss = new QLabel(summary_screen);
-        money_loss->setObjectName("money_loss");
-        money_loss->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(money_loss, 1, 0, 1, 1);
-
-        money = new QLabel(summary_screen);
-        money->setObjectName("money");
-        money->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(money, 2, 0, 1, 1);
-
-        promote_cost = new QLabel(summary_screen);
-        promote_cost->setObjectName("promote_cost");
-        promote_cost->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(promote_cost, 3, 0, 1, 1);
-
-        nextRound = new QPushButton(summary_screen);
-        nextRound->setObjectName("nextRound");
-        nextRound->setMinimumSize(QSize(0, 200));
-        nextRound->setStyleSheet(QString::fromUtf8("font: 12pt \"Courier\";\n"
-"background-color: qlineargradient(spread:pad, x1:1, y1:0.948864, x2:1, y2:0, stop:0 rgba(196, 187, 164, 255), stop:1 rgba(255, 255, 255, 255));\n"
-"color: rgb(127, 74, 28);"));
-
-        gridLayout_7->addWidget(nextRound, 3, 1, 1, 1);
-
-        screens->addWidget(summary_screen);
+        screens->addWidget(screenpage5);
 
         verticalLayout_2->addWidget(screens);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 995, 26));
+        menubar->setGeometry(QRect(0, 0, 1003, 26));
         MainWindow->setMenuBar(menubar);
         statusbar = new QStatusBar(MainWindow);
         statusbar->setObjectName("statusbar");
@@ -892,9 +342,8 @@ public:
 
         retranslateUi(MainWindow);
 
-        screens->setCurrentIndex(1);
+        screens->setCurrentIndex(2);
         ruleBook->setCurrentIndex(1);
-        titles->setCurrentIndex(15);
         selectClient->setCurrentIndex(0);
         instruction_tab->setCurrentIndex(1);
 
@@ -906,89 +355,23 @@ public:
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         client->setText(QString());
+        user_desk->setText(QString());
         front_page->setText(QString());
-        contents->setText(QString());
         ruleBook->setTabText(ruleBook->indexOf(tab), QCoreApplication::translate("MainWindow", "Conte.", nullptr));
-        title9Button->setText(QCoreApplication::translate("MainWindow", "Cultural and Community Engagement", nullptr));
-        title_4->setText(QCoreApplication::translate("MainWindow", "TITLE 8", nullptr));
-        title_3->setText(QCoreApplication::translate("MainWindow", "TITLE 7", nullptr));
-        title7Button->setText(QCoreApplication::translate("MainWindow", "Financial Institutions Act", nullptr));
-        title_7->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title6Button->setText(QCoreApplication::translate("MainWindow", " Assignment for Benefit of Creditors", nullptr));
-        title8Button->setText(QCoreApplication::translate("MainWindow", "Cemeteries", nullptr));
-        title12Button->setText(QCoreApplication::translate("MainWindow", "what the dawg doin", nullptr));
-        title10Button->setText(QCoreApplication::translate("MainWindow", "Your mom", nullptr));
-        title4Button->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_2->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title_5->setText(QCoreApplication::translate("MainWindow", "TITLE 9", nullptr));
-        title_6->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_2->setText(QCoreApplication::translate("MainWindow", "TITLE 6", nullptr));
-        title11Button->setText(QCoreApplication::translate("MainWindow", "You dad", nullptr));
-        title_1->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_8->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_9->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title4Button_3->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_4->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_5->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_6->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_7->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_8->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title4Button_9->setText(QCoreApplication::translate("MainWindow", "Utah Agricultural Code", nullptr));
-        title_10->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_11->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_12->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_13->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_14->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_15->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
-        title_16->setText(QCoreApplication::translate("MainWindow", "TITLE 4", nullptr));
+        rules1->setText(QString());
         ruleBook->setTabText(ruleBook->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Rules", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Title 4", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Title 6", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Title 7", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Title 8", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Title 9", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "title 10", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "title 11", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "page  8", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "page 9", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "page 10", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "page 11", nullptr));
-        label_13->setText(QCoreApplication::translate("MainWindow", "page 12", nullptr));
-        label_14->setText(QCoreApplication::translate("MainWindow", "page 13", nullptr));
-        label_15->setText(QCoreApplication::translate("MainWindow", "page 14", nullptr));
-        label_16->setText(QCoreApplication::translate("MainWindow", "page 15", nullptr));
-        label_17->setText(QCoreApplication::translate("MainWindow", "page 16", nullptr));
+        rules2->setText(QString());
         ruleBook->setTabText(ruleBook->indexOf(tab_3), QCoreApplication::translate("MainWindow", "Rules", nullptr));
-        textEdit_2->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"hr { height: 1px; border-width: 0; }\n"
-"li.unchecked::marker { content: \"\\2610\"; }\n"
-"li.checked::marker { content: \"\\2612\"; }\n"
-"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">&quot;</p>\n"
-"<ul style=\"margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;\">\n"
-"<li style=\" margin-top:12px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent"
-                        ":0px;\">text 1</li>\n"
-"<li style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">text 2</li>\n"
-"<li style=\" margin-top:0px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">text 3</li></ul>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br />&quot;</p></body></html>", nullptr));
-
-        const bool __sortingEnabled = listWidget->isSortingEnabled();
-        listWidget->setSortingEnabled(false);
-        QListWidgetItem *___qlistwidgetitem = listWidget->item(0);
-        ___qlistwidgetitem->setText(QCoreApplication::translate("MainWindow", "Hello WORLD!", nullptr));
-        listWidget->setSortingEnabled(__sortingEnabled);
-
+        map->setText(QString());
         ruleBook->setTabText(ruleBook->indexOf(tab_4), QCoreApplication::translate("MainWindow", "Map", nullptr));
         ruleBook_pushButton->setText(QString());
         closeRules_pushButton->setText(QCoreApplication::translate("MainWindow", "Close book", nullptr));
+        question_pushButton->setText(QCoreApplication::translate("MainWindow", "Question", nullptr));
         newClient_pushButton->setText(QCoreApplication::translate("MainWindow", "NEW CLIENT", nullptr));
         menu_pushButton->setText(QCoreApplication::translate("MainWindow", "Main Menu", nullptr));
         accept_pushButton->setText(QCoreApplication::translate("MainWindow", "Accept", nullptr));
         reject_pushButton->setText(QCoreApplication::translate("MainWindow", "Reject", nullptr));
-        history_pushButton->setText(QCoreApplication::translate("MainWindow", "V", nullptr));
+        next_pushButton->setText(QCoreApplication::translate("MainWindow", "V", nullptr));
         dialougeHistory->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -997,7 +380,6 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier';\">#PLACEHOLDER</span></p></body></html>", nullptr));
-        next_pushButton->setText(QCoreApplication::translate("MainWindow", "next", nullptr));
         dialouge->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -1006,11 +388,9 @@ public:
 "li.checked::marker { content: \"\\2612\"; }\n"
 "</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier';\">#PLACEHOLDER</span></p></body></html>", nullptr));
-        page_turner->setText(QString());
-        page_turner_2->setText(QString());
-        promote->setText(QCoreApplication::translate("MainWindow", "promote", nullptr));
-        level->setText(QCoreApplication::translate("MainWindow", "level", nullptr));
-        user_desk->setText(QString());
+
+        next_pushButton->setText(QCoreApplication::translate("MainWindow", "Next", nullptr));
+        addClient_pushButton->setText(QCoreApplication::translate("MainWindow", "ADD CLIENT", nullptr));
         label->setText(QCoreApplication::translate("MainWindow", "CLIENTELE", nullptr));
         selectClient->setTabText(selectClient->indexOf(tab_8), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
         selectClient_pushButton->setText(QCoreApplication::translate("MainWindow", "Select Client", nullptr));
@@ -1040,15 +420,21 @@ public:
         instr_nextPage_pushButton->setText(QCoreApplication::translate("MainWindow", "NEXT...", nullptr));
         instr_menu_pushButton->setText(QCoreApplication::translate("MainWindow", "MENU", nullptr));
         continue_pushButton->setText(QCoreApplication::translate("MainWindow", "CONTINUE...", nullptr));
-        textBrowser->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "RESTART GAME", nullptr));
-        label_18->setText(QCoreApplication::translate("MainWindow", "YOU'RE BANKRUPT!", nullptr));
-        payment_total->setText(QCoreApplication::translate("MainWindow", "Payment: ", nullptr));
-        reputation->setText(QCoreApplication::translate("MainWindow", "Reputation: 0", nullptr));
-        money_loss->setText(QCoreApplication::translate("MainWindow", "Money lost: ", nullptr));
-        money->setText(QCoreApplication::translate("MainWindow", "NET EARNINGS: ", nullptr));
-        promote_cost->setText(QCoreApplication::translate("MainWindow", "Cost for next promotion:", nullptr));
-        nextRound->setText(QCoreApplication::translate("MainWindow", "NEXT ROUND", nullptr));
+        textBrowser->setHtml(QCoreApplication::translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><meta charset=\"utf-8\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"hr { height: 1px; border-width: 0; }\n"
+"li.unchecked::marker { content: \"\\2610\"; }\n"
+"li.checked::marker { content: \"\\2612\"; }\n"
+"</style></head><body style=\" font-family:'Segoe UI'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-fam"
+                        "ily:'Courier'; font-size:25pt;\"><br /></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:25pt;\"><br /></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:24pt;\">UNFORTUNATELY YOU LOST THE CASE</span></p>\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'Courier'; font-size:10pt;\">Child soliders are illegal under the Geneva Convention...</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Courier'; font-size:24pt;\"><br /></p></body></html>", nullptr));
     } // retranslateUi
 
 };
