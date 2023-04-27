@@ -36,6 +36,7 @@ public slots:
     void ruleBookClosed();
 
     void checkMoneyAndReputation();
+    void checkUserChoose(bool truth);
     void questionClient();
     void acceptClient();
     void rejectClient();
@@ -53,7 +54,9 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    void on_continue_pushButton_clicked();
+    void on_update_pressed();
+
+    void on_update_released();
 
     void title4Clicked();
 
@@ -100,5 +103,6 @@ private:
     std::vector<Box> mBoxes;
     QTimer *timer;
 
+    void restart();
 };
 #endif // MAINWINDOW_H

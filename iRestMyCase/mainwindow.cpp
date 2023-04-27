@@ -170,6 +170,12 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     //Box 2D implementation
     //connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
+    //ui->level->setText("Apprentice lawyer"); //Add later once button added
+    //QFont font = ui->level->font();
+    //font.setPointSize(12);
+    //font.setBold(true);
+    //ui->level->setFont(font);
+
 }
 
 void MainWindow::playClickSound()
@@ -303,60 +309,57 @@ void MainWindow::checkMoneyAndReputation(){
    QString currentMoney = "Money: " + QString::number(model->getMoney());
    ui->money->setText(currentMoney);
    if(model->getMoney() < 0){
-        //Implement timer that slowly fades into the next screen
-        ui->screens->setCurrentIndex(4);
+        if(model->getLevel() == 0){
+            restart();
+            ui->screens->setCurrentIndex(4);
+        }else{
+            model->deleteLevel();
+            model->equalMoney(1000);
+            QString currentMoney = "Money: " + QString::number(model->getMoney());
+            ui->money->setText(currentMoney);
+            ui->level->setText(model->getLevelStatus());
+        }
    }
-   double reputation = model->getReputation();
-   if(reputation >= 0.59 && reputation < 1.611){
-        ui->reputation->setText("Reputation status:    mediocre");
-   }else if(reputation >= 0.206 && reputation < 0.59){
-        ui->reputation->setText("Reputation status:    bad deeds");
-   }else if(reputation >= 1.611 && reputation < 4.177){
-        ui->reputation->setText("Reputation status:    small famous");
-   }else if(reputation >= 0.042 && reputation < 0.206){
-        ui->reputation->setText("Reputation status:    notorious");
-   }else if(reputation >= 4.177 && reputation < 17.45){
-        ui->reputation->setText("Reputation status:    outstanding");
-   }else if(reputation < 0.042){
-        ui->reputation->setText("Reputation status:    everyone spurned");
-   }else if (reputation >= 17.45){
-        ui->reputation->setText("Reputation status:    everyone knows");
-   }else{
-        ui->reputation->setText("Error");
+   ui->reputation->setText(model->getReputationStatus());
+}
+
+void MainWindow::restart(){
+   model->reset();
+   QString currentMoney = "Money: " + QString::number(model->getMoney());
+   ui->money->setText(currentMoney);
+   ui->reputation->setText("");
+   ui->update->setText("UPDATE");
+   ui->level->setText(model->getLevelStatus());
+
+}
+
+void MainWindow::checkUserChoose(bool truth){
+   // implement money/reputation
+   int commission = model->clients[client_index]->payment;
+   if(truth){ // When the user judges correctly.
+        model->addMoney(commission * model->getReputation());
+        model->changeReputation(model->getReputation()*1.1);
+        nextRound();
+   }else{ // When the user judges incorrectly
+        model->deleteMoney(commission);
+        model->changeReputation(model->getReputation()*0.9);
+        nextRound();
    }
+   checkMoneyAndReputation();
 }
 
 void MainWindow::acceptClient()
 {
     ui->dialouge->setText(model->clients[client_index]->dialogue_a[0]);
 
-    // implement money/reputation
-    int commission = model->clients[client_index]->payment * model->getReputation();
-    if(true){ // When the user judges correctly.
-        model->addMoney(commission);
-        model->changeReputation(model->getReputation()*1.1);
-    }else{ // When the user judges incorrectly
-        model->deleteMoney(commission);
-        model->changeReputation(model->getReputation()*0.9);
-    }
-    checkMoneyAndReputation();
-
+   checkUserChoose(true); // Need to add case is true or false
 }
 
 void MainWindow::rejectClient()
 {
     ui->dialouge->setText(model->clients[client_index]->dialogue_r[0]);
 
-    // implement money/reputation
-    int commission = model->clients[client_index]->payment * model->getReputation();
-    if(false){ // When the user judges correctly.
-        model->addMoney(commission);
-        model->changeReputation(model->getReputation()*1.1);
-    }else{ // When the user judges incorrectly
-        model->deleteMoney(commission);
-        model->changeReputation(model->getReputation()*0.9);
-    }
-    checkMoneyAndReputation();
+    checkUserChoose(false); // Need to add case is true or false
 
 }
 
@@ -485,13 +488,23 @@ void MainWindow::nextRound()
 
 }
 
-
-void MainWindow::on_continue_pushButton_clicked()
+void MainWindow::on_update_pressed()
 {
-    model->restart();
-    QString currentMoney = "Money: " + QString::number(model->getMoney());
-    ui->money->setText(currentMoney);
-    ui->reputation->setText("");
+    if(model->update()){
+        QString currentMoney = "Money: " + QString::number(model->getMoney());
+        ui->money->setText(currentMoney);
+    }else{
+        ui->update->setText("lack of money");
+        ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
+
+    }
+}
+
+
+void MainWindow::on_update_released()
+{
+    ui->update->setText("UPDATE");
+    ui->level->setText(model->getLevelStatus());
 }
 
 

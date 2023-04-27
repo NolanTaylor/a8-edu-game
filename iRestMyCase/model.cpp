@@ -8,7 +8,8 @@ Model::Model(QObject *parent)
 {
     clients = QVector<Client*>();
     money = 0;
-    reputation = 1;
+    reputation = 1.00;
+    level = 0;
     // currentClients.push_back(std::make_unique<Client>()); (rachel mode)
 
     fillClients();
@@ -65,6 +66,9 @@ void Model::fillUnusedClients()
 
 void Model::reset()
 {
+    money = 0;
+    reputation = 1;
+    level = 0;
     //Reset the pool
     clients.clear();
     unusedClients.clear();
@@ -85,6 +89,10 @@ void Model::addMoney(int value){
     money += value;
 }
 
+void Model::equalMoney(int value){
+    money = value;
+}
+
 void Model::deleteMoney(int value){
     money -= value;
 }
@@ -93,11 +101,110 @@ void Model::changeReputation(double value){
     reputation = value;
 }
 
-void Model::restart(){
-    money = 0;
-    reputation = 1;
-//    int iNum = clients.count();
-//    for(int i = 0; i < iNum; i++){
-//        delete(clients.takeAt(0));
-//    }
+QString Model::getReputationStatus(){
+    if(reputation >= 0.59 && reputation < 1.61){
+        return "Reputation status:    mediocre";
+    }else if(reputation >= 0.21 && reputation < 0.59){
+        return "Reputation status:    bad deeds";
+    }else if(reputation >= 1.61 && reputation < 4.18){
+        return "Reputation status:    small famous";
+    }else if(reputation >= 0.04 && reputation < 0.21){
+        return "Reputation status:    notorious";
+    }else if(reputation >= 4.18 && reputation < 17.45){
+        return "Reputation status:    outstanding";
+    }else if(reputation < 0.04){
+        return "Reputation status:    everyone spurned";
+    }else if (reputation >= 17.45){
+        return "Reputation status:    everyone knows";
+    }else{
+        return "Error";
+    }
+}
+
+bool Model::update(){
+    switch (level) {
+    case 0:
+        if(money > 10000){
+            money -= 10000;
+            level++;
+            return true;
+        }else{
+
+        }
+        break;
+    case 1:
+        if(money > 35000){
+            money -= 35000;
+            level++;
+            return true;
+        }
+        break;
+    case 2:
+        if(money > 200000){
+            money -= 200000;
+            level++;
+            return true;
+        }
+        break;
+    case 3:
+        if(money > 1500000){
+            money -= 1500000;
+            graduate();
+            return true;
+        }
+        break;
+    }
+    return false;
+}
+
+void Model::graduate(){
+
+}
+
+int Model::getLevel(){
+    return this->level;
+}
+
+int Model::getLevelMoney(){
+    switch(level){
+    case 0:
+        return 10000;
+        break;
+    case 1:
+        return 35000;
+        break;
+    case 2:
+        return 200000;
+        break;
+    case 3:
+        return 1500000;
+        break;
+    case 4:
+        return INT_MAX;
+    }
+    return 0;
+}
+
+QString Model::getLevelStatus(){
+    switch(level){
+    case 0:
+        return "Apprentice lawyer";
+        break;
+    case 1:
+        return "junior lawyer";
+        break;
+    case 2:
+        return "Intermediate Lawyer";
+        break;
+    case 3:
+        return "senior lawyer";
+        break;
+    case 4:
+        return "Graduate";
+    }
+    return 0;
+}
+
+void Model::deleteLevel(){
+    level -= 1;
 }
