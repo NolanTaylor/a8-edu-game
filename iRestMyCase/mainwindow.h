@@ -6,8 +6,6 @@
 #include <QSoundEffect>
 #include "startmenu.h"
 #include "model.h"
-#include <Box2D/Box2D.h>
-#include "box.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -37,6 +35,7 @@ public slots:
 
     void checkMoneyAndReputation();
     void checkUserChoose(bool truth);
+    void questionClient();
     void acceptClient();
     void rejectClient();
 
@@ -53,37 +52,7 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    //void updateClicked();
-
-    //void on_update_released();
     void on_continue_pushButton_clicked();
-
-    void title4Clicked();
-
-    void title6Clicked();
-
-    void turnPage();
-
-    void title7Clicked();
-
-    void title8Clicked();
-
-    void title9Clicked();
-
-    void title10Clicked();
-
-    void title11Clicked();
-
-    void title12Clicked();
-
-    void backPage();
-
-    void changedTabs(int index);
-
-    void titlesScreenChanged(int arg1);
-
-    void characterAnimationOnTick();
-
 
 private:
     Ui::MainWindow *ui;
@@ -97,13 +66,5 @@ private:
 
     void nextClient();
     void replaceClient();
-
-    //Box2D implementation
-    std::unique_ptr<b2World> mWorld;
-    std::vector<Box> mBoxes;
-    QTimer *timer;
-
-    void restart();
-
 };
 #endif // MAINWINDOW_H
