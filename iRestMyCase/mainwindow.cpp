@@ -665,7 +665,7 @@ void MainWindow::on_title4Button_6_clicked()
 {
 
     ui->ruleBook->setCurrentIndex(2);
-    ui->titles->setCurrentIndex(12);
+    ui->titles->setCurrentIndex(12); //
 }
 
 

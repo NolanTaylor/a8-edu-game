@@ -35,11 +35,11 @@
         <file>img/car_color.png</file>
         <file>img/CEO_color.png</file>
         <file>img/fatman_color.png</file>
+        <file>img/final_page_turn_flip.png</file>
         <file>img/general_color.png</file>
         <file>img/granny_color.png</file>
         <file>img/kid_color.png</file>
         <file>img/rule_book.png</file>
         <file>img/worker_color.png</file>
-        <file>img/desk.png</file>
     </qresource>
 </RCC>
