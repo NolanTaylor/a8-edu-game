@@ -209,7 +209,7 @@ void MainWindow::restartGame(){
     ui->closeRules_pushButton->setEnabled(false);
 
     ui->ruleBook_pushButton->show();
-    ui->ruleBook_pushButton->setEnabled(true);
+    ui->ruleBook_pushButton->setEnabled(true);//
 
 
     //Reset Everything in model
