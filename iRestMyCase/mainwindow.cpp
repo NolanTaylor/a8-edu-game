@@ -226,8 +226,16 @@ void MainWindow::checkMoneyAndReputation(){
    QString currentMoney = "Money: " + QString::number(model->getMoney());
    ui->money->setText(currentMoney);
    if(model->getMoney() < 0){
-        restart();
-        ui->screens->setCurrentIndex(4);
+        if(model->getLevel() == 0){
+            restart();
+            ui->screens->setCurrentIndex(4);
+        }else{
+            model->deleteLevel();
+            model->equalMoney(1000);
+            QString currentMoney = "Money: " + QString::number(model->getMoney());
+            ui->money->setText(currentMoney);
+            ui->level->setText(model->getLevelStatus());
+        }
    }
    ui->reputation->setText(model->getReputationStatus());
 }
@@ -413,6 +421,6 @@ void MainWindow::on_update_pressed()
 void MainWindow::on_update_released()
 {
     ui->update->setText("UPDATE");
-    ui->level->setText(model->getReputationStatus());
+    ui->level->setText(model->getLevelStatus());
 }
 

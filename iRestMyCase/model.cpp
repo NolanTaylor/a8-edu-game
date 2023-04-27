@@ -84,6 +84,10 @@ void Model::addMoney(int value){
     money += value;
 }
 
+void Model::equalMoney(int value){
+    money = value;
+}
+
 void Model::deleteMoney(int value){
     money -= value;
 }
@@ -194,4 +198,8 @@ QString Model::getLevelStatus(){
         return "Graduate";
     }
     return 0;
+}
+
+void Model::deleteLevel(){
+    level -= 1;
 }
