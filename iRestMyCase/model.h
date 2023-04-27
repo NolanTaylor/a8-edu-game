@@ -26,8 +26,12 @@ public:
     void addMoney(int value);
     void deleteMoney(int value);
     void changeReputation(double value);
-    void restart();
     QString getReputationStatus();
+    bool update();
+    void graduate();
+    int getLevel();
+    int getLevelMoney();
+    QString getLevelStatus();
 
 public slots:
     void reset();
@@ -36,6 +40,7 @@ signals:
 private:
     int money;
     double reputation;
+    int level;
 
     void fillClients();
     void fillUnusedClients();

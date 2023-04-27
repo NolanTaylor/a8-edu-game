@@ -391,6 +391,32 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Courier';&quot;&gt;#PLACEHOLDER&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
        </widget>
+       <widget class="QPushButton" name="update">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>111</width>
+          <height>24</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>UPDATE</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="level">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>171</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="selectClient_screen">
        <widget class="QTabWidget" name="selectClient">
@@ -591,7 +617,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <x>0</x>
      <y>0</y>
      <width>1003</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

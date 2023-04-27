@@ -96,6 +96,12 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
 
+    ui->level->setText("Apprentice lawyer");
+    QFont font = ui->level->font();
+    font.setPointSize(12);
+    font.setBold(true);
+    ui->level->setFont(font);
+
 }
 
 void MainWindow::playClickSound()
@@ -220,10 +226,20 @@ void MainWindow::checkMoneyAndReputation(){
    QString currentMoney = "Money: " + QString::number(model->getMoney());
    ui->money->setText(currentMoney);
    if(model->getMoney() < 0){
-        //Implement timer that slowly fades into the next screen
+        restart();
         ui->screens->setCurrentIndex(4);
    }
    ui->reputation->setText(model->getReputationStatus());
+}
+
+void MainWindow::restart(){
+   model->reset();
+   QString currentMoney = "Money: " + QString::number(model->getMoney());
+   ui->money->setText(currentMoney);
+   ui->reputation->setText("");
+   ui->update->setText("UPDATE");
+   ui->level->setText(model->getLevelStatus());
+
 }
 
 void MainWindow::checkUserChoose(bool truth){
@@ -232,10 +248,11 @@ void MainWindow::checkUserChoose(bool truth){
    if(truth){ // When the user judges correctly.
         model->addMoney(commission * model->getReputation());
         model->changeReputation(model->getReputation()*1.1);
-        qDebug() << model->getReputation();
+        nextRound();
    }else{ // When the user judges incorrectly
         model->deleteMoney(commission);
         model->changeReputation(model->getReputation()*0.9);
+        nextRound();
    }
    checkMoneyAndReputation();
 }
@@ -380,12 +397,22 @@ void MainWindow::nextRound()
 
 }
 
-
-void MainWindow::on_continue_pushButton_clicked()
+void MainWindow::on_update_pressed()
 {
-    model->restart();
-    QString currentMoney = "Money: " + QString::number(model->getMoney());
-    ui->money->setText(currentMoney);
-    ui->reputation->setText("");
+    if(model->update()){
+        QString currentMoney = "Money: " + QString::number(model->getMoney());
+        ui->money->setText(currentMoney);
+    }else{
+        ui->update->setText("lack of money");
+        ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
+
+    }
+}
+
+
+void MainWindow::on_update_released()
+{
+    ui->update->setText("UPDATE");
+    ui->level->setText(model->getReputationStatus());
 }
 

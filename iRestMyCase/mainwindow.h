@@ -52,7 +52,9 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    void on_continue_pushButton_clicked();
+    void on_update_pressed();
+
+    void on_update_released();
 
 private:
     Ui::MainWindow *ui;
@@ -66,5 +68,7 @@ private:
 
     void nextClient();
     void replaceClient();
+
+    void restart();
 };
 #endif // MAINWINDOW_H
