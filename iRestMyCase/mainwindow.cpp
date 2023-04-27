@@ -54,7 +54,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     dialogue_index = 0;
 
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
+    //ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
@@ -117,7 +117,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->instr_menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::nextPageInstruction);
 
-    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
+    //connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::questionClient);
 
     // connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
     // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
@@ -145,7 +145,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->continue_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
-    connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
+   // connect(ui->question_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
 
     //hitbox implementation
 //    connect(ui->ruleBook_hitBox, &QPushButton::clicked, this, &MainWindow::ruleBookHitBox);
@@ -172,11 +172,11 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     //Box 2D implementation
     connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
-    //ui->level->setText("Apprentice lawyer"); //Add later once button added
-    //QFont font = ui->level->font();
-    //font.setPointSize(12);
-    //font.setBold(true);
-    //ui->level->setFont(font);
+    ui->level->setText("Apprentice lawyer"); //Add later once button added
+    QFont font = ui->level->font();
+    font.setPointSize(12);
+    font.setBold(true);
+    ui->level->setFont(font);
 
 }
 
@@ -283,7 +283,7 @@ void MainWindow::nextClient()
 
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
-    ui->question_pushButton->setDisabled(false);
+    //ui->question_pushButton->setDisabled(false);
     ui->next_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
@@ -322,7 +322,7 @@ void MainWindow::checkMoneyAndReputation(){
             model->equalMoney(1000);
             QString currentMoney = "Money: " + QString::number(model->getMoney());
             ui->money->setText(currentMoney);
-            ui->level->setText(model->getLevelStatus());
+           // ui->level->setText(model->getLevelStatus());
         }
    }
    ui->reputation->setText(model->getReputationStatus());
@@ -372,7 +372,7 @@ void MainWindow::replaceClient()
 {
 
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
+    //ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -474,7 +474,7 @@ void MainWindow::nextRound()
 
     replaceClient();
     ui->newClient_pushButton->setDisabled(false);
-    ui->question_pushButton->setDisabled(true);
+    //ui->question_pushButton->setDisabled(true);
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
@@ -493,14 +493,14 @@ void MainWindow::nextRound()
 
 }
 
-void MainWindow::on_update_pressed()
+void MainWindow::updateClicked()
 {
     if(model->update()){
         QString currentMoney = "Money: " + QString::number(model->getMoney());
         ui->money->setText(currentMoney);
     }else{
-        ui->update->setText("lack of money");
-        ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
+       ui->update->setText("lack of money");
+       ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
 
     }
 }
@@ -508,8 +508,8 @@ void MainWindow::on_update_pressed()
 
 void MainWindow::on_update_released()
 {
-    ui->update->setText("UPDATE");
-    ui->level->setText(model->getLevelStatus());
+    //ui->update->setText("UPDATE");
+    //ui->level->setText(model->getLevelStatus());
 }
 
 

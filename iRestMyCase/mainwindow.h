@@ -54,7 +54,7 @@ private slots:
     void displayOutcome();
     void nextRound();
 
-    void on_update_pressed();
+    void updateClicked();
 
     void on_update_released();
 
