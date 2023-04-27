@@ -1317,6 +1317,7 @@ background-color: transparent;
          <string>Reputation: 0</string>
         </property>
        </widget>
+
        <widget class="QLabel" name="level">
         <property name="geometry">
          <rect>
@@ -1341,6 +1342,7 @@ background-color: transparent;
         </property>
         <property name="text">
          <string>PushButton</string>
+
         </property>
        </widget>
        <zorder>client</zorder>
@@ -1360,8 +1362,10 @@ background-color: transparent;
        <zorder>page_turner_2</zorder>
        <zorder>money</zorder>
        <zorder>reputation</zorder>
+
        <zorder>level</zorder>
        <zorder>update</zorder>
+
       </widget>
       <widget class="QWidget" name="selectClient_screen">
        <widget class="QTabWidget" name="selectClient">

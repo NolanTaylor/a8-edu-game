@@ -53,6 +53,9 @@ private slots:
     void displayOutcome();
     void nextRound();
 
+    //void updateClicked();
+
+    //void on_update_released();
     void on_continue_pushButton_clicked();
 
     void title4Clicked();

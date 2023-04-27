@@ -10,6 +10,8 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     //Make the world
+    timer = new QTimer(this);
+
 
     b2Vec2 gravity(0.0f, -9.81);
     mWorld = std::make_unique<b2World>(gravity);
@@ -113,7 +115,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->instr_menu_pushButton, &QPushButton::clicked, this, &MainWindow::toMainMenu);
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::nextPageInstruction);
-
     // connect(ui->addClient_pushButton, &QPushButton::clicked, &model, &Model::getNewClient);
     // connect(&model, &Model::addClientToManila, ui->selectClient, &SelectClient::addNewClients);
 
@@ -141,7 +142,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     connect(ui->instr_nextPage_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
     connect(ui->menu_pushButton, &QPushButton::clicked, this, &MainWindow::playClickSound);
 
-
     //hitbox implementation
 //    connect(ui->ruleBook_hitBox, &QPushButton::clicked, this, &MainWindow::ruleBookHitBox);
 //    connect(ui->ruleBook_hitBox_2, &QPushButton::clicked, this, &MainWindow::ruleBookHitBox);
@@ -167,13 +167,13 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
 
     //Box 2D implementation
-    //connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
+    connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
-    //ui->level->setText("Apprentice lawyer"); //Add later once button added
-    //QFont font = ui->level->font();
-    //font.setPointSize(12);
-    //font.setBold(true);
-    //ui->level->setFont(font);
+    ui->level->setText("Apprentice lawyer"); //Add later once button added
+    QFont font = ui->level->font();
+    font.setPointSize(12);
+    font.setBold(true);
+    ui->level->setFont(font);
 
 }
 
@@ -206,11 +206,14 @@ void MainWindow::restartGame(){
     ui->closeRules_pushButton->setEnabled(false);
 
     ui->ruleBook_pushButton->show();
-    ui->ruleBook_pushButton->setEnabled(true);
+    ui->ruleBook_pushButton->setEnabled(true);//
 
 
     //Reset Everything in model
     emit resetSignal();
+
+    //Start animation once user starts the game
+    timer->start(100);
 }
 
 void MainWindow::toMainMenu(){
@@ -277,6 +280,7 @@ void MainWindow::nextClient()
 
     client_in_office = true;
     ui->newClient_pushButton->setDisabled(true);
+
     ui->next_pushButton->setDisabled(false);
     ui->accept_pushButton->setDisabled(false);
     ui->reject_pushButton->setDisabled(false);
@@ -313,7 +317,7 @@ void MainWindow::checkMoneyAndReputation(){
             model->equalMoney(1000);
             QString currentMoney = "Money: " + QString::number(model->getMoney());
             ui->money->setText(currentMoney);
-            ui->level->setText(model->getLevelStatus());
+           // ui->level->setText(model->getLevelStatus());
         }
 
    }
@@ -367,6 +371,7 @@ void MainWindow::replaceClient()
 {
 
     ui->newClient_pushButton->setDisabled(false);
+
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
 
@@ -469,6 +474,7 @@ void MainWindow::nextRound()
 
     replaceClient();
     ui->newClient_pushButton->setDisabled(false);
+
     ui->accept_pushButton->setDisabled(true);
     ui->reject_pushButton->setDisabled(true);
     ui->next_pushButton->setDisabled(true);
@@ -485,6 +491,18 @@ void MainWindow::nextRound()
 
     //Reset dialouge
 
+}
+
+void MainWindow::updateClicked()
+{
+    if(model->update()){
+        QString currentMoney = "Money: " + QString::number(model->getMoney());
+        ui->money->setText(currentMoney);
+    }else{
+       ui->update->setText("lack of money");
+       ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
+
+    }
 }
 
 
