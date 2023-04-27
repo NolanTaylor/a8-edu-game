@@ -13,13 +13,13 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     timer = new QTimer(this);
 
 
-    b2Vec2 gravity(0.0f, -9.81);
+    b2Vec2 gravity(0.0f, 9.81);
     mWorld = std::make_unique<b2World>(gravity);
 
     //Create physics objects
     //Make the ground...will stop the boxes
     b2BodyDef groundBodyDef;
-    groundBodyDef.position.Set(0.0f, -10.0f); //in meters
+    groundBodyDef.position.Set(0.0f, 200.0f); //in meters
     //Allocates body in memory
     b2Body* groundBody = mWorld->CreateBody(&groundBodyDef);
     //Make the ground fixture
@@ -30,24 +30,17 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     //create some boxes
     Box newBox;
     QVector2D position(0.0f, 14.0f);
-    QVector2D direction(15.0f, 15.0f);
+    QVector2D direction(2.0f, 2.0f);
 
     newBox.init(mWorld.get(), position, direction);
+    mBoxes.push_back(newBox);
 
-    for (auto& box: mBoxes){
-        QVector4D destRect;
-        destRect.setX(box.getBody()->GetPosition().x);
-        destRect.setY(box.getBody()->GetPosition().y);
-        destRect.setZ(box.getDimensions().x());
-        destRect.setW(box.getDimensions().y());
-        //box.getBody()->GetAngle();
-
-    }
 
     this->model = &model;
     ui->setupUi(this);
     ui->screens->setCurrentIndex(0);
     ui->instruction_tab->setCurrentIndex(0);
+    ui->ruleBook->setCurrentIndex(0);
 
     client_in_office = false;//
     client_index = 0;
@@ -65,7 +58,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
     ui->next_pushButton->hide();
     ui->history_pushButton->hide();
 
-    QPixmap desk(":/resources/img/tempDesk2A8.png");
+    QPixmap desk(":/resources/img/desk.png");
     ui->user_desk->setPixmap(desk.scaled(ui->user_desk->width(),ui->user_desk->height(), Qt::IgnoreAspectRatio));
 
     QPixmap utahCode(":/resources/img/utah_code.jpg");
@@ -89,7 +82,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 //     ui->rule_book->setPixmap(ruleBook.scaled(ui->rule_book->width(),ui->rule_book->height(), Qt::KeepAspectRatio));
 //     ui->rule_book->hide();
 
-    QPixmap ruleBook(":/resources/img/tempRuleBookP2A8.png");
+  //  QPixmap ruleBook(":/resources/img/tempRuleBookP2A8.png");
     //ui->rules1->setPixmap(ruleBook.scaled(ui->ruleBook->width(), ui->ruleBook->height(), Qt::IgnoreAspectRatio));
     ui->closeRules_pushButton->hide();
     ui->closeRules_pushButton->setEnabled(false);
@@ -148,8 +141,6 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
 //    connect(ui->dialouge_hitBox, &QPushButton::clicked, this, &MainWindow::on_dialouge_hitBox_clicked);
 //    connect(ui->dialouge_hitBox_2, &QPushButton::clicked, this, &MainWindow::on_dialouge_hitBox_clicked);
-
-
     connect(ui->ruleBook, &QTabWidget::currentChanged, this, &MainWindow::changedTabs);
 
     connect(ui->title4Button, &QPushButton::clicked, this, &MainWindow::title4Clicked);
@@ -213,7 +204,7 @@ void MainWindow::restartGame(){
     emit resetSignal();
 
     //Start animation once user starts the game
-    timer->start(100);
+    timer->start(17);
 }
 
 void MainWindow::toMainMenu(){
@@ -310,9 +301,9 @@ void MainWindow::checkMoneyAndReputation(){
         // ui->screens->setCurrentIndex(4);
 
         if(model->getLevel() == 0){
-            restart();
+            //restart();
             ui->screens->setCurrentIndex(4);
-        } else {
+        }else{
             model->deleteLevel();
             model->equalMoney(1000);
             QString currentMoney = "Money: " + QString::number(model->getMoney());
@@ -322,16 +313,6 @@ void MainWindow::checkMoneyAndReputation(){
 
    }
    ui->reputation->setText(model->getReputationStatus());
-}
-
-void MainWindow::restart() {
-   model->reset();
-   QString currentMoney = "Money: " + QString::number(model->getMoney());
-   ui->money->setText(currentMoney);
-   ui->reputation->setText("");
-   ui->update->setText("UPDATE");
-   ui->level->setText(model->getLevelStatus());
-
 }
 
 void MainWindow::checkUserChoose(bool truth){
@@ -493,13 +474,13 @@ void MainWindow::nextRound()
 
 }
 
-void MainWindow::updateClicked()
+void MainWindow::promoteClicked()
 {
-    if(model->update()){
+    if(model->promote_pushButton()){
         QString currentMoney = "Money: " + QString::number(model->getMoney());
         ui->money->setText(currentMoney);
     }else{
-       ui->update->setText("lack of money");
+       ui->promote->setText("lack of money");
        ui->level->setText("NEED: " + QString::number(model->getLevelMoney()));
 
     }
@@ -510,7 +491,7 @@ void MainWindow::on_continue_pushButton_clicked()
 {
     // model->restart();
 
-    ui->update->setText("UPDATE");
+    ui->promote->setText("UPDATE");
     ui->level->setText(model->getLevelStatus());
 }
 
@@ -562,18 +543,18 @@ void MainWindow::title9Clicked()
 void MainWindow::title10Clicked()
 {
     ui->ruleBook->setCurrentIndex(2);
-    ui->titles->setCurrentIndex(4);
+    ui->titles->setCurrentIndex(5);
 }
 void MainWindow::title11Clicked()
 {
     ui->ruleBook->setCurrentIndex(2);
-    ui->titles->setCurrentIndex(5);
+    ui->titles->setCurrentIndex(6);
 }
 
 void MainWindow::title12Clicked()
 {
     ui->ruleBook->setCurrentIndex(2);
-    ui->titles->setCurrentIndex(5);
+    ui->titles->setCurrentIndex(7);
 }
 void MainWindow::turnPage()
 {
@@ -635,5 +616,75 @@ void MainWindow::titlesScreenChanged(int arg1)
 }
 //Controls the Box2D implementation
 void MainWindow::characterAnimationOnTick(){
+    mWorld->Step(1.0f / 60.0f, 8, 3);
+    //draw the box falling
+    for (auto& box: mBoxes){
+       // QVector4D destRect;
+        //destRect.setX(box.getBody()->GetPosition().x);
+       // destRect.setY(box.getBody()->GetPosition().y);
+       // destRect.setZ(box.getDimensions().x());
+        //destRect.setW(box.getDimensions().y());
+        //box.getBody()->GetAngle();
+        QPoint destBox;
+        destBox.setX(box.getBody()->GetPosition().x);
+        destBox.setY(box.getBody()->GetPosition().y);
+        ui->promote->move(destBox);
+    }
 
+}
+
+void MainWindow::on_title4Button_2_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(8);
+}
+
+
+void MainWindow::on_title4Button_3_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(9);
+}
+
+
+void MainWindow::on_title4Button_4_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(10);
+}
+
+
+void MainWindow::on_title4Button_5_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(10);
+}
+
+
+void MainWindow::on_title4Button_6_clicked()
+{
+
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(12); //
+}
+
+
+void MainWindow::on_title4Button_7_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(13);
+}
+
+
+void MainWindow::on_title4Button_8_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(14);
+}
+
+
+void MainWindow::on_title4Button_9_clicked()
+{
+    ui->ruleBook->setCurrentIndex(2);
+    ui->titles->setCurrentIndex(15);
 }

@@ -10,7 +10,6 @@ StartMenu::StartMenu(QWidget *parent) :
     connect(ui->newGame_pushButton, &QPushButton::clicked, this, &StartMenu::playClickSound);
     connect(ui->instruction_pushButton, &QPushButton::clicked, this, &StartMenu::playClickSound);
     connect(ui->load_pushButton, &QPushButton::clicked, this, &StartMenu::playClickSound);
-
 }
 
 void StartMenu::playClickSound()

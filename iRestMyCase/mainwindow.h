@@ -54,6 +54,7 @@ private slots:
     void nextRound();
 
     //void updateClicked();
+    void promoteClicked();
 
     //void on_update_released();
     void on_continue_pushButton_clicked();
@@ -84,6 +85,22 @@ private slots:
 
     void characterAnimationOnTick();
 
+
+    void on_title4Button_2_clicked();
+
+    void on_title4Button_3_clicked();
+
+    void on_title4Button_4_clicked();
+
+    void on_title4Button_5_clicked();
+
+    void on_title4Button_6_clicked();
+
+    void on_title4Button_7_clicked();
+
+    void on_title4Button_8_clicked();
+
+    void on_title4Button_9_clicked();
 
 private:
     Ui::MainWindow *ui;

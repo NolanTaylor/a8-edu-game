@@ -279,4 +279,3 @@ QString Model::getLevelStatus(){
 void Model::deleteLevel(){
     level -= 1;
 }
-
