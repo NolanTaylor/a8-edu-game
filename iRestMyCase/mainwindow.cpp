@@ -4,7 +4,7 @@
 #include <QDebug>
 #include "clienttab.h"
 #include <QVector2D>
-
+#include <QTimer>
 MainWindow::MainWindow(Model &model, QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
@@ -168,7 +168,7 @@ MainWindow::MainWindow(Model &model, QWidget *parent)
 
 
     //Box 2D implementation
-    connect(timer, &QTimer::timeout, this, &Model::characterAnimationOnTick);
+    //connect(timer, &QTimer::timeout, this, &MainWindow::characterAnimationOnTick);
 
 }
 
