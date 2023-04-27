@@ -1,0 +1,45 @@
+<RCC>
+    <qresource prefix="/resources">
+        <file>img/suitManA8.png</file>
+        <file>img/tempRuleBookA8.png</file>
+        <file>img/tempDesk2A8.png</file>
+        <file>img/tempBooksA8.png</file>
+        <file>img/tempBookP4A8.png</file>
+        <file>img/tempBookP5A8.png</file>
+        <file>img/tempBookP6A8.png</file>
+        <file>img/tempBookP7A8.png</file>
+        <file>img/tempBookP8A8.png</file>
+        <file>img/tempRuleBookCover.png</file>
+        <file>img/tempRuleBookMap.png</file>
+        <file>img/tempRuleBookP2A8.png</file>
+        <file>img/tempRuleBookP3A8.png</file>
+        <file>img/client1.png</file>
+        <file>img/client2.png</file>
+        <file>img/client3.png</file>
+        <file>img/tempMaxwell.png</file>
+        <file>img/clicknoise.wav</file>
+        <file>img/carwithgolfball.png</file>
+        <file>img/utah_code.jpg</file>
+        <file>img/business.png</file>
+        <file>img/CEO.png</file>
+        <file>img/fatman.png</file>
+        <file>img/general.png</file>
+        <file>img/granny.png</file>
+        <file>img/kiddo.png</file>
+        <file>img/punk.png</file>
+        <file>img/worker.png</file>
+        <file>img/paper_turn.png</file>
+        <file>img/paper_turn_trans.png</file>
+        <file>img/final_page_turn.png</file>
+        <file>img/business_color.png</file>
+        <file>img/car_color.png</file>
+        <file>img/CEO_color.png</file>
+        <file>img/fatman_color.png</file>
+        <file>img/general_color.png</file>
+        <file>img/granny_color.png</file>
+        <file>img/kid_color.png</file>
+        <file>img/rule_book.png</file>
+        <file>img/worker_color.png</file>
+        <file>img/desk.png</file>
+    </qresource>
+</RCC>
